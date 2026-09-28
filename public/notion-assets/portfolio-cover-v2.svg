@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="600" viewBox="0 0 1800 600">
+<rect width="1800" height="600" fill="#F7F3EC"/>
+<rect x="0" y="0" width="1220" height="600" fill="#18273B"/>
+<path d="M1190 0 C1390 90, 1550 55, 1800 0 L1800 600 L1160 600 C1260 455, 1285 275, 1190 0 Z" fill="#EEF3EE"/>
+<circle cx="1500" cy="300" r="175" fill="none" stroke="#647C6E" stroke-width="4" opacity="0.65"/>
+<circle cx="1500" cy="300" r="105" fill="#FFFEFB" opacity="0.9"/>
+<rect x="90" y="92" width="10" height="345" rx="5" fill="#647C6E"/>
+<text x="145" y="188" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#FFFFFF">Маркетинговые</text>
+<text x="145" y="258" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#FFFFFF">и специальные проекты</text>
+<text x="145" y="336" font-family="Arial, sans-serif" font-size="29" fill="#D9E0E6">Исследование · стратегия · ТЗ · запуск · измеримый результат</text>
+<text x="145" y="420" font-family="Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="2" fill="#AFC0B7">ТАТЬЯНА БАБАНОВА · ПОРТФОЛИО</text>
+</svg>
