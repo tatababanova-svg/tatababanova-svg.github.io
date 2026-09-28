@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="600" viewBox="0 0 1800 600">
+<rect width="1800" height="600" fill="#18273B"/>
+<rect x="0" y="0" width="22" height="600" fill="#7690A8"/>
+<circle cx="1510" cy="300" r="210" fill="none" stroke="#7690A8" stroke-width="5" opacity="0.55"/>
+<circle cx="1510" cy="300" r="125" fill="none" stroke="#F7F3EC" stroke-width="2" opacity="0.35"/>
+<path d="M1180 520 C1390 390, 1530 470, 1800 300" fill="none" stroke="#7690A8" stroke-width="6" opacity="0.7"/>
+<text x="110" y="160" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#AFC0B7">ПОТОК ПРОЕКТОВ + E-COMMERCE</text>
+<text x="110" y="270" font-family="Arial, sans-serif" font-size="62" font-weight="700" fill="#FFFFFF">КАН-АВТО / CarWit</text>
+<text x="110" y="360" font-family="Arial, sans-serif" font-size="30" fill="#DCE4E0">167 запросов · 5 000 единиц · 30% лид → заказ</text>
+</svg>
