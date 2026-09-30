@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
-const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
-const basePath = isGitHubPages ? "/tatiana-babanova-portfolio" : "";
+const basePath = "";
 
 const nextConfig: NextConfig = {
   output: "export",
