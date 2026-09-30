@@ -930,3 +930,22 @@
     animation: none !important;
   }
 }
+
+
+/* Keep the native mouse pointer visible on desktop. */
+.approved-site.approved-modern,
+.approved-site.approved-modern *,
+html,
+body {
+  cursor: auto !important;
+}
+.approved-site.approved-modern a,
+.approved-site.approved-modern button,
+.approved-site.approved-modern summary,
+.approved-site.approved-modern [role="button"] {
+  cursor: pointer !important;
+}
+.approved-site.approved-modern input,
+.approved-site.approved-modern textarea {
+  cursor: text !important;
+}
