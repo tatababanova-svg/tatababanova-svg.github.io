@@ -108,7 +108,7 @@ function HeroSection() {
           <h1 id="approved-hero-title" data-hero-motion>{withoutTrailingPeriod(hero.title)}</h1>
           <p className="approved-hero-lead" data-hero-motion>{hero.lead}</p>
           <p className="approved-hero-statement" data-hero-motion>{hero.statement}</p>
-          <HeroFlow />
+          <p className="approved-hero-location" data-hero-motion>{hero.location}</p>
           <div className="approved-hero-actions" data-hero-motion>
             <a className="approved-button approved-button-primary" href="#cases" data-analytics-event="hero_cases">
               {hero.primaryCta}
