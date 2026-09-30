@@ -6,7 +6,7 @@ export function GitHubPagesCompat() {
   useEffect(() => {
     if (window.location.hostname !== "tatababanova-svg.github.io") return;
 
-    const basePath = "/tatiana-babanova-portfolio";
+    const basePath = "";
 
     document
       .querySelectorAll<HTMLAnchorElement>('a[href="/tatiana-babanova-project-manager.pdf"]')
