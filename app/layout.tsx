@@ -8,9 +8,8 @@ import "./responsive-refinement.css";
 import "./mobile-desktop-parity.css";
 import "./mobile-final.css";
 import "./mobile-parity-v2.css";
-import "./mobile-desktop-style-lock.css";
-import "./mobile-photo-parity.css";
 import "./editorial-refresh.css";
+import "./mobile-editorial-final.css";
 
 export const metadata: Metadata = {
   title: seo.title,
