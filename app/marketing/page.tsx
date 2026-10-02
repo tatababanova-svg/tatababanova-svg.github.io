@@ -20,6 +20,7 @@ const asset = "/marketing-assets";
 
 const links = {
   portfolio: "#contact",
+  resume: "/tatiana-babanova-project-manager.pdf",
   eal: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
   vois: "https://marsh-inch-22f.notion.site/3e92eed19c8581dda040c3b2e574855d",
   carwit: "https://marsh-inch-22f.notion.site/3e92eed19c85815f807fca93e619b82a",
@@ -42,7 +43,7 @@ const commercialCases = [
   {
     title: "COMvex — B2B-выставочный проект",
     badge: "Выставочный проект",
-    image: null,
+    image: `${asset}/cover-COMvex.svg`,
     metrics: ["2,5 млн ₽|бюджет", "137|целевых лидов", "67 млн ₽|продаж", "44 млн ₽|валовой прибыли"],
     task: "Организовать участие в отраслевой выставке с понятной коммуникацией и коммерческой целью.",
     role: "Содержание, требования, ТЗ, подрядчики, логистика, запуск, контроль бюджета и результата.",
@@ -52,7 +53,7 @@ const commercialCases = [
   {
     title: "Canton Fair — международный проект",
     badge: "Международный проект",
-    image: null,
+    image: `${asset}/cover-Canton.svg`,
     metrics: ["317|лидов", "98|новых клиентов", "30,9%|конверсия"],
     task: "Привлечь новых клиентов на международной выставке и быстро перестроить проект под новые требования.",
     role: "Пересборка плана, коммуникация команды и подрядчиков, контроль запуска и качества.",
@@ -72,7 +73,7 @@ const commercialCases = [
   {
     title: "TatOilExpo — событийный коммерческий проект",
     badge: "Событийный проект",
-    image: null,
+    image: `${asset}/cover-TatOil.svg`,
     metrics: ["1,5 млн ₽|бюджет", "117|лидов", "37 млн ₽|атрибутированной выручки"],
     task: "Подготовить отраслевое событие с целевой B2B-аудиторией и измеримым коммерческим результатом.",
     role: "Коммуникация, материалы, подрядчики, программа, сроки, запуск активности и контроль.",
@@ -108,7 +109,7 @@ export default function MarketingPortfolio() {
             <a href="#process">Как я работаю</a>
             <a href="#contact">Контакты</a>
           </div>
-          <a className="marketing-resume-link" href={links.portfolio}>Связаться <span>→</span></a>
+          <a className="marketing-resume-link" href={links.resume} download>Скачать резюме <span>→</span></a>
         </nav>
       </header>
 
@@ -116,18 +117,21 @@ export default function MarketingPortfolio() {
         <div className="marketing-shell marketing-hero-grid">
           <div className="marketing-hero-copy">
             <p className="marketing-kicker">Маркетинг и специальные проекты</p>
-            <h1>Соединяю исследование, стратегию и реализацию, чтобы идеи становились понятными решениями для бизнеса</h1>
+            <h1>Превращаю неясные рыночные задачи в решения, которые можно запустить и измерить.</h1>
             <p className="marketing-lead">
-              Разбираюсь в рынке и клиенте, формирую логику продукта и коммуникации, ставлю задачи команде и сопровождаю запуск до измеримого результата
+              Исследую рынок и клиента, собираю маркетинговую и продуктовую логику, ставлю ТЗ и довожу проект до запуска и проверяемого результата.
             </p>
             <div className="marketing-hero-actions">
               <a className="marketing-button marketing-button-primary" href="#flagships">Смотреть проекты ↓</a>
-              <a className="marketing-button marketing-button-secondary" href={links.portfolio}>Контакты →</a>
+              <a className="marketing-button marketing-button-secondary" href={links.resume} download>Скачать резюме (PDF) ↓</a>
             </div>
           </div>
 
           <div className="marketing-hero-photo" aria-label="Татьяна Бабанова">
             <img src="/tatiana-babanova.jpg" alt="Татьяна Бабанова" />
+            <div className="marketing-hand-note" aria-hidden="true">
+              <span>Исследование</span><span>Анализ</span><span>Стратегия</span><span>Запуск</span><span>Результат</span>
+            </div>
             <p className="marketing-photo-caption">проекты, которые двигают бизнес вперёд</p>
           </div>
         </div>
@@ -174,7 +178,7 @@ export default function MarketingPortfolio() {
                 </div>
               </div>
               <div className="marketing-flagship-visual marketing-eal-visual">
-                <img src={`${asset}/EAL-05-evidence.svg`} alt="Рабочий материал проекта EAL" />
+                <img src={`${asset}/eal-site.jpg`} alt="Рабочий материал проекта EAL" />
                 <span>исследование → коммерческая система → сайт</span>
               </div>
             </article>
@@ -205,43 +209,6 @@ export default function MarketingPortfolio() {
         </div>
       </section>
 
-      <section className="marketing-section marketing-proof-section" id="proof">
-        <div className="marketing-shell">
-          <div className="marketing-heading-row marketing-proof-heading">
-            <div>
-              <p className="marketing-kicker">Подтверждающие материалы</p>
-              <h2>Не только описание кейсов — показываю рабочие материалы</h2>
-              <p>Фрагменты исследований, планов внедрения, прототипов и реальный экран продукта. Каждый материал можно открыть отдельно или перейти в полный кейс.</p>
-            </div>
-          </div>
-
-          <div className="marketing-proof-showcase">
-            <a href={`${asset}/EAL-01-CA.svg`} target="_blank" rel="noreferrer">
-              <img src={`${asset}/EAL-01-CA.svg`} alt="EAL — сегментация аудитории" />
-              <div><span>Рабочий проект</span><strong>EAL — сегментация аудитории</strong><small>Ситуации покупки, боли, риски и критерии выбора</small></div>
-            </a>
-            <a href={`${asset}/EAL-04-implementation.svg`} target="_blank" rel="noreferrer">
-              <img src={`${asset}/EAL-04-implementation.svg`} alt="EAL — план внедрения" />
-              <div><span>Рабочий проект</span><strong>EAL — план внедрения</strong><small>Приоритеты, зависимости и этапы проверки</small></div>
-            </a>
-            <a href={`${asset}/CarWit-product-screen.jpg`} target="_blank" rel="noreferrer">
-              <img src={`${asset}/CarWit-product-screen.jpg`} alt="CarWit — реальный экран продуктовой презентации" />
-              <div><span>Реальный материал</span><strong>CarWit — продуктовая презентация</strong><small>Экран рабочего материала проекта КАН-АВТО</small></div>
-            </a>
-            <a href={`${asset}/VOIS-02-journey.svg`} target="_blank" rel="noreferrer">
-              <img src={`${asset}/VOIS-02-journey.svg`} alt="VOIS — карта пути клиента" />
-              <div><span>Инициативный проект</span><strong>VOIS — карта пути клиента</strong><small>Открытые данные · зоны неопределённости и точки проверки</small></div>
-            </a>
-          </div>
-
-          <div className="marketing-proof-actions">
-            <a href={links.eal} target="_blank" rel="noreferrer">Открыть полный рабочий кейс EAL ↗</a>
-            <a href={links.carwit} target="_blank" rel="noreferrer">Открыть кейс CarWit ↗</a>
-            <a href={links.vois} target="_blank" rel="noreferrer">Открыть исследование VOIS ↗</a>
-          </div>
-        </div>
-      </section>
-
       <section className="marketing-project marketing-project-eal" id="eal">
         <div className="marketing-shell">
           <div className="marketing-project-hero">
@@ -256,7 +223,7 @@ export default function MarketingPortfolio() {
               </div>
             </div>
             <div className="marketing-project-cover">
-              <img src={`${asset}/EAL-05-evidence.svg`} alt="Рабочий материал проекта EAL" />
+              <img src={`${asset}/eal-site.jpg`} alt="Рабочий материал проекта EAL" />
               <ul>
                 <li>Исследование рынка</li>
                 <li>Продуктовая стратегия</li>
@@ -336,7 +303,7 @@ export default function MarketingPortfolio() {
                 className="marketing-proof-feature"
                 items={[
                   {
-                    src: `${asset}/EAL-05-evidence.svg`,
+                    src: `${asset}/eal-site.jpg`,
                     alt: "MVP сайта EAL",
                     caption: "Рабочий материал EAL: выводы исследования переведены в структуру решений и план внедрения.",
                   },
@@ -512,17 +479,29 @@ export default function MarketingPortfolio() {
             </div>
           </div>
 
-          <div className="marketing-extra-grid">
-            <article className="marketing-extra-card marketing-extra-wide">
+          <div className="marketing-extra-grid marketing-extra-grid-three">
+            <article className="marketing-extra-card">
+              <div>
+                <span className="marketing-chip">Событийный проект</span>
+                <h3>TatOilExpo / GSS</h3>
+                <p>Коммуникация, материалы, подрядчики и запуск выставочной активности к фиксированной дате.</p>
+              </div>
+              <a className="marketing-extra-visual" href={links.tatoil} target="_blank" rel="noreferrer">
+                <img src={`${asset}/cover-TatOil.svg`} alt="TatOilExpo / GSS — материалы выставочного проекта" loading="lazy" />
+              </a>
+              <div className="marketing-extra-metrics"><strong>117</strong><span>лидов</span><strong>1,5 млн ₽</strong><span>бюджет</span><strong>37 млн ₽</strong><span>атрибутированная выручка</span></div>
+            </article>
+
+            <article className="marketing-extra-card">
               <div>
                 <span className="marketing-chip">B2B-выставочная коммуникация</span>
                 <h3>CTT / SuperSnow</h3>
-                <p>Концепция стенда, ключевые сообщения, печатные и digital-материалы, работа с подрядчиками и подготовка команды на площадке.</p>
+                <p>Концепция стенда, ключевые сообщения, печатные и digital-материалы, подрядчики и готовность команды к площадке.</p>
               </div>
-              <div className="marketing-extra-proof-panel">
+              <div className="marketing-extra-proof-panel marketing-extra-proof-compact">
                 <span>Реальный проект</span>
-                <strong>Концепция → материалы → подрядчики → готовность к запуску</strong>
-                <p>Не использую условную картинку вместо доказательства: здесь оставляю только описание реальной роли и результата проекта.</p>
+                <strong>Концепция → материалы → подрядчики → запуск</strong>
+                <small>Подробные материалы — в полном портфолио</small>
               </div>
             </article>
 
@@ -530,34 +509,34 @@ export default function MarketingPortfolio() {
               <div>
                 <span className="marketing-chip">Упаковка сложной модели</span>
                 <h3>Broxi</h3>
-                <p>Перевела сложную схему взаимодействия участников сделки в понятную презентационную логику.</p>
+                <p>Перевела сложную схему взаимодействия участников сделки в понятную презентационную логику для клиента и партнёров.</p>
               </div>
               <div className="marketing-service-map" aria-label="Сервисная модель Broxi">
                 <span>Продавец</span><span>Сервис</span><strong>broxi</strong><span>Банк</span><span>Покупатель</span>
               </div>
             </article>
+          </div>
 
-            <article className="marketing-extra-card marketing-brand-card">
-              <div>
-                <span className="marketing-chip">Бренд-системы</span>
-                <h3>EAL / LOTOS / ГК Альфа</h3>
-                <p>Требования к системе, содержание, ТЗ, правила применения и контроль носителей. Графическую реализацию выполняли профильные дизайнеры.</p>
-              </div>
-              <div className="marketing-brand-proof-wrap">
-                <ProofGallery
-                  className="marketing-brand-proofs"
-                  items={[
-                    { src: `${asset}/EAL-06-TZ-fragment.svg`, alt: "Фрагмент проектных материалов EAL" },
-                  ]}
-                />
-                <div className="marketing-brand-proof-copy">
-                  <strong>Что подтверждаю здесь</strong>
-                  <span>EAL — требования и правила внедрения</span>
-                  <span>LOTOS — работа с вариантами фирменной системы</span>
-                  <span>ГК Альфа — требования к шаблонам и единообразию материалов</span>
-                  <small>Графическую реализацию выполняли профильные дизайнеры</small>
-                </div>
-              </div>
+          <div className="marketing-brand-strip">
+            <article>
+              <span className="marketing-chip">EAL</span>
+              <ProofGallery className="marketing-brand-proof-single" items={[{ src: `${asset}/EAL-06-TZ-fragment.svg`, alt: "Фрагмент бренд-системы EAL" }]} />
+              <p>Требования к системе, носителям и правилам применения.</p>
+            </article>
+            <article>
+              <span className="marketing-chip">LOTOS</span>
+              <div className="marketing-brand-text-visual"><strong>LOTOS</strong><small>варианты логотипа · правила применения</small></div>
+              <p>Работа с вариантами фирменной системы и единообразием носителей.</p>
+            </article>
+            <article>
+              <span className="marketing-chip">ГК Альфа</span>
+              <ProofGallery className="marketing-brand-proof-single" items={[{ src: `${asset}/Alpha-brandbook-colors.jpg`, alt: "Фрагмент бренд-системы ГК Альфа" }]} />
+              <p>Требования к шаблонам презентаций и визуальному единообразию материалов.</p>
+            </article>
+            <article className="marketing-brand-role">
+              <span className="marketing-chip">Моя роль</span>
+              <strong>Требования → ТЗ → согласование → контроль применения</strong>
+              <p>Графическую реализацию выполняли профильные дизайнеры.</p>
             </article>
           </div>
         </div>
@@ -588,11 +567,12 @@ export default function MarketingPortfolio() {
         <div className="marketing-shell marketing-contact-card">
           <div>
             <p className="marketing-kicker marketing-kicker-light">Связаться</p>
-            <h2>Готова подключаться к задачам, где нужны исследование, системный подход и доведение идеи до запуска</h2>
-            <p>Обсудим задачу и посмотрим, чем мой опыт может быть полезен вашей команде</p>
+            <h2>Нужен маркетолог-практик, который умеет доводить проекты до результата?</h2>
+            <p>Обсудим задачу и посмотрим, как я могу быть полезна вашей команде.</p>
           </div>
           <div className="marketing-contact-links">
-            <a className="marketing-contact-primary" href={links.telegram} target="_blank" rel="noreferrer">Написать в Telegram →</a>
+            <a className="marketing-contact-primary" href={links.telegram} target="_blank" rel="noreferrer">Связаться со мной →</a>
+            <a href={links.telegram} target="_blank" rel="noreferrer"><span>Telegram</span><strong>@taninnik</strong></a>
             <a href={links.phone}><span>Телефон</span><strong>+7 986 723 31 55</strong></a>
             <a href={links.email}><span>Почта</span><strong>babanova595@gmail.com</strong></a>
           </div>
