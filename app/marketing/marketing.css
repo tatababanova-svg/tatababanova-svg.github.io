@@ -806,3 +806,287 @@
   .marketing-case-visual { min-height: 250px; }
   .marketing-contact { padding: 68px 0; }
 }
+
+
+/* Evidence + typography refinement */
+.marketing-site {
+  font-family: "Onest", "Segoe UI", sans-serif !important;
+  font-weight: 400;
+  background-color: #f5f2eb;
+  background-image:
+    radial-gradient(circle at 86% 3%, rgba(201,111,91,.11), transparent 31rem),
+    radial-gradient(circle at 7% 8%, rgba(39,87,68,.09), transparent 30rem),
+    linear-gradient(rgba(24,35,30,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24,35,30,.025) 1px, transparent 1px);
+  background-size: auto, auto, 48px 48px, 48px 48px;
+}
+.marketing-site :where(h1,h2,h3,strong) {
+  font-family: "Onest", "Segoe UI", sans-serif;
+}
+.marketing-site h1 {
+  font-weight: 520;
+  letter-spacing: -.055em;
+}
+.marketing-site h2 {
+  font-weight: 520;
+  letter-spacing: -.045em;
+}
+.marketing-site h3 {
+  font-weight: 620;
+  letter-spacing: -.025em;
+}
+.marketing-kicker,
+.marketing-eyebrow,
+.marketing-case-label {
+  font-weight: 750;
+  letter-spacing: .09em;
+}
+.marketing-lead,
+.marketing-story-grid p,
+.marketing-selected-copy > span,
+.marketing-gallery-card p {
+  font-weight: 400;
+}
+
+.marketing-hero {
+  background:
+    linear-gradient(120deg, rgba(255,253,249,.84), rgba(255,253,249,.48)),
+    radial-gradient(circle at 72% 18%, rgba(201,111,91,.10), transparent 28rem);
+}
+.marketing-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 10px;
+  max-width: 790px;
+  margin-top: 38px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(24,35,30,.14);
+}
+.marketing-hero-metrics div {
+  display: grid;
+  gap: 3px;
+}
+.marketing-hero-metrics strong {
+  color: var(--green);
+  font-size: 1.08rem;
+  font-weight: 780;
+}
+.marketing-hero-metrics span {
+  color: var(--muted);
+  font-size: .74rem;
+  line-height: 1.35;
+}
+
+.marketing-gallery-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  color: var(--ink) !important;
+  box-shadow: 0 10px 30px rgba(24,35,30,.035);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.marketing-gallery-card figure { height: 100%; }
+.marketing-gallery-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(39,87,68,.34);
+  box-shadow: 0 20px 42px rgba(24,35,30,.09);
+}
+.marketing-gallery-image {
+  position: relative;
+}
+.marketing-gallery-tag {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 2;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 999px;
+  background: rgba(255,253,249,.92);
+  color: var(--green-dark);
+  font-size: .64rem;
+  font-weight: 760;
+  letter-spacing: .03em;
+  backdrop-filter: blur(10px);
+}
+.marketing-gallery-open {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--green-dark);
+  color: #fff;
+  font-size: .66rem;
+  font-weight: 750;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.marketing-gallery-card:hover .marketing-gallery-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.marketing-gallery-mvp,
+.marketing-selected-media-mvp {
+  padding: 0 !important;
+  background: #dfe8e2 !important;
+}
+.marketing-mvp-browser {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  background: #fff;
+  color: #0c2340;
+}
+.marketing-mvp-browser-large { min-height: 330px; }
+.marketing-mvp-top {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 10px;
+  border-bottom: 1px solid #d9e0e4;
+  background: #f8fafb;
+}
+.marketing-mvp-top i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9d1d6;
+}
+.marketing-mvp-top span {
+  margin-left: auto;
+  color: #102a56;
+  font-size: .58rem;
+  font-weight: 850;
+}
+.marketing-mvp-hero {
+  min-height: 132px;
+  padding: 18px 18px 16px;
+  background:
+    linear-gradient(110deg, rgba(8,30,55,.97), rgba(13,55,78,.88)),
+    #0c2b47;
+  color: #fff;
+}
+.marketing-mvp-hero small {
+  display: block;
+  color: #c6d4df;
+  font-size: .46rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+}
+.marketing-mvp-hero strong {
+  display: block;
+  margin-top: 11px;
+  font-size: 1.15rem;
+  line-height: 1.03;
+  letter-spacing: -.035em;
+}
+.marketing-mvp-hero p {
+  max-width: 280px;
+  margin-top: 8px;
+  color: #d9e4eb;
+  font-size: .53rem;
+  line-height: 1.45;
+}
+.marketing-mvp-cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 6px;
+  padding: 10px;
+  background: #f8faf8;
+}
+.marketing-mvp-cards i {
+  display: block;
+  height: 48px;
+  border: 1px solid #d8e0dc;
+  border-radius: 4px;
+  background:
+    linear-gradient(#173b5b 0 0) 8px 9px / 28% 3px no-repeat,
+    linear-gradient(#dfe5e1 0 0) 8px 18px / 70% 3px no-repeat,
+    linear-gradient(#dfe5e1 0 0) 8px 25px / 55% 3px no-repeat,
+    #fff;
+}
+.marketing-mvp-browser-large .marketing-mvp-hero {
+  min-height: 205px;
+  padding: 28px 30px;
+}
+.marketing-mvp-browser-large .marketing-mvp-hero strong {
+  margin-top: 16px;
+  font-size: clamp(1.7rem,3vw,2.55rem);
+}
+.marketing-mvp-browser-large .marketing-mvp-hero p {
+  max-width: 440px;
+  margin-top: 12px;
+  font-size: .74rem;
+}
+.marketing-mvp-browser-large .marketing-mvp-cards i { height: 66px; }
+
+.marketing-selected-card {
+  text-decoration: none;
+}
+.marketing-selected-open {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 3;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: rgba(16,41,31,.94);
+  color: #fff;
+  font-size: .67rem;
+  font-weight: 760;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.marketing-selected-card:hover .marketing-selected-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.marketing-selected,
+.marketing-contact {
+  background-image:
+    radial-gradient(circle at 82% 10%, rgba(201,111,91,.16), transparent 27rem),
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: auto, 54px 54px, 54px 54px;
+}
+
+.marketing-work-card,
+.marketing-case-visual,
+.marketing-gallery-card,
+.marketing-selected-card {
+  border-color: rgba(24,35,30,.12);
+}
+
+.marketing-contact-actions a.marketing-contact-primary {
+  color: #10291f !important;
+  -webkit-text-fill-color: #10291f !important;
+  font-weight: 780;
+}
+
+@media (max-width: 760px) {
+  .marketing-site {
+    background-size: auto, auto, 34px 34px, 34px 34px;
+  }
+  .marketing-hero-metrics {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 14px 18px;
+  }
+  .marketing-gallery-open,
+  .marketing-selected-open {
+    opacity: 1;
+    transform: none;
+  }
+  .marketing-mvp-browser-large { min-height: 260px; }
+  .marketing-mvp-browser-large .marketing-mvp-hero {
+    min-height: 165px;
+    padding: 22px;
+  }
+}
