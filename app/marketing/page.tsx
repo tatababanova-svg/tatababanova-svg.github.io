@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 const assetBase = "/marketing-assets";
+const sourceAssetBase =
+  "https://raw.githubusercontent.com/tatababanova-svg/tatiana-babanova-portfolio/notion-portfolio-assets-20260928/public/notion-assets";
 
 const topResults = [
   {
@@ -57,9 +59,9 @@ const workDirections = [
     title: "Сайты и продуктовые страницы",
     text: "Собираю структуру страницы, требования, доказательства, форму действия и ТЗ — до готового запуска.",
     proof: "EAL · новый сайт · VOIS · прототип и ТЗ",
-    image: "/marketing-assets/eal-site.jpg",
-    fallback: "Новый сайт EAL",
-    href: "#gallery",
+    image: `${assetBase}/EAL-06-TZ-fragment.svg`,
+    fallback: "MVP и требования к сайту EAL",
+    href: "#eal",
   },
   {
     number: "04",
@@ -191,7 +193,7 @@ const flagshipCases = [
       "Маркетинговая задача → требования → содержание → исполнители → выпуск → сбор коммерческого результата.",
     visuals: [
       { src: `${assetBase}/cover-COMvex.svg`, alt: "COMvex — материалы проекта", fallback: "COMvex — B2B-коммуникация" },
-      { src: `${assetBase}/Alpha-brandbook-colors.jpg`, alt: "Фрагмент бренд-системы ГК Альфа", fallback: "Бренд-система ГК Альфа" },
+      { src: `${sourceAssetBase}/Alpha-brandbook-colors.jpg`, alt: "Реальный фрагмент бренд-системы ГК Альфа", fallback: "Бренд-система ГК Альфа" },
     ],
     href: "https://marsh-inch-22f.notion.site/3e92eed19c8581fe8a90c1d0c5614168",
   },
@@ -200,43 +202,60 @@ const flagshipCases = [
 const gallery = [
   {
     title: "Исследование конкурентов · EAL",
-    role: "Я задала критерии сравнения и выделила, где предложения рынка уже выглядят одинаково.",
+    role: "Задала критерии сравнения и выделила, где предложения рынка уже выглядят одинаково.",
     image: `${assetBase}/EAL-02-competitors.svg`,
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
+    tag: "исследование",
   },
   {
     title: "Сегментация аудитории · EAL",
-    role: "Разделила аудиторию по ситуации покупки, риску и критериям выбора, а не по формальным признакам.",
+    role: "Разделила аудиторию по ситуации покупки, риску и критериям выбора.",
     image: `${assetBase}/EAL-01-CA.svg`,
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
+    tag: "B2B",
   },
   {
-    title: "Готовый сайт · EAL",
-    role: "Перевела исследование в структуру и требования к страницам; организовала сборку и проверку.",
-    image: "/marketing-assets/eal-site.jpg",
+    title: "MVP сайта · EAL",
+    role: "Исследование и коммерческую логику перевела в структуру сайта, продуктовые входы и требования к страницам.",
+    image: `${assetBase}/EAL-06-TZ-fragment.svg`,
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
+    tag: "сайт · MVP",
+    mvp: true,
   },
   {
     title: "Путь клиента · VOIS",
     role: "Связала этапы выбора с вопросами покупателя и точками, где информации недостаточно.",
     image: `${assetBase}/VOIS-02-journey.svg`,
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581dda040c3b2e574855d",
+    tag: "исследование",
   },
   {
     title: "ТЗ дизайнеру · VOIS",
-    role: "Зафиксировала, что должен понять пользователь, какое доказательство увидеть и что проверить экспериментом.",
+    role: "Зафиксировала, что должен понять пользователь, какое доказательство увидеть и что проверить.",
     image: `${assetBase}/VOIS-04-brief.svg`,
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581dda040c3b2e574855d",
+    tag: "продукт",
   },
   {
     title: "Эксперименты · VOIS",
-    role: "Собрала гипотезы проверки и показатели, по которым можно оценивать изменение поведения пользователя.",
+    role: "Собрала гипотезы и показатели, по которым можно оценивать изменение поведения пользователя.",
     image: `${assetBase}/VOIS-05-experiments.svg`,
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581dda040c3b2e574855d",
+    tag: "аналитика",
   },
   {
-    title: "Продукт и рекламные материалы · CarWit",
+    title: "CarWit · продукт и рекламные материалы",
     role: "Собирала содержание, требования и сценарий; визуальную реализацию выполняли дизайнеры и подрядчики.",
     image: `${assetBase}/cover-CarWit.svg`,
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c85815f807fca93e619b82a",
+    tag: "продукт · e-commerce",
   },
   {
     title: "Бренд-система · ГК Альфа",
-    role: "Работала с требованиями к фирменной системе и единообразию материалов; графический дизайн выполняли профильные исполнители.",
-    image: `${assetBase}/Alpha-brandbook-colors.jpg`,
+    role: "Работала с требованиями к фирменной системе и контролем единообразия материалов.",
+    image: `${sourceAssetBase}/Alpha-brandbook-colors.jpg`,
+    href: "#comvex",
+    tag: "бренд",
   },
 ];
 
@@ -248,22 +267,26 @@ const selectedWork = [
     text: "Выставочный проект с фиксированным сроком: материалы, подрядчики, запуск и последующий коммерческий результат. По данным бизнеса — 37 млн ₽ оплаченной выручки при бюджете 1,5 млн ₽.",
     image: `${assetBase}/cover-TatOil.svg`,
     size: "wide",
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581969193f2ffd66e0ac3",
   },
   {
     title: "EAL — новый сайт",
     category: "B2B digital · продуктовые страницы",
     metric: "4 сценария входа",
     text: "Перевела исследование и коммерческую стратегию в структуру сайта, требования к страницам и точки действия. В среднем сайт получает около 14 заявок в неделю.",
-    image: "/marketing-assets/eal-site.jpg",
+    image: `${assetBase}/EAL-06-TZ-fragment.svg`,
     size: "large",
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
+    mvp: true,
   },
   {
     title: "Бренд-системы",
     category: "EAL · LOTOS · ГК Альфа",
     metric: "от логотипа до носителей",
     text: "Формировала требования к визуальной системе, ТЗ для дизайнеров и правила применения на digital-, печатных и выставочных материалах.",
-    image: `${assetBase}/Alpha-brandbook-colors.jpg`,
+    image: `${sourceAssetBase}/Alpha-brandbook-colors.jpg`,
     size: "tall",
+    href: "#comvex",
   },
   {
     title: "Canton Fair / Китай",
@@ -272,6 +295,7 @@ const selectedWork = [
     text: "Подготовка презентационных материалов, переводов и коммуникации для международной деловой поездки и переговоров.",
     image: `${assetBase}/cover-Canton.svg`,
     size: "standard",
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581339f94cf048cc2dabc",
   },
   {
     title: "Рекламное видео",
@@ -280,6 +304,7 @@ const selectedWork = [
     text: "Три рекламных видеоматериала: постановка задачи, выбор исполнителей, производство и выпуск. После запуска конверсия из лидов в продажи выросла на 23%.",
     image: `${assetBase}/cover-CarWit.svg`,
     size: "standard",
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c85815f807fca93e619b82a",
   },
   {
     title: "Маркетинговое производство",
@@ -288,6 +313,7 @@ const selectedWork = [
     text: "15 внутренних заказчиков, 3 дизайнера и до 5 подрядчиков. Управляла потоком материалов и доводила запросы до готового результата.",
     image: `${assetBase}/cover-COMvex.svg`,
     size: "wide",
+    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581fe8a90c1d0c5614168",
   },
 ];
 
@@ -324,6 +350,12 @@ export default function MarketingPortfolio() {
             <div className="marketing-hero-actions">
               <a className="marketing-button marketing-button-primary" href="#cases">Смотреть кейсы</a>
               <a className="marketing-button marketing-button-secondary" href="#contact">Обсудить задачу</a>
+            </div>
+            <div className="marketing-hero-metrics" aria-label="Ключевые результаты">
+              <div><strong>+45%</strong><span>рост продаж</span></div>
+              <div><strong>+23%</strong><span>конверсия лид → продажа</span></div>
+              <div><strong>137</strong><span>целевых лидов</span></div>
+              <div><strong>2 млн ₽</strong><span>выручка CarWit / месяц</span></div>
             </div>
           </div>
 
@@ -464,15 +496,37 @@ export default function MarketingPortfolio() {
           </div>
           <div className="marketing-gallery-grid">
             {gallery.map((item) => (
-              <figure className="marketing-gallery-card" key={item.title}>
-                <div className="marketing-gallery-image">
-                  <SafeImage src={item.image} alt={item.title} fallback={item.title} />
-                </div>
-                <figcaption>
-                  <strong>{item.title}</strong>
-                  <p>{item.role}</p>
-                </figcaption>
-              </figure>
+              <a
+                className="marketing-gallery-card"
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                key={item.title}
+              >
+                <figure>
+                  <div className={`marketing-gallery-image ${item.mvp ? "marketing-gallery-mvp" : ""}`}>
+                    {item.mvp ? (
+                      <div className="marketing-mvp-browser" aria-label="MVP сайта EAL">
+                        <div className="marketing-mvp-top"><i /><i /><i /><span>EAL</span></div>
+                        <div className="marketing-mvp-hero">
+                          <small>МЕЖДУНАРОДНЫЕ ПОСТАВКИ ДЛЯ БИЗНЕСА</small>
+                          <strong>Сначала схема.<br />Потом поставка.</strong>
+                          <p>Проверяем исходные данные, риски и маршрут до запуска.</p>
+                        </div>
+                        <div className="marketing-mvp-cards"><i /><i /><i /><i /></div>
+                      </div>
+                    ) : (
+                      <SafeImage src={item.image} alt={item.title} fallback={item.title} />
+                    )}
+                    <span className="marketing-gallery-tag">{item.tag}</span>
+                    <span className="marketing-gallery-open">Открыть кейс ↗</span>
+                  </div>
+                  <figcaption>
+                    <strong>{item.title}</strong>
+                    <p>{item.role}</p>
+                  </figcaption>
+                </figure>
+              </a>
             ))}
           </div>
         </div>
@@ -523,17 +577,36 @@ export default function MarketingPortfolio() {
           </div>
           <div className="marketing-selected-grid">
             {selectedWork.map((item) => (
-              <article className={`marketing-selected-card marketing-selected-${item.size}`} key={item.title}>
-                <div className="marketing-selected-media">
-                  <SafeImage src={item.image} alt={item.title} fallback={item.title} />
+              <a
+                className={`marketing-selected-card marketing-selected-${item.size}`}
+                href={item.href || "#cases"}
+                target={(item.href || "").startsWith("http") ? "_blank" : undefined}
+                rel={(item.href || "").startsWith("http") ? "noreferrer" : undefined}
+                key={item.title}
+              >
+                <div className={`marketing-selected-media ${item.mvp ? "marketing-selected-media-mvp" : ""}`}>
+                  {item.mvp ? (
+                    <div className="marketing-mvp-browser marketing-mvp-browser-large" aria-label="MVP сайта EAL">
+                      <div className="marketing-mvp-top"><i /><i /><i /><span>EAL</span></div>
+                      <div className="marketing-mvp-hero">
+                        <small>МЕЖДУНАРОДНЫЕ ПОСТАВКИ ДЛЯ БИЗНЕСА</small>
+                        <strong>Сначала схема.<br />Потом поставка.</strong>
+                        <p>До оплаты помогаем проверить исходные данные, ограничения, маршрут и риски.</p>
+                      </div>
+                      <div className="marketing-mvp-cards"><i /><i /><i /><i /></div>
+                    </div>
+                  ) : (
+                    <SafeImage src={item.image} alt={item.title} fallback={item.title} />
+                  )}
                   <span>{item.category}</span>
+                  <b className="marketing-selected-open">Смотреть проект ↗</b>
                 </div>
                 <div className="marketing-selected-copy">
                   <p>{item.title}</p>
                   <strong>{item.metric}</strong>
                   <span>{item.text}</span>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </div>
@@ -559,7 +632,7 @@ export default function MarketingPortfolio() {
         <div className="marketing-shell marketing-contact-grid">
           <div>
             <p className="marketing-eyebrow">Контакты</p>
-            <h2>Если вам нужен человек, который может разобраться в рынке, собрать решение и довести его до запуска — давайте обсудим задачу.</h2>
+            <h2>Нужен маркетолог, который не останавливается на идее — исследует, собирает решение и доводит его до запуска? Давайте обсудим задачу.</h2>
             <p>Удалённая работа по РФ · гибридный формат обсуждаем · готова к командировкам и релокации</p>
           </div>
           <div className="marketing-contact-actions">
