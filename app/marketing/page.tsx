@@ -1,416 +1,358 @@
 import type { Metadata } from "next";
-import SafeImage from "./safe-image";
+import ProofGallery from "./proof-gallery";
 import "./marketing.css";
 
 export const metadata: Metadata = {
   title: "Татьяна Бабанова — продуктовый и B2B-маркетинг",
   description:
-    "Портфолио Татьяны Бабановой: исследования рынка и аудитории, B2B и продуктовый маркетинг, сайты, e-commerce, бренд, видео и коммерческие результаты.",
+    "Портфолио Татьяны Бабановой: исследования рынка и клиента, продуктовый и B2B-маркетинг, сайты, коммуникация, запуски и измеримые бизнес-результаты.",
+  keywords: [
+    "продуктовый маркетинг",
+    "B2B маркетинг",
+    "маркетинговые проекты",
+    "исследование рынка",
+    "позиционирование",
+    "маркетинговая стратегия",
+    "Татьяна Бабанова",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    title: "Татьяна Бабанова — продуктовый и B2B-маркетинг",
+    description:
+      "Исследую рынок и клиента, собираю маркетинговое решение и довожу его до запуска.",
+    siteName: "Маркетинговое портфолио Татьяны Бабановой",
+  },
+  twitter: {
+    card: "summary",
+    title: "Татьяна Бабанова — продуктовый и B2B-маркетинг",
+    description:
+      "Исследования, продукт, B2B-коммуникация, сайты и запуски с измеримыми результатами.",
+  },
 };
 
-const assetBase = "/marketing-assets";
-const sourceAssetBase =
-  "https://raw.githubusercontent.com/tatababanova-svg/tatiana-babanova-portfolio/notion-portfolio-assets-20260928/public/notion-assets";
+const asset = "/marketing-assets";
 
-const topResults = [
-  {
-    value: "+45%",
-    title: "рост продаж",
-    text: "ГК Альфа внедрила 9 из 15 рекомендаций по рынку, конкурентам, аудитории и спросу. За следующий год продажи выросли на 45%.",
-  },
-  {
-    value: "+8%",
-    title: "к конверсии в покупки",
-    text: "EAL: после внедрения первых трёх решений из разработанной B2B-коммерческой системы.",
-  },
-  {
-    value: "2 млн ₽/мес.",
-    title: "CarWit после запуска",
-    text: "Ежемесячная выручка продукта достигла 2 млн ₽ — на 900 тыс. ₽ выше предыдущего уровня.",
-  },
-  {
-    value: "137 лидов",
-    title: "COMvex",
-    text: "По данным бизнеса: 67 млн ₽ продаж и 44 млн ₽ валовой прибыли при бюджете проекта 2,5 млн ₽.",
-  },
+const heroMetrics = [
+  { value: "+8%", label: "к конверсии в покупки", note: "EAL · после первых внедрённых решений" },
+  { value: "137", label: "целевых лидов", note: "COMvex" },
+  { value: "67 млн ₽", label: "продаж", note: "COMvex · по данным бизнеса" },
+  { value: "2 млн ₽/мес.", label: "выручка CarWit", note: "после запуска продукта" },
 ];
 
-const workDirections = [
+const proofCards = [
   {
-    number: "01",
+    tag: "Исследование",
     title: "Рынок и аудитория",
-    text: "Сравниваю конкурентов, сегментирую аудиторию и разбираю, почему клиент выбирает один вариант, а не другой.",
-    proof: "EAL · 13 конкурентов · 4 ситуации покупки",
-    image: `${assetBase}/EAL-02-competitors.svg`,
-    fallback: "Исследование конкурентов EAL",
+    text: "Сравниваю предложения рынка, сегментирую аудиторию и нахожу, где решение действительно может отличаться.",
+    result: "EAL · 13 конкурентов · 4 ситуации покупки",
+    image: `${asset}/EAL-02-competitors.svg`,
     href: "#eal",
+    size: "proof-card-wide",
   },
   {
-    number: "02",
-    title: "Позиционирование и продукт",
-    text: "Перевожу выводы исследования в продуктовую логику: что предложить, кому, чем доказать ценность и что проверить.",
-    proof: "VOIS · путь клиента · продуктовые гипотезы",
-    image: `${assetBase}/VOIS-02-journey.svg`,
-    fallback: "Путь клиента VOIS",
+    tag: "Продукт",
+    title: "Позиционирование и продуктовая логика",
+    text: "Перевожу вывод исследования в гипотезу: что предложить, кому, чем доказать ценность и что проверить.",
+    result: "VOIS · путь клиента · 7 экранов прототипа",
+    image: `${asset}/VOIS-03-prototype.svg`,
     href: "#vois",
+    size: "",
   },
   {
-    number: "03",
-    title: "Сайты и продуктовые страницы",
-    text: "Собираю структуру страницы, требования, доказательства, форму действия и ТЗ — до готового запуска.",
-    proof: "EAL · новый сайт · VOIS · прототип и ТЗ",
-    image: `${assetBase}/EAL-06-TZ-fragment.svg`,
-    fallback: "MVP и требования к сайту EAL",
+    tag: "Сайт",
+    title: "Структура и продуктовые страницы",
+    text: "Собираю содержание, сценарий страницы, требования и точки действия — до готового запуска.",
+    result: "EAL · 4 сценария входа",
+    image: `${asset}/eal-site.jpg`,
     href: "#eal",
+    size: "",
   },
   {
-    number: "04",
-    title: "Контент и визуальная упаковка",
-    text: "Собираю содержание, сценарий и требования; ставлю задачи дизайнерам и подрядчикам и сопровождаю материал до выпуска.",
-    proof: "CarWit · e-commerce · видео · брендбуки",
-    image: `${assetBase}/cover-CarWit.svg`,
-    fallback: "Продуктовая презентация CarWit",
+    tag: "Контент",
+    title: "Продуктовая и рекламная упаковка",
+    text: "Формирую содержание и требования, ставлю задачи дизайнерам и подрядчикам и веду материал до выпуска.",
+    result: "CarWit · e-commerce · презентация · видео",
+    image: `${asset}/CarWit-product-screen.jpg`,
     href: "#carwit",
+    size: "",
   },
   {
-    number: "05",
-    title: "Запуск и результат",
-    text: "Перевожу решение в задачи внедрения, синхронизирую исполнителей и проверяю, что произошло после запуска.",
-    proof: "EAL · план внедрения · +8% к конверсии",
-    image: `${assetBase}/EAL-04-implementation.svg`,
-    fallback: "План внедрения EAL",
-    href: "#research-route",
+    tag: "Запуск и аналитика",
+    title: "От решения — к внедрению и результату",
+    text: "Перевожу решение в конкретные задачи, держу готовность запуска и проверяю, что изменилось после.",
+    result: "EAL · 40 задач внедрения · +8%",
+    image: `${asset}/EAL-04-implementation.svg`,
+    href: "#eal",
+    size: "proof-card-wide",
   },
 ];
 
-const flagshipCases = [
+const cases = [
   {
     id: "eal",
-    number: "01",
-    label: "Рабочий проект",
+    badge: "Рабочий проект",
     title: "EAL — B2B-коммерческая система",
-    subtitle: "Исследование + B2B + продукт + сайт + конверсия",
+    short: "Исследование → продуктовые входы → сайт → внедрение",
+    outcome: "+8% к конверсии в покупки после первых трёх внедрённых решений.",
     task:
-      "Понять, почему разные B2B-клиенты покупают одну и ту же услугу по разным причинам, и перестроить предложение под реальный процесс выбора.",
+      "Разобраться, почему разные B2B-клиенты покупают одну и ту же услугу по разным причинам, и перестроить предложение под реальный процесс выбора.",
     research:
-      "13 конкурентов, аудитория, роли в решении, критерии выбора, клиентский путь и коммерческие сценарии.",
-    insight:
-      "Один общий каталог услуг не отвечает разным ситуациям покупки. Для разных участников решения нужны разные аргументы и доказательства.",
+      "Исследовала 13 конкурентов, аудиторию, роли в принятии решения, критерии выбора и четыре ситуации покупки.",
     solution:
-      "Четыре продуктовых входа, отдельные доказательства под сценарии покупки и новая логика сайта и коммерческой коммуникации.",
-    created:
-      "Сегментация, конкурентный анализ, путь клиента, реестр доказательности, требования к сайту и план из 40 задач.",
-    launched:
-      "Бизнес начал внедрение. Первые три решения были реализованы.",
-    result:
-      "После внедрения первых трёх решений конверсия в покупки выросла на 8%.",
+      "Сформировала четыре продуктовых входа, систему доказательств и новую логику сайта вместо одного общего каталога услуг.",
+    launch:
+      "Перевела решение в требования и план из 40 задач. Первые три решения бизнес внедрил.",
     role:
-      "Исследование → вывод → коммерческая логика → требования → приоритизация внедрения.",
-    visuals: [
-      { src: `${assetBase}/EAL-02-competitors.svg`, alt: "Анализ конкурентов EAL", fallback: "Анализ конкурентов" },
-      { src: `${assetBase}/EAL-01-CA.svg`, alt: "Сегментация аудитории EAL", fallback: "Сегментация аудитории" },
-      { src: "/marketing-assets/eal-site.jpg", alt: "Новый сайт EAL", fallback: "Готовый сайт EAL" },
-    ],
+      "Исследование, сегментация, коммерческая логика, требования к сайту и приоритизация внедрения.",
     href: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
+    proofs: [
+      {
+        src: `${asset}/EAL-02-competitors.svg`,
+        alt: "Исследование конкурентов EAL",
+        caption: "Сравнение конкурентов и поиск возможностей для содержательной отстройки.",
+      },
+      {
+        src: `${asset}/EAL-01-CA.svg`,
+        alt: "Сегментация аудитории EAL",
+        caption: "Сегментация по ситуации покупки, рискам и критериям решения.",
+      },
+      {
+        src: `${asset}/eal-site.jpg`,
+        alt: "Реальный экран сайта EAL / MVP",
+        caption: "Экран сайта / MVP, в который переведена коммерческая логика проекта.",
+      },
+    ],
   },
   {
     id: "vois",
-    number: "02",
-    label: "Инициативный проект на открытых данных",
-    title: "VOIS — продуктово-маркетинговый проект",
-    subtitle: "Исследование покупателя + продуктовая логика + прототипирование",
+    badge: "Инициативный проект",
+    title: "VOIS — продуктово-маркетинговое исследование",
+    short: "Путь клиента → гипотеза → прототип → система проверки",
+    outcome:
+      "7 экранов прототипа, 8 экспериментов и 17 показателей. Коммерческий эффект не заявляю: проект не внедрялся компанией.",
     task:
-      "Понять, почему при большом количестве информации покупателю всё равно трудно сравнить продукты и сделать выбор.",
+      "Понять, почему покупателю трудно сравнить продукты даже при большом количестве информации, и превратить вывод в проверяемое решение.",
     research:
-      "9 брендов, 5 клиентских сегментов, путь клиента из 10 этапов, вопросы и точки неопределённости при выборе.",
-    insight:
-      "Проблема не только в объёме информации. Покупателю не хватает структуры сравнения и доказательств именно в момент выбора.",
+      "Сравнила 9 брендов, выделила 5 сегментов и разобрала путь выбора из 10 этапов.",
     solution:
-      "Логика «задача клиента → критерий → доказательство → применение» и новая структура продуктовой карточки.",
-    created:
-      "Прототип из 7 экранов, ТЗ дизайнеру, 8 экспериментов, система из 17 показателей и план на 13 недель.",
-    launched:
-      "Проект не внедрялся компанией: это демонстрация моего продуктового мышления на открытых данных.",
-    result:
-      "Готовое к проверке решение: прототип + ТЗ + система экспериментов и измерения.",
+      "Собрала логику «задача клиента → критерий → доказательство → применение» и новую структуру продуктовой карточки.",
+    launch:
+      "Подготовила прототип, ТЗ дизайнеру, реестр экспериментов и систему измерения — готовую к тестированию.",
     role:
-      "Исследование открытых данных → гипотеза проблемы → решение → прототип → система проверки.",
-    visuals: [
-      { src: `${assetBase}/VOIS-02-journey.svg`, alt: "Путь клиента VOIS", fallback: "Путь клиента" },
-      { src: `${assetBase}/VOIS-03-prototype.svg`, alt: "Прототип VOIS", fallback: "Прототип 7 экранов" },
-      { src: `${assetBase}/VOIS-04-brief.svg`, alt: "ТЗ VOIS", fallback: "Фрагмент ТЗ" },
-    ],
+      "Исследование открытых данных, гипотеза проблемы, продуктовая логика, прототип и план проверки.",
     href: "https://marsh-inch-22f.notion.site/3e92eed19c8581dda040c3b2e574855d",
+    proofs: [
+      {
+        src: `${asset}/VOIS-02-journey.svg`,
+        alt: "Путь клиента VOIS",
+        caption: "Этапы выбора, вопросы покупателя и точки неопределённости.",
+      },
+      {
+        src: `${asset}/VOIS-03-prototype.svg`,
+        alt: "Прототип VOIS",
+        caption: "Прототип продуктовой карточки из семи экранов.",
+      },
+      {
+        src: `${asset}/VOIS-04-brief.svg`,
+        alt: "ТЗ дизайнеру VOIS",
+        caption: "ТЗ: что должен понять пользователь, какое доказательство увидеть и что проверить.",
+      },
+    ],
   },
   {
     id: "carwit",
-    number: "03",
-    label: "Рабочий проект · КАН-АВТО",
+    badge: "Рабочий проект · КАН-АВТО",
     title: "CarWit — продукт, e-commerce и видео",
-    subtitle: "Продукт + контент + рекламные материалы + коммерческий результат",
-    task:
-      "Поддержать запуск цифрового сервиса для автомобилистов и перевести его функции в понятные клиенту продуктовые материалы.",
-    research:
-      "Сценарии использования продукта, требования внутренних заказчиков и форматы для e-commerce и рекламной коммуникации.",
-    insight:
-      "Функций много, поэтому продукт нужно объяснять не перечнем возможностей, а через ситуации пользователя и понятный сценарий ценности.",
-    solution:
-      "Структура продуктовой презентации, e-commerce-материалы и рекламный сценарий, который показывает продукт через реальные ситуации.",
-    created:
-      "Продуктовая презентация, товарный контент, сценарий ролика из 11 сцен; участвовала в подборе актёров, диктора и съёмке.",
-    launched:
-      "Продукт и маркетинговые материалы были выпущены. Визуальную реализацию делали дизайнеры и подрядчики.",
-    result:
+    short: "Продуктовая упаковка → контент → рекламные материалы → запуск",
+    outcome:
       "После запуска ежемесячная выручка CarWit достигла 2 млн ₽ — на 900 тыс. ₽ выше предыдущего уровня.",
+    task:
+      "Перевести функции цифрового сервиса для автомобилистов в понятную продуктовую и рекламную коммуникацию.",
+    research:
+      "Собрала сценарии использования, требования внутренних заказчиков и форматы для e-commerce и рекламы.",
+    solution:
+      "Сформировала структуру продуктовой презентации, содержание e-commerce-материалов и сценарий рекламного ролика.",
+    launch:
+      "Вела материал от содержания и требований до готовности к выпуску; дизайн и производство выполняли профильные исполнители.",
     role:
-      "Содержание и требования → сценарий → постановка задач → сопровождение производства → запуск.",
-    visuals: [
-      { src: `${assetBase}/cover-CarWit.svg`, alt: "CarWit — материалы продуктового запуска", fallback: "CarWit — продукт и материалы запуска" },
-    ],
+      "Содержание, требования, сценарий, постановка задач и ведение реализации до запуска.",
     href: "https://marsh-inch-22f.notion.site/3e92eed19c85815f807fca93e619b82a",
+    proofs: [
+      {
+        src: `${asset}/CarWit-product-screen.jpg`,
+        alt: "Экран продукта CarWit",
+        caption: "Реальный экран продукта CarWit.",
+      },
+      {
+        src: `${asset}/cover-CarWit.svg`,
+        alt: "Материалы запуска CarWit",
+        caption: "Материалы продуктового запуска и рекламной коммуникации.",
+      },
+      {
+        src: `${asset}/VOIS-04-brief.svg`,
+        alt: "Пример структуры ТЗ и требований",
+        caption: "На сайте оставляю только подтверждаемые материалы; полные слайды и видео доступны в подробном кейсе.",
+      },
+    ],
   },
   {
     id: "comvex",
-    number: "04",
-    label: "Рабочий проект · ГК Альфа",
+    badge: "Рабочий проект · ГК Альфа",
     title: "COMvex — B2B-коммуникация и лидогенерация",
-    subtitle: "B2B + материалы + производство + лиды + коммерческий результат",
+    short: "Технический продукт → материалы → лиды → продажи",
+    outcome:
+      "Бюджет 2,5 млн ₽ · 137 целевых лидов · 67 млн ₽ продаж · 44 млн ₽ валовой прибыли по данным бизнеса.",
     task:
       "Перевести сложный технический продукт в понятные B2B-материалы и подготовить коммуникацию к фиксированной дате.",
     research:
-      "Собирала продуктовую и техническую информацию у внутренних участников и переводила её в структуру для клиента и партнёра.",
-    insight:
-      "Сложная техническая информация не продаёт сама себя: её нужно собрать, упорядочить и разложить по аргументам, носителям и этапам коммуникации.",
+      "Собрала продуктовую и техническую информацию у внутренних участников и разложила её по аргументам и носителям.",
     solution:
-      "Единая система требований к презентационным, рекламным и выставочным материалам с понятной связью между содержанием и коммерческой задачей.",
-    created:
-      "157+ макетов и более 50 000 рекламных материалов; координация 4 подрядчиков, дизайна и производства.",
-    launched:
-      "Материалы выпущены к фиксированной дате. Я отвечала за требования, содержание, согласования и готовность; дизайн и производство выполняли профильные исполнители.",
-    result:
-      "137 целевых лидов → 67 млн ₽ продаж → 44 млн ₽ валовой прибыли по данным бизнеса.",
+      "Сформировала требования и содержание для презентационных, рекламных и выставочных материалов.",
+    launch:
+      "Довела до выпуска 157+ макетов и более 50 000 материалов. Дизайн и производство выполняли профильные исполнители.",
     role:
-      "Маркетинговая задача → требования → содержание → исполнители → выпуск → сбор коммерческого результата.",
-    visuals: [
-      { src: `${assetBase}/cover-COMvex.svg`, alt: "COMvex — материалы проекта", fallback: "COMvex — B2B-коммуникация" },
-      { src: `${sourceAssetBase}/Alpha-brandbook-colors.jpg`, alt: "Реальный фрагмент бренд-системы ГК Альфа", fallback: "Бренд-система ГК Альфа" },
-    ],
+      "Маркетинговая задача, содержание, требования, ТЗ, согласования, контроль готовности и сбор результата.",
     href: "https://marsh-inch-22f.notion.site/3e92eed19c8581fe8a90c1d0c5614168",
+    proofs: [
+      {
+        src: `${asset}/cover-COMvex.svg`,
+        alt: "COMvex — материалы проекта",
+        caption: "Витрина кейса COMvex и его коммерческого результата.",
+      },
+      {
+        src: `${asset}/Alpha-brandbook-colors.jpg`,
+        alt: "Реальная страница бренд-системы ГК Альфа",
+        caption: "Фрагмент бренд-системы. Моя роль — требования, содержание, ТЗ и контроль применения; графический дизайн — профильные исполнители.",
+      },
+    ],
   },
 ];
 
-const gallery = [
-  {
-    title: "Исследование конкурентов · EAL",
-    role: "Задала критерии сравнения и выделила, где предложения рынка уже выглядят одинаково.",
-    image: `${assetBase}/EAL-02-competitors.svg`,
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
-    tag: "исследование",
-  },
-  {
-    title: "Сегментация аудитории · EAL",
-    role: "Разделила аудиторию по ситуации покупки, риску и критериям выбора.",
-    image: `${assetBase}/EAL-01-CA.svg`,
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
-    tag: "B2B",
-  },
-  {
-    title: "MVP сайта · EAL",
-    role: "Исследование и коммерческую логику перевела в структуру сайта, продуктовые входы и требования к страницам.",
-    image: `${assetBase}/EAL-06-TZ-fragment.svg`,
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
-    tag: "сайт · MVP",
-    mvp: true,
-  },
-  {
-    title: "Путь клиента · VOIS",
-    role: "Связала этапы выбора с вопросами покупателя и точками, где информации недостаточно.",
-    image: `${assetBase}/VOIS-02-journey.svg`,
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581dda040c3b2e574855d",
-    tag: "исследование",
-  },
-  {
-    title: "ТЗ дизайнеру · VOIS",
-    role: "Зафиксировала, что должен понять пользователь, какое доказательство увидеть и что проверить.",
-    image: `${assetBase}/VOIS-04-brief.svg`,
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581dda040c3b2e574855d",
-    tag: "продукт",
-  },
-  {
-    title: "Эксперименты · VOIS",
-    role: "Собрала гипотезы и показатели, по которым можно оценивать изменение поведения пользователя.",
-    image: `${assetBase}/VOIS-05-experiments.svg`,
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581dda040c3b2e574855d",
-    tag: "аналитика",
-  },
-  {
-    title: "CarWit · продукт и рекламные материалы",
-    role: "Собирала содержание, требования и сценарий; визуальную реализацию выполняли дизайнеры и подрядчики.",
-    image: `${assetBase}/cover-CarWit.svg`,
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c85815f807fca93e619b82a",
-    tag: "продукт · e-commerce",
-  },
-  {
-    title: "Бренд-система · ГК Альфа",
-    role: "Работала с требованиями к фирменной системе и контролем единообразия материалов.",
-    image: `${sourceAssetBase}/Alpha-brandbook-colors.jpg`,
-    href: "#comvex",
-    tag: "бренд",
-  },
-];
-
-const selectedWork = [
+const additional = [
   {
     title: "TatOilExpo / GSS",
-    category: "B2B-событие · лидогенерация",
+    tag: "B2B-событие",
     metric: "117 лидов",
-    text: "Выставочный проект с фиксированным сроком: материалы, подрядчики, запуск и последующий коммерческий результат. По данным бизнеса — 37 млн ₽ оплаченной выручки при бюджете 1,5 млн ₽.",
-    image: "",
-    size: "wide",
+    text: "Материалы, подрядчики и запуск к фиксированной дате. Бюджет 1,5 млн ₽; 37 млн ₽ атрибутированной оплаченной выручки по данным бизнеса.",
+    image: `${asset}/cover-TatOil.svg`,
     href: "https://marsh-inch-22f.notion.site/3e92eed19c8581969193f2ffd66e0ac3",
-    visualText: "117 лидов · выставочный B2B-проект",
-  },
-  {
-    title: "EAL — новый сайт",
-    category: "B2B digital · продуктовые страницы",
-    metric: "4 сценария входа",
-    text: "Перевела исследование и коммерческую стратегию в структуру сайта, требования к страницам и точки действия. В среднем сайт получает около 14 заявок в неделю.",
-    image: `${assetBase}/EAL-06-TZ-fragment.svg`,
-    size: "large",
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
-    mvp: true,
   },
   {
     title: "Бренд-системы",
-    category: "EAL · LOTOS · ГК Альфа",
-    metric: "от логотипа до носителей",
+    tag: "EAL · LOTOS · ГК Альфа",
+    metric: "от требований до носителей",
     text: "Формировала требования к визуальной системе, ТЗ для дизайнеров и правила применения на digital-, печатных и выставочных материалах.",
-    image: `${sourceAssetBase}/Alpha-brandbook-colors.jpg`,
-    size: "tall",
+    image: `${asset}/Alpha-brandbook-colors.jpg`,
     href: "#comvex",
   },
   {
     title: "Canton Fair / Китай",
-    category: "международная B2B-коммуникация",
-    metric: "делегация 5 человек",
-    text: "Подготовка презентационных материалов, переводов и коммуникации для международной деловой поездки и переговоров.",
-    image: "",
-    size: "standard",
+    tag: "международная B2B-коммуникация",
+    metric: "317 лидов · 98 клиентов",
+    text: "За две недели до запуска требования существенно изменились. Проект пересобран без переноса даты и дополнительного бюджета.",
+    image: `${asset}/cover-Canton.svg`,
     href: "https://marsh-inch-22f.notion.site/3e92eed19c8581339f94cf048cc2dabc",
-    visualText: "Китай · международная B2B-коммуникация",
   },
   {
-    title: "Рекламное видео",
-    category: "видеомаркетинг",
-    metric: "+23% к конверсии",
-    text: "Три рекламных видеоматериала: постановка задачи, выбор исполнителей, производство и выпуск. После запуска конверсия из лидов в продажи выросла на 23%.",
-    image: "",
-    size: "standard",
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c85815f807fca93e619b82a",
-    visualText: "3 рекламных видео · +23% к конверсии",
+    title: "Новый сайт EAL",
+    tag: "B2B digital",
+    metric: "4 сценария входа",
+    text: "Перевела исследование и коммерческую стратегию в структуру сайта, продуктовые страницы и требования к точкам действия.",
+    image: `${asset}/eal-site.jpg`,
+    href: "#eal",
   },
-  {
-    title: "Маркетинговое производство",
-    category: "КАН-АВТО",
-    metric: "167 запросов · 100% в срок",
-    text: "15 внутренних заказчиков, 3 дизайнера и до 5 подрядчиков. Управляла потоком материалов и доводила запросы до готового результата.",
-    image: "",
-    size: "wide",
-    href: "https://marsh-inch-22f.notion.site/3e92eed19c8581fe8a90c1d0c5614168",
-    visualText: "167 запросов · 100% выполнено в срок",
-  },
+];
+
+const tasks = [
+  "Исследовать рынок и аудиторию перед запуском — и объяснить, какие выводы из этого следуют для бизнеса.",
+  "Сформулировать продуктовую или коммерческую гипотезу: что предложить, кому, почему и чем доказать ценность.",
+  "Собрать позиционирование, предложение и путь клиента до нужного действия.",
+  "Перевести решение в сайт, продуктовую страницу, презентацию, видео, контент или бренд-систему.",
+  "Организовать запуск с командой и подрядчиками и проверить результат по лидам, конверсии, продажам или другой целевой метрике.",
 ];
 
 export default function MarketingPortfolio() {
   return (
     <main className="marketing-site">
-      <nav className="marketing-nav" aria-label="Навигация по маркетинговому портфолио">
+      <nav className="marketing-nav" aria-label="Навигация">
         <a className="marketing-brand" href="#top">
-          <span>Татьяна Бабанова</span>
-          <small>маркетинговые и исследовательские проекты</small>
+          <strong>Татьяна Бабанова</strong>
+          <span>маркетинговые проекты</span>
         </a>
         <div className="marketing-nav-links">
-          <a href="#results">Результаты</a>
-          <a href="#work">Работа</a>
+          <a href="#proofs">Работа</a>
           <a href="#cases">Кейсы</a>
-          <a href="#gallery">Материалы</a>
+          <a href="#tasks">Задачи</a>
           <a href="#contact">Контакты</a>
         </div>
       </nav>
 
       <section className="marketing-hero" id="top">
-        <div className="marketing-shell marketing-hero-grid">
+        <div className="marketing-shell marketing-hero-card">
           <div className="marketing-hero-copy">
-            <p className="marketing-kicker">Продуктовый и B2B-маркетинг · исследования · запуски</p>
-            <h1>Превращаю исследование рынка и клиента в продукт, коммуникацию и измеримый результат.</h1>
+            <span className="marketing-badge">Продуктовый и B2B-маркетинг</span>
+            <h1>Исследую рынок, собираю маркетинговое решение и довожу его до запуска.</h1>
             <p className="marketing-lead">
-              Разбираюсь, что мешает клиенту выбрать или бизнесу расти, формулирую гипотезу и собираю решение:
-              позиционирование, сайт, продуктовую страницу, контент, видео или B2B-коммуникацию.
+              Помогаю бизнесу понять, что мешает клиенту выбрать или продукту расти,
+              и превращаю выводы в конкретное решение — позиционирование, сайт,
+              продуктовую страницу, коммуникацию или запуск.
             </p>
             <p className="marketing-hero-proof">
-              <strong>Моя сильная сторона:</strong> соединяю стратегию и реализацию — от исследования и ТЗ
-              до работы с дизайнерами, разработчиками, подрядчиками, запуска и проверки результата.
+              Я соединяю стратегию и реализацию: сама собираю логику решения и требования,
+              затем веду работу с дизайнерами, разработчиками и подрядчиками до готового результата.
             </p>
             <div className="marketing-hero-actions">
               <a className="marketing-button marketing-button-primary" href="#cases">Смотреть кейсы</a>
               <a className="marketing-button marketing-button-secondary" href="#contact">Обсудить задачу</a>
             </div>
-            <div className="marketing-hero-metrics" aria-label="Ключевые результаты">
-              <div><strong>+45%</strong><span>рост продаж</span></div>
-              <div><strong>+23%</strong><span>конверсия лид → продажа</span></div>
-              <div><strong>137</strong><span>целевых лидов</span></div>
-              <div><strong>2 млн ₽</strong><span>выручка CarWit / месяц</span></div>
+          </div>
+
+          <div className="marketing-hero-visual">
+            <img src="/tatiana-babanova.jpg" alt="Татьяна Бабанова" />
+            <div className="marketing-hero-stamp">
+              <span>исследование</span>
+              <span>→</span>
+              <span>решение</span>
+              <span>→</span>
+              <span>запуск</span>
             </div>
           </div>
 
-          <aside className="marketing-hero-side">
-            <figure className="marketing-portrait">
-              <img src="/tatiana-babanova.jpg" alt="Татьяна Бабанова" />
-            </figure>
-            <div className="marketing-hero-side-copy">
-              <strong>Открыта к удалённой и гибридной работе</strong>
-              <span>командировки и релокация обсуждаемы</span>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section className="marketing-section marketing-results" id="results">
-        <div className="marketing-shell">
-          <div className="marketing-section-head">
-            <p className="marketing-eyebrow">Результаты</p>
-            <h2>Что изменилось после маркетинговой работы</h2>
-            <p>Четыре показателя, которые лучше всего подтверждают связь моей работы с бизнес-результатом.</p>
-          </div>
-          <div className="marketing-results-grid">
-            {topResults.map((item) => (
-              <article className="marketing-result" key={item.value + item.title}>
+          <div className="marketing-hero-metrics">
+            {heroMetrics.map((item) => (
+              <article key={item.value + item.label}>
                 <strong>{item.value}</strong>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+                <span>{item.label}</span>
+                <small>{item.note}</small>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="marketing-section marketing-work" id="work">
+      <section className="marketing-section marketing-proof-section" id="proofs">
         <div className="marketing-shell">
           <div className="marketing-section-head">
-            <p className="marketing-eyebrow">Что я умею превращать в решение</p>
-            <h2>Не список навыков — реальные фрагменты моей работы</h2>
+            <span className="marketing-badge">Реальные фрагменты работы</span>
+            <h2>Не список навыков — доказательства того, как я работаю</h2>
+            <p>
+              Исследование, продуктовая логика, ТЗ, сайт, коммуникация и внедрение —
+              каждый блок опирается на реальный материал проекта.
+            </p>
           </div>
-          <div className="marketing-work-grid">
-            {workDirections.map((item) => (
-              <a className="marketing-work-card" href={item.href} key={item.number}>
-                <div className="marketing-work-media">
-                  <SafeImage src={item.image} alt={item.title} fallback={item.fallback} />
+
+          <div className="marketing-proof-bento">
+            {proofCards.map((item) => (
+              <a className={`marketing-proof-card ${item.size}`} href={item.href} key={item.title}>
+                <div className="marketing-proof-card-media">
+                  <img src={item.image} alt={item.title} loading="lazy" />
+                  <span>{item.tag}</span>
                 </div>
-                <div className="marketing-work-copy">
-                  <span>{item.number}</span>
+                <div className="marketing-proof-card-copy">
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
-                  <small>{item.proof}</small>
+                  <strong>{item.result}</strong>
                 </div>
               </a>
             ))}
@@ -421,207 +363,91 @@ export default function MarketingPortfolio() {
       <section className="marketing-section marketing-cases" id="cases">
         <div className="marketing-shell">
           <div className="marketing-section-head">
-            <p className="marketing-eyebrow">Флагманские кейсы</p>
-            <h2>Четыре проекта, которые показывают, как я думаю и что создаю</h2>
+            <span className="marketing-badge">Флагманские кейсы</span>
+            <h2>Четыре проекта, где видно бизнес-задачу, решение и результат</h2>
           </div>
 
           <div className="marketing-case-list">
-            {flagshipCases.map((item) => (
+            {cases.map((item, index) => (
               <article className="marketing-case" id={item.id} key={item.id}>
-                <header className="marketing-case-head">
-                  <span>{item.number}</span>
+                <header className="marketing-case-header">
                   <div>
-                    <p className="marketing-case-label">{item.label}</p>
+                    <span className="marketing-case-number">0{index + 1}</span>
+                    <span className="marketing-case-badge">{item.badge}</span>
+                  </div>
+                  <div>
                     <h3>{item.title}</h3>
-                    <p className="marketing-case-subtitle">{item.subtitle}</p>
+                    <p>{item.short}</p>
+                  </div>
+                  <div className="marketing-case-outcome">
+                    <small>Результат / выход</small>
+                    <strong>{item.outcome}</strong>
                   </div>
                 </header>
 
-                <div className="marketing-case-visuals">
-                  {item.visuals.map((visual) => (
-                    <div className="marketing-case-visual" key={visual.src}>
-                      <SafeImage src={visual.src} alt={visual.alt} fallback={visual.fallback} />
-                    </div>
-                  ))}
-                </div>
+                <ProofGallery items={item.proofs} className="marketing-case-proofs" />
 
-                <div className="marketing-story-grid">
-                  <div><span>Задача</span><p>{item.task}</p></div>
-                  <div><span>Что исследовала</span><p>{item.research}</p></div>
-                  <div><span>Что увидела</span><p>{item.insight}</p></div>
-                  <div><span>Что предложила</span><p>{item.solution}</p></div>
-                  <div><span>Что создала</span><p>{item.created}</p></div>
-                  <div><span>Что было запущено</span><p>{item.launched}</p></div>
-                </div>
-
-                {item.id === "vois" && (
-                  <div className="marketing-before-after" aria-label="Было — решение — стало">
-                    <article>
-                      <span>Было</span>
-                      <p>Информации о продукте много, но покупателю трудно сравнить варианты и понять, что подходит именно ему.</p>
-                    </article>
-                    <i>→</i>
-                    <article>
-                      <span>Решение</span>
-                      <p>Разложила выбор по задачам клиента, критериям и доказательствам и собрала структуру из 7 экранов.</p>
-                    </article>
-                    <i>→</i>
-                    <article>
-                      <span>Стало</span>
-                      <p>Появились прототип, ТЗ и 8 экспериментов для проверки. Это готовое к тестированию решение, а не заявленный коммерческий эффект.</p>
-                    </article>
-                  </div>
-                )}
-
-                <div className="marketing-case-bottom">
+                <div className="marketing-case-story">
                   <div>
-                    <span>Результат</span>
-                    <strong>{item.result}</strong>
+                    <span>Бизнес-задача</span>
+                    <p>{item.task}</p>
                   </div>
                   <div>
-                    <span>Моя роль</span>
-                    <p>{item.role}</p>
+                    <span>Что исследовала</span>
+                    <p>{item.research}</p>
                   </div>
-                  <a className="marketing-case-link" href={item.href} target="_blank" rel="noreferrer">
+                  <div>
+                    <span>Решение</span>
+                    <p>{item.solution}</p>
+                  </div>
+                  <div>
+                    <span>Что дошло до запуска</span>
+                    <p>{item.launch}</p>
+                  </div>
+                </div>
+
+                <footer className="marketing-case-footer">
+                  <p><b>Моя роль:</b> {item.role}</p>
+                  <a href={item.href} target="_blank" rel="noreferrer">
                     Открыть подробный кейс ↗
                   </a>
-                </div>
+                </footer>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="marketing-section marketing-gallery" id="gallery">
+      <section className="marketing-section marketing-additional">
         <div className="marketing-shell">
-          <div className="marketing-section-head">
-            <p className="marketing-eyebrow">Фрагменты моей работы</p>
-            <h2>Материалы, по которым видно не только результат, но и процесс</h2>
-            <p>Это реальные рабочие артефакты и фрагменты проектов. Нажмите на изображение, чтобы рассмотреть материал; под ним — переход к подробному кейсу.</p>
-          </div>
-          <div className="marketing-gallery-grid">
-            {gallery.map((item) => {
-              const materialHref = item.mvp ? item.href : item.image;
-              return (
-                <article className="marketing-gallery-card" key={item.title}>
-                  <figure>
-                    <a
-                      className={`marketing-gallery-image ${item.mvp ? "marketing-gallery-mvp" : ""}`}
-                      href={materialHref}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Открыть материал: ${item.title}`}
-                    >
-                      {item.mvp ? (
-                        <div className="marketing-mvp-browser" aria-label="MVP сайта EAL">
-                          <div className="marketing-mvp-top"><i /><i /><i /><span>EAL</span></div>
-                          <div className="marketing-mvp-hero">
-                            <small>МЕЖДУНАРОДНЫЕ ПОСТАВКИ ДЛЯ БИЗНЕСА</small>
-                            <strong>Сначала схема.<br />Потом поставка.</strong>
-                            <p>Проверяем исходные данные, риски и маршрут до запуска.</p>
-                          </div>
-                          <div className="marketing-mvp-cards"><i /><i /><i /><i /></div>
-                        </div>
-                      ) : (
-                        <SafeImage src={item.image} alt={item.title} fallback={item.title} />
-                      )}
-                      <span className="marketing-gallery-tag">{item.tag}</span>
-                      <span className="marketing-gallery-open">Увеличить ↗</span>
-                    </a>
-                    <figcaption>
-                      <strong>{item.title}</strong>
-                      <p>{item.role}</p>
-                      <a className="marketing-gallery-case-link" href={item.href} target="_blank" rel="noreferrer">
-                        Открыть подробный кейс →
-                      </a>
-                    </figcaption>
-                  </figure>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="marketing-section marketing-research-route" id="research-route">
-        <div className="marketing-shell">
-          <div className="marketing-section-head">
-            <p className="marketing-eyebrow">Как исследование превращается в решение</p>
-            <h2>На примере EAL: от вопроса бизнеса до измеримого изменения</h2>
-          </div>
-
-          <div className="marketing-route">
-            <article><b>01</b><h3>Бизнес-вопрос</h3><p>Почему разным B2B-клиентам недостаточно одного общего предложения?</p></article>
-            <article><b>02</b><h3>Что нужно узнать</h3><p>Конкуренты, ситуации покупки, роли в решении, риски и критерии выбора.</p></article>
-            <article><b>03</b><h3>Источники и проверка</h3><p>Открытые материалы конкурентов + исходные данные проекта. Факты отделяю от гипотез и отмечаю, чего ещё не хватает.</p></article>
-            <article><b>04</b><h3>Закономерность</h3><p>Одна услуга покупается по разным причинам; разным участникам решения нужны разные доказательства.</p></article>
-            <article><b>05</b><h3>Решение</h3><p>4 продуктовых входа, новая логика сайта, коммерческие сценарии и система доказательств.</p></article>
-            <article><b>06</b><h3>Внедрение</h3><p>Выводы переведены в 40 задач. Первые три решения внедрены.</p></article>
-            <article className="marketing-route-result"><b>07</b><h3>Результат</h3><p>+8% к конверсии в покупки после первых внедрённых решений.</p></article>
-          </div>
-
-          <div className="marketing-source-proof">
-            <div className="marketing-source-image">
-              <SafeImage
-                src={`${assetBase}/EAL-05-evidence.svg`}
-                alt="Реестр доказательности EAL"
-                fallback="Факты, гипотезы и недостающие данные"
-              />
-            </div>
+          <div className="marketing-section-head marketing-section-head-row">
             <div>
-              <p className="marketing-eyebrow">Работа с источниками</p>
-              <h3>Я отдельно фиксирую, что подтверждено, что остаётся гипотезой и какие данные ещё нужны.</h3>
-              <p>Это не декоративный этап исследования: он определяет, какие маркетинговые заявления можно использовать и что нужно проверить до запуска.</p>
+              <span className="marketing-badge">Ещё проекты</span>
+              <h2>Опыт шире четырёх флагманских кейсов</h2>
             </div>
+            <p>
+              Здесь оставила только проекты, которые добавляют новое доказательство:
+              событийный маркетинг, бренд, международную коммуникацию и B2B digital.
+            </p>
           </div>
-        </div>
-      </section>
 
-      <section className="marketing-section marketing-selected">
-        <div className="marketing-shell">
-          <div className="marketing-section-head marketing-section-head-split">
-            <div>
-              <p className="marketing-eyebrow">Ещё проекты</p>
-              <h2>Маркетинг, который дошёл до реального материала и запуска</h2>
-            </div>
-            <p>Здесь — не условные иконки, а конкретные проекты и материалы из моей работы.</p>
-          </div>
-          <div className="marketing-selected-grid">
-            {selectedWork.map((item) => (
+          <div className="marketing-additional-grid">
+            {additional.map((item, index) => (
               <a
-                className={`marketing-selected-card marketing-selected-${item.size}`}
-                href={item.href || "#cases"}
-                target={(item.href || "").startsWith("http") ? "_blank" : undefined}
-                rel={(item.href || "").startsWith("http") ? "noreferrer" : undefined}
+                className={`marketing-additional-card marketing-additional-card-${index + 1}`}
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                 key={item.title}
               >
-                <div className={`marketing-selected-media ${item.mvp ? "marketing-selected-media-mvp" : ""}`}>
-                  {item.mvp ? (
-                    <div className="marketing-mvp-browser marketing-mvp-browser-large" aria-label="MVP сайта EAL">
-                      <div className="marketing-mvp-top"><i /><i /><i /><span>EAL</span></div>
-                      <div className="marketing-mvp-hero">
-                        <small>МЕЖДУНАРОДНЫЕ ПОСТАВКИ ДЛЯ БИЗНЕСА</small>
-                        <strong>Сначала схема.<br />Потом поставка.</strong>
-                        <p>До оплаты помогаем проверить исходные данные, ограничения, маршрут и риски.</p>
-                      </div>
-                      <div className="marketing-mvp-cards"><i /><i /><i /><i /></div>
-                    </div>
-                  ) : item.image ? (
-                    <SafeImage src={item.image} alt={item.title} fallback={item.title} />
-                  ) : (
-                    <div className="marketing-evidence-visual" aria-label={item.title}>
-                      <small>РЕАЛЬНЫЙ ПРОЕКТ</small>
-                      <strong>{item.visualText || item.metric}</strong>
-                      <span>{item.category}</span>
-                    </div>
-                  )}
-                  <span>{item.category}</span>
-                  <b className="marketing-selected-open">Смотреть проект ↗</b>
+                <div className="marketing-additional-image">
+                  <img src={item.image} alt={item.title} loading="lazy" />
+                  <span>{item.tag}</span>
                 </div>
-                <div className="marketing-selected-copy">
-                  <p>{item.title}</p>
+                <div>
+                  <h3>{item.title}</h3>
                   <strong>{item.metric}</strong>
-                  <span>{item.text}</span>
+                  <p>{item.text}</p>
                 </div>
               </a>
             ))}
@@ -629,31 +455,42 @@ export default function MarketingPortfolio() {
         </div>
       </section>
 
-      <section className="marketing-section marketing-tasks">
-        <div className="marketing-shell marketing-task-layout">
+      <section className="marketing-section marketing-tasks" id="tasks">
+        <div className="marketing-shell marketing-tasks-layout">
           <div className="marketing-section-head">
-            <p className="marketing-eyebrow">Для работодателя</p>
-            <h2>Какие задачи я могу закрыть</h2>
+            <span className="marketing-badge">Для работодателя</span>
+            <h2>Что я закрываю как маркетолог-проектник: от исследования до запуска</h2>
+            <p>
+              Я полезна там, где маркетинговую задачу нужно не только придумать,
+              но и разобрать, превратить в решение и довести до готового результата.
+            </p>
           </div>
+
           <div className="marketing-task-list">
-            <article><b>01</b><p>Исследовать рынок и аудиторию перед запуском и объяснить, что из этого следует для бизнеса.</p></article>
-            <article><b>02</b><p>Найти и сформулировать продуктовую или коммерческую гипотезу: что предложить, кому и почему.</p></article>
-            <article><b>03</b><p>Спроектировать позиционирование, предложение и путь клиента до нужного действия.</p></article>
-            <article><b>04</b><p>Перевести решение в сайт, продуктовую страницу, контент, презентацию, видео или визуальную систему.</p></article>
-            <article><b>05</b><p>Организовать запуск с командой и подрядчиками и проверить, что произошло после.</p></article>
+            {tasks.map((task, index) => (
+              <article key={task}>
+                <span>0{index + 1}</span>
+                <p>{task}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="marketing-contact" id="contact">
-        <div className="marketing-shell marketing-contact-grid">
+        <div className="marketing-shell marketing-contact-card">
           <div>
-            <p className="marketing-eyebrow">Контакты</p>
-            <h2>Нужен маркетолог, который не останавливается на идее — исследует, собирает решение и доводит его до запуска? Давайте обсудим задачу.</h2>
-            <p>Удалённая работа по РФ · гибридный формат обсуждаем · готова к командировкам и релокации</p>
+            <span className="marketing-badge marketing-badge-dark">Контакты</span>
+            <h2>
+              Нужен маркетолог-проектник, который умеет разобраться в рынке,
+              собрать решение и довести его до запуска? Давайте обсудим задачу.
+            </h2>
+            <p>Удалённо по РФ · гибрид обсуждаем · командировки и релокация</p>
           </div>
           <div className="marketing-contact-actions">
-            <a className="marketing-contact-primary" href="https://t.me/taninnik" target="_blank" rel="noreferrer">Написать в Telegram ↗</a>
+            <a className="marketing-contact-primary" href="https://t.me/taninnik" target="_blank" rel="noreferrer">
+              Telegram ↗
+            </a>
             <a href="tel:+79867233155">+7 986 723 31 55</a>
             <a href="mailto:babanova595@gmail.com">babanova595@gmail.com</a>
           </div>
