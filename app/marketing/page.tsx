@@ -3,7 +3,7 @@ import SafeImage from "./safe-image";
 import "./marketing.css";
 
 export const metadata: Metadata = {
-  title: "Татьяна Бабанова — маркетинговые и исследовательские проекты",
+  title: "Татьяна Бабанова — продуктовый и B2B-маркетинг",
   description:
     "Портфолио Татьяны Бабановой: исследования рынка и аудитории, B2B и продуктовый маркетинг, сайты, e-commerce, бренд, видео и коммерческие результаты.",
 };
@@ -66,7 +66,7 @@ const workDirections = [
     title: "Контент и визуальная упаковка",
     text: "Собираю содержание, сценарий и требования; ставлю задачи дизайнерам и подрядчикам и сопровождаю материал до выпуска.",
     proof: "CarWit · e-commerce · видео · брендбуки",
-    image: `${assetBase}/CarWit-product-screen.jpg`,
+    image: `${assetBase}/cover-CarWit.svg`,
     fallback: "Продуктовая презентация CarWit",
     href: "#carwit",
   },
@@ -163,8 +163,7 @@ const flagshipCases = [
     role:
       "Содержание и требования → сценарий → постановка задач → сопровождение производства → запуск.",
     visuals: [
-      { src: `${assetBase}/CarWit-product-screen.jpg`, alt: "Экран продукта CarWit", fallback: "CarWit — продукт" },
-      { src: `${assetBase}/cover-CarWit.svg`, alt: "Материалы CarWit", fallback: "CarWit — материалы запуска" },
+      { src: `${assetBase}/cover-CarWit.svg`, alt: "CarWit — материалы продуктового запуска", fallback: "CarWit — продукт и материалы запуска" },
     ],
     href: "https://marsh-inch-22f.notion.site/3e92eed19c85815f807fca93e619b82a",
   },
@@ -230,9 +229,9 @@ const gallery = [
     image: `${assetBase}/VOIS-05-experiments.svg`,
   },
   {
-    title: "Продуктовая презентация · CarWit",
-    role: "Собирала содержание и требования; визуальную реализацию выполняли дизайнеры.",
-    image: `${assetBase}/CarWit-product-screen.jpg`,
+    title: "Продукт и рекламные материалы · CarWit",
+    role: "Собирала содержание, требования и сценарий; визуальную реализацию выполняли дизайнеры и подрядчики.",
+    image: `${assetBase}/cover-CarWit.svg`,
   },
   {
     title: "Бренд-система · ГК Альфа",
@@ -241,36 +240,54 @@ const gallery = [
   },
 ];
 
-const extraProof = [
+const selectedWork = [
   {
-    title: "Проверка новых направлений",
-    metric: "20 → 7 → 3 → 53",
-    text: "Исследовала 20 коммерческих ниш, отобрала 7, довела 3 до тестирования и получила 53 запроса. 21 запрос дошёл до этапа продаж; одно направление бизнес продолжил.",
-  },
-  {
-    title: "Сравнение коммерческих предложений",
-    metric: "235 вариантов",
-    text: "Сформировала сравнительную базу по стоимости, срокам, возможностям, ограничениям и рискам, чтобы решение принималось по критериям, а не по впечатлению.",
-  },
-  {
-    title: "Три рекламных видео",
-    metric: "+23%",
-    text: "Вела производство от постановки задачи и выбора исполнителей до выпуска. После запуска конверсия из лидов в продажи выросла на 23%.",
-  },
-  {
-    title: "TatOilExpo",
+    title: "TatOilExpo / GSS",
+    category: "B2B-событие · лидогенерация",
     metric: "117 лидов",
-    text: "Проект реализован к фиксированной дате без превышения бюджета 1,5 млн ₽. По данным бизнеса ему было атрибутировано 37 млн ₽ оплаченной выручки.",
+    text: "Выставочный проект с фиксированным сроком: материалы, подрядчики, запуск и последующий коммерческий результат. По данным бизнеса — 37 млн ₽ оплаченной выручки при бюджете 1,5 млн ₽.",
+    image: `${assetBase}/cover-TatOil.svg`,
+    size: "wide",
   },
   {
-    title: "Два корпоративных сайта",
-    metric: "14 заявок/нед.",
-    text: "Определила структуру, содержание и требования, организовала сборку и публикацию. Сайты получают около 37 посещений в день и в среднем 14 заявок в неделю.",
+    title: "EAL — новый сайт",
+    category: "B2B digital · продуктовые страницы",
+    metric: "4 сценария входа",
+    text: "Перевела исследование и коммерческую стратегию в структуру сайта, требования к страницам и точки действия. В среднем сайт получает около 14 заявок в неделю.",
+    image: "/marketing-assets/eal-site.jpg",
+    size: "large",
   },
   {
-    title: "Брендбуки и фирменные стандарты",
-    metric: "от системы до носителей",
-    text: "Формировала требования, ТЗ и структуру, согласовывала визуальные решения и контролировала применение на digital-, печатных и выставочных материалах.",
+    title: "Бренд-системы",
+    category: "EAL · LOTOS · ГК Альфа",
+    metric: "от логотипа до носителей",
+    text: "Формировала требования к визуальной системе, ТЗ для дизайнеров и правила применения на digital-, печатных и выставочных материалах.",
+    image: `${assetBase}/Alpha-brandbook-colors.jpg`,
+    size: "tall",
+  },
+  {
+    title: "Canton Fair / Китай",
+    category: "международная B2B-коммуникация",
+    metric: "делегация 5 человек",
+    text: "Подготовка презентационных материалов, переводов и коммуникации для международной деловой поездки и переговоров.",
+    image: `${assetBase}/cover-Canton.svg`,
+    size: "standard",
+  },
+  {
+    title: "Рекламное видео",
+    category: "видеомаркетинг",
+    metric: "+23% к конверсии",
+    text: "Три рекламных видеоматериала: постановка задачи, выбор исполнителей, производство и выпуск. После запуска конверсия из лидов в продажи выросла на 23%.",
+    image: `${assetBase}/cover-CarWit.svg`,
+    size: "standard",
+  },
+  {
+    title: "Маркетинговое производство",
+    category: "КАН-АВТО",
+    metric: "167 запросов · 100% в срок",
+    text: "15 внутренних заказчиков, 3 дизайнера и до 5 подрядчиков. Управляла потоком материалов и доводила запросы до готового результата.",
+    image: `${assetBase}/cover-COMvex.svg`,
+    size: "wide",
   },
 ];
 
@@ -294,16 +311,15 @@ export default function MarketingPortfolio() {
       <section className="marketing-hero" id="top">
         <div className="marketing-shell marketing-hero-grid">
           <div className="marketing-hero-copy">
-            <p className="marketing-kicker">Маркетинговые и исследовательские проекты</p>
-            <h1>Исследую рынок и клиента, нахожу решение и довожу его до запуска.</h1>
+            <p className="marketing-kicker">Продуктовый и B2B-маркетинг · исследования · запуски</p>
+            <h1>Превращаю исследование рынка и клиента в продукт, коммуникацию и измеримый результат.</h1>
             <p className="marketing-lead">
-              Работаю на стыке B2B, продуктового маркетинга, исследований и бренд-коммуникации.
-              Из неясной задачи делаю понятную логику: кому продаём, что предлагаем, чем доказываем ценность,
-              какой материал нужен и как проверить результат.
+              Разбираюсь, что мешает клиенту выбрать или бизнесу расти, формулирую гипотезу и собираю решение:
+              позиционирование, сайт, продуктовую страницу, контент, видео или B2B-коммуникацию.
             </p>
             <p className="marketing-hero-proof">
-              Моя сильная сторона — связать исследование с конкретным продуктом, страницей, коммуникацией или запуском,
-              а не оставить выводы в презентации.
+              <strong>Моя сильная сторона:</strong> соединяю стратегию и реализацию — от исследования и ТЗ
+              до работы с дизайнерами, разработчиками, подрядчиками, запуска и проверки результата.
             </p>
             <div className="marketing-hero-actions">
               <a className="marketing-button marketing-button-primary" href="#cases">Смотреть кейсы</a>
@@ -316,8 +332,8 @@ export default function MarketingPortfolio() {
               <img src="/tatiana-babanova.jpg" alt="Татьяна Бабанова" />
             </figure>
             <div className="marketing-hero-side-copy">
-              <strong>Казань · удалённо</strong>
-              <span>готова к командировкам и релокации</span>
+              <strong>Открыта к удалённой и гибридной работе</strong>
+              <span>командировки и релокация обсуждаемы</span>
             </div>
           </aside>
         </div>
@@ -496,18 +512,27 @@ export default function MarketingPortfolio() {
         </div>
       </section>
 
-      <section className="marketing-section marketing-extra">
+      <section className="marketing-section marketing-selected">
         <div className="marketing-shell">
-          <div className="marketing-section-head">
-            <p className="marketing-eyebrow">Дополнительные доказательства</p>
-            <h2>Ещё шесть примеров, которые расширяют картину</h2>
+          <div className="marketing-section-head marketing-section-head-split">
+            <div>
+              <p className="marketing-eyebrow">Ещё проекты</p>
+              <h2>Маркетинг, который дошёл до реального материала и запуска</h2>
+            </div>
+            <p>Здесь — не условные иконки, а конкретные проекты и материалы из моей работы.</p>
           </div>
-          <div className="marketing-extra-grid">
-            {extraProof.map((item) => (
-              <article key={item.title}>
-                <p>{item.title}</p>
-                <strong>{item.metric}</strong>
-                <span>{item.text}</span>
+          <div className="marketing-selected-grid">
+            {selectedWork.map((item) => (
+              <article className={`marketing-selected-card marketing-selected-${item.size}`} key={item.title}>
+                <div className="marketing-selected-media">
+                  <SafeImage src={item.image} alt={item.title} fallback={item.title} />
+                  <span>{item.category}</span>
+                </div>
+                <div className="marketing-selected-copy">
+                  <p>{item.title}</p>
+                  <strong>{item.metric}</strong>
+                  <span>{item.text}</span>
+                </div>
               </article>
             ))}
           </div>
@@ -535,7 +560,7 @@ export default function MarketingPortfolio() {
           <div>
             <p className="marketing-eyebrow">Контакты</p>
             <h2>Если вам нужен человек, который может разобраться в рынке, собрать решение и довести его до запуска — давайте обсудим задачу.</h2>
-            <p>Татьяна Бабанова · Казань · удалённо по РФ · готова к командировкам и релокации</p>
+            <p>Удалённая работа по РФ · гибридный формат обсуждаем · готова к командировкам и релокации</p>
           </div>
           <div className="marketing-contact-actions">
             <a className="marketing-contact-primary" href="https://t.me/taninnik" target="_blank" rel="noreferrer">Написать в Telegram ↗</a>
