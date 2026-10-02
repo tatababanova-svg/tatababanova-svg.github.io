@@ -265,9 +265,10 @@ const selectedWork = [
     category: "B2B-событие · лидогенерация",
     metric: "117 лидов",
     text: "Выставочный проект с фиксированным сроком: материалы, подрядчики, запуск и последующий коммерческий результат. По данным бизнеса — 37 млн ₽ оплаченной выручки при бюджете 1,5 млн ₽.",
-    image: `${assetBase}/cover-TatOil.svg`,
+    image: "",
     size: "wide",
     href: "https://marsh-inch-22f.notion.site/3e92eed19c8581969193f2ffd66e0ac3",
+    visualText: "117 лидов · выставочный B2B-проект",
   },
   {
     title: "EAL — новый сайт",
@@ -293,27 +294,30 @@ const selectedWork = [
     category: "международная B2B-коммуникация",
     metric: "делегация 5 человек",
     text: "Подготовка презентационных материалов, переводов и коммуникации для международной деловой поездки и переговоров.",
-    image: `${assetBase}/cover-Canton.svg`,
+    image: "",
     size: "standard",
     href: "https://marsh-inch-22f.notion.site/3e92eed19c8581339f94cf048cc2dabc",
+    visualText: "Китай · международная B2B-коммуникация",
   },
   {
     title: "Рекламное видео",
     category: "видеомаркетинг",
     metric: "+23% к конверсии",
     text: "Три рекламных видеоматериала: постановка задачи, выбор исполнителей, производство и выпуск. После запуска конверсия из лидов в продажи выросла на 23%.",
-    image: `${assetBase}/cover-CarWit.svg`,
+    image: "",
     size: "standard",
     href: "https://marsh-inch-22f.notion.site/3e92eed19c85815f807fca93e619b82a",
+    visualText: "3 рекламных видео · +23% к конверсии",
   },
   {
     title: "Маркетинговое производство",
     category: "КАН-АВТО",
     metric: "167 запросов · 100% в срок",
     text: "15 внутренних заказчиков, 3 дизайнера и до 5 подрядчиков. Управляла потоком материалов и доводила запросы до готового результата.",
-    image: `${assetBase}/cover-COMvex.svg`,
+    image: "",
     size: "wide",
     href: "https://marsh-inch-22f.notion.site/3e92eed19c8581fe8a90c1d0c5614168",
+    visualText: "167 запросов · 100% выполнено в срок",
   },
 ];
 
@@ -493,41 +497,48 @@ export default function MarketingPortfolio() {
           <div className="marketing-section-head">
             <p className="marketing-eyebrow">Фрагменты моей работы</p>
             <h2>Материалы, по которым видно не только результат, но и процесс</h2>
+            <p>Это реальные рабочие артефакты и фрагменты проектов. Нажмите на изображение, чтобы рассмотреть материал; под ним — переход к подробному кейсу.</p>
           </div>
           <div className="marketing-gallery-grid">
-            {gallery.map((item) => (
-              <a
-                className="marketing-gallery-card"
-                href={item.href}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
-                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                key={item.title}
-              >
-                <figure>
-                  <div className={`marketing-gallery-image ${item.mvp ? "marketing-gallery-mvp" : ""}`}>
-                    {item.mvp ? (
-                      <div className="marketing-mvp-browser" aria-label="MVP сайта EAL">
-                        <div className="marketing-mvp-top"><i /><i /><i /><span>EAL</span></div>
-                        <div className="marketing-mvp-hero">
-                          <small>МЕЖДУНАРОДНЫЕ ПОСТАВКИ ДЛЯ БИЗНЕСА</small>
-                          <strong>Сначала схема.<br />Потом поставка.</strong>
-                          <p>Проверяем исходные данные, риски и маршрут до запуска.</p>
+            {gallery.map((item) => {
+              const materialHref = item.mvp ? item.href : item.image;
+              return (
+                <article className="marketing-gallery-card" key={item.title}>
+                  <figure>
+                    <a
+                      className={`marketing-gallery-image ${item.mvp ? "marketing-gallery-mvp" : ""}`}
+                      href={materialHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Открыть материал: ${item.title}`}
+                    >
+                      {item.mvp ? (
+                        <div className="marketing-mvp-browser" aria-label="MVP сайта EAL">
+                          <div className="marketing-mvp-top"><i /><i /><i /><span>EAL</span></div>
+                          <div className="marketing-mvp-hero">
+                            <small>МЕЖДУНАРОДНЫЕ ПОСТАВКИ ДЛЯ БИЗНЕСА</small>
+                            <strong>Сначала схема.<br />Потом поставка.</strong>
+                            <p>Проверяем исходные данные, риски и маршрут до запуска.</p>
+                          </div>
+                          <div className="marketing-mvp-cards"><i /><i /><i /><i /></div>
                         </div>
-                        <div className="marketing-mvp-cards"><i /><i /><i /><i /></div>
-                      </div>
-                    ) : (
-                      <SafeImage src={item.image} alt={item.title} fallback={item.title} />
-                    )}
-                    <span className="marketing-gallery-tag">{item.tag}</span>
-                    <span className="marketing-gallery-open">Открыть кейс ↗</span>
-                  </div>
-                  <figcaption>
-                    <strong>{item.title}</strong>
-                    <p>{item.role}</p>
-                  </figcaption>
-                </figure>
-              </a>
-            ))}
+                      ) : (
+                        <SafeImage src={item.image} alt={item.title} fallback={item.title} />
+                      )}
+                      <span className="marketing-gallery-tag">{item.tag}</span>
+                      <span className="marketing-gallery-open">Увеличить ↗</span>
+                    </a>
+                    <figcaption>
+                      <strong>{item.title}</strong>
+                      <p>{item.role}</p>
+                      <a className="marketing-gallery-case-link" href={item.href} target="_blank" rel="noreferrer">
+                        Открыть подробный кейс →
+                      </a>
+                    </figcaption>
+                  </figure>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -595,8 +606,14 @@ export default function MarketingPortfolio() {
                       </div>
                       <div className="marketing-mvp-cards"><i /><i /><i /><i /></div>
                     </div>
-                  ) : (
+                  ) : item.image ? (
                     <SafeImage src={item.image} alt={item.title} fallback={item.title} />
+                  ) : (
+                    <div className="marketing-evidence-visual" aria-label={item.title}>
+                      <small>РЕАЛЬНЫЙ ПРОЕКТ</small>
+                      <strong>{item.visualText || item.metric}</strong>
+                      <span>{item.category}</span>
+                    </div>
                   )}
                   <span>{item.category}</span>
                   <b className="marketing-selected-open">Смотреть проект ↗</b>
