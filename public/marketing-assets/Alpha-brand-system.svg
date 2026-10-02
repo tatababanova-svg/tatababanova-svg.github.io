@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <rect width="1200" height="620" rx="28" fill="#F7F3EC"/>
+  <rect x="34" y="34" width="1132" height="552" rx="24" fill="#FFFFFF" stroke="#D9D3C8" stroke-width="2"/>
+  <text x="78" y="112" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3" fill="#6D7480">ГК АЛЬФА · БРЕНД-СИСТЕМА</text>
+  <text x="78" y="178" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#05143F">Фирменная палитра и правила применения</text>
+  <rect x="78" y="236" width="210" height="118" rx="18" fill="#05143F"/>
+  <text x="101" y="388" font-family="Arial, sans-serif" font-size="18" fill="#05143F">#05143F · основной синий</text>
+  <rect x="315" y="236" width="210" height="118" rx="18" fill="#EE1B21"/>
+  <text x="338" y="388" font-family="Arial, sans-serif" font-size="18" fill="#05143F">#EE1B21 · акцентный красный</text>
+  <rect x="552" y="236" width="210" height="118" rx="18" fill="#CCCCCC"/>
+  <text x="575" y="388" font-family="Arial, sans-serif" font-size="18" fill="#05143F">#CCCCCC · нейтральный серый</text>
+  <rect x="789" y="236" width="210" height="118" rx="18" fill="#FEFEFE" stroke="#D7D7D7"/>
+  <text x="812" y="388" font-family="Arial, sans-serif" font-size="18" fill="#05143F">#FEFEFE · белый</text>
+  <line x1="78" y1="434" x2="1122" y2="434" stroke="#D9D3C8"/>
+  <text x="78" y="482" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#05143F">Система:</text>
+  <text x="183" y="482" font-family="Arial, sans-serif" font-size="21" fill="#414B5B">основная версия логотипа · допустимые сочетания · охранные поля · единые правила применения</text>
+  <text x="78" y="530" font-family="Arial, sans-serif" font-size="18" fill="#6A7480">Визуал собран по фирменной палитре и правилам из брендбука ГК «Альфа».</text>
+</svg>
