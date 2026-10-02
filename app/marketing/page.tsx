@@ -8,8 +8,7 @@ export const metadata: Metadata = {
     "Портфолио Татьяны Бабановой: исследования рынка и аудитории, B2B и продуктовый маркетинг, сайты, e-commerce, бренд, видео и коммерческие результаты.",
 };
 
-const assetBase =
-  "https://raw.githubusercontent.com/tatababanova-svg/tatiana-babanova-portfolio/notion-portfolio-assets-20260928/public/notion-assets";
+const assetBase = "/marketing-assets";
 
 const topResults = [
   {
@@ -402,6 +401,25 @@ export default function MarketingPortfolio() {
                   <div><span>Что создала</span><p>{item.created}</p></div>
                   <div><span>Что было запущено</span><p>{item.launched}</p></div>
                 </div>
+
+                {item.id === "vois" && (
+                  <div className="marketing-before-after" aria-label="Было — решение — стало">
+                    <article>
+                      <span>Было</span>
+                      <p>Информации о продукте много, но покупателю трудно сравнить варианты и понять, что подходит именно ему.</p>
+                    </article>
+                    <i>→</i>
+                    <article>
+                      <span>Решение</span>
+                      <p>Разложила выбор по задачам клиента, критериям и доказательствам и собрала структуру из 7 экранов.</p>
+                    </article>
+                    <i>→</i>
+                    <article>
+                      <span>Стало</span>
+                      <p>Появились прототип, ТЗ и 8 экспериментов для проверки. Это готовое к тестированию решение, а не заявленный коммерческий эффект.</p>
+                    </article>
+                  </div>
+                )}
 
                 <div className="marketing-case-bottom">
                   <div>
