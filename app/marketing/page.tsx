@@ -20,7 +20,6 @@ const asset = "/marketing-assets";
 
 const links = {
   portfolio: "#contact",
-  resume: "/tatiana-babanova-project-manager.pdf",
   eal: "https://marsh-inch-22f.notion.site/3e92eed19c8581678755c267f35fa3c5",
   vois: "https://marsh-inch-22f.notion.site/3e92eed19c8581dda040c3b2e574855d",
   carwit: "https://marsh-inch-22f.notion.site/3e92eed19c85815f807fca93e619b82a",
@@ -63,7 +62,7 @@ const commercialCases = [
   {
     title: "КАН-АВТО / CarWit — продукт и e-commerce",
     badge: "E-commerce и контент",
-    image: `${asset}/carwit-product-v2.jpg`,
+    image: `${asset}/cover-CarWit.svg`,
     metrics: ["15|внутренних заказчиков", "167|запросов за год", "5 000|единиц контента", "30%|лид → заказ"],
     task: "Обеспечить стабильный поток продуктовых и e-commerce материалов для разных направлений бизнеса.",
     role: "Процессы, приоритизация запросов, координация команд и подрядчиков, качество и сроки.",
@@ -109,7 +108,6 @@ export default function MarketingPortfolio() {
             <a href="#process">Как я работаю</a>
             <a href="#contact">Контакты</a>
           </div>
-          <a className="marketing-resume-link" href={links.resume} download>Скачать резюме <span>→</span></a>
         </nav>
       </header>
 
@@ -123,7 +121,6 @@ export default function MarketingPortfolio() {
             </p>
             <div className="marketing-hero-actions">
               <a className="marketing-button marketing-button-primary" href="#flagships">Смотреть проекты ↓</a>
-              <a className="marketing-button marketing-button-secondary" href={links.resume} download>Скачать резюме (PDF) ↓</a>
             </div>
           </div>
 
@@ -175,8 +172,8 @@ export default function MarketingPortfolio() {
                 </div>
               </div>
               <div className="marketing-flagship-visual marketing-eal-visual">
-                <img src={`${asset}/eal-site-v2.jpg`} alt="Рабочий материал проекта EAL" />
-                <span>исследование → коммерческая система → сайт</span>
+                <img src={`${asset}/EAL-02-competitors.svg`} alt="Рабочий материал проекта EAL" />
+                <span>конкурентный анализ → сегментация → коммерческое решение</span>
               </div>
             </article>
 
@@ -219,8 +216,8 @@ export default function MarketingPortfolio() {
                 <a className="marketing-button marketing-button-secondary" href="#commercial">Другие проекты ↓</a>
               </div>
             </div>
-            <div className="marketing-project-cover">
-              <img src={`${asset}/eal-site-v2.jpg`} alt="Рабочий материал проекта EAL" />
+            <div className="marketing-project-cover marketing-eal-cover">
+              <img src={`${asset}/EAL-01-CA.svg`} alt="Фрагмент исследования аудитории EAL" />
               <ul>
                 <li>Исследование рынка</li>
                 <li>Продуктовая стратегия</li>
@@ -300,19 +297,19 @@ export default function MarketingPortfolio() {
                 className="marketing-proof-feature"
                 items={[
                   {
-                    src: `${asset}/eal-site-v2.jpg`,
-                    alt: "MVP сайта EAL",
-                    caption: "Рабочий материал EAL: выводы исследования переведены в структуру решений и план внедрения.",
-                  },
-                  {
                     src: `${asset}/EAL-04-implementation.svg`,
-                    alt: "План внедрения EAL",
-                    caption: "План внедрения и приоритеты задач.",
+                    alt: "План первых 30 дней EAL",
+                    caption: "План первых 30 дней: что именно нужно изменить, зачем и по какому критерию считать задачу готовой.",
                   },
                   {
                     src: `${asset}/EAL-06-TZ-fragment.svg`,
                     alt: "Фрагмент ТЗ EAL",
-                    caption: "Фрагмент требований к внедрению.",
+                    caption: "Реальный фрагмент требований, который можно передать исполнителям.",
+                  },
+                  {
+                    src: `${asset}/EAL-05-evidence.svg`,
+                    alt: "Реестр доказательности EAL",
+                    caption: "Проверка фактов и формулировок перед публикацией и запуском коммуникации.",
                   },
                 ]}
               />
@@ -542,7 +539,7 @@ export default function MarketingPortfolio() {
             </article>
             <article>
               <span className="marketing-chip">ГК Альфа</span>
-              <ProofGallery className="marketing-brand-proof-single" items={[{ src: `${asset}/alpha-brandbook-v2.jpg`, alt: "Фрагмент бренд-системы ГК Альфа" }]} />
+              <ProofGallery className="marketing-brand-proof-single" items={[{ src: `${asset}/Alpha-brand-system.svg`, alt: "Фирменная палитра и правила бренд-системы ГК Альфа" }]} />
               <p>Требования к шаблонам презентаций и визуальному единообразию материалов.</p>
             </article>
             <article className="marketing-brand-role">
