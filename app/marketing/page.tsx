@@ -99,7 +99,7 @@ export default function MarketingPortfolio() {
         <nav className="marketing-nav marketing-shell" aria-label="Навигация по портфолио">
           <a href="#top" className="marketing-brand">
             <strong>Татьяна Бабанова</strong>
-            <span>маркетинг · стратегия · B2B</span>
+            <span>маркетинг и специальные проекты</span>
           </a>
           <div className="marketing-nav-links">
             <a href="#flagships">Проекты</a>
@@ -115,7 +115,7 @@ export default function MarketingPortfolio() {
       <section className="marketing-hero" id="top">
         <div className="marketing-shell marketing-hero-grid">
           <div className="marketing-hero-copy">
-            <p className="marketing-kicker">Маркетинг · стратегия · специальные проекты</p>
+            <p className="marketing-kicker">Маркетинг и специальные проекты</p>
             <h1>Соединяю исследование, стратегию и реализацию, чтобы идеи становились понятными решениями для бизнеса</h1>
             <p className="marketing-lead">
               Разбираюсь в рынке и клиенте, формирую логику продукта и коммуникации, ставлю задачи команде и сопровождаю запуск до измеримого результата
