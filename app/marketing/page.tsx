@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     locale: "ru_RU",
     title: "Татьяна Бабанова — продуктовый и B2B-маркетинг",
     description:
-      "Соединяю исследование, стратегию и реализацию, чтобы идеи становились понятными решениями для бизнеса.",
+      "Помогаю бизнесу находить точки роста и доводить маркетинговые проекты до измеримого результата.",
     siteName: "Маркетинговое портфолио Татьяны Бабановой",
   },
 };
@@ -63,7 +63,7 @@ const commercialCases = [
   {
     title: "КАН-АВТО / CarWit — продукт и e-commerce",
     badge: "E-commerce и контент",
-    image: `${asset}/CarWit-product-screen.jpg`,
+    image: `${asset}/carwit-product-v2.jpg`,
     metrics: ["15|внутренних заказчиков", "167|запросов за год", "5 000|единиц контента", "30%|лид → заказ"],
     task: "Обеспечить стабильный поток продуктовых и e-commerce материалов для разных направлений бизнеса.",
     role: "Процессы, приоритизация запросов, координация команд и подрядчиков, качество и сроки.",
@@ -117,9 +117,9 @@ export default function MarketingPortfolio() {
         <div className="marketing-shell marketing-hero-grid">
           <div className="marketing-hero-copy">
             <p className="marketing-kicker">Маркетинг и специальные проекты</p>
-            <h1>Превращаю неясные рыночные задачи в решения, которые можно запустить и измерить.</h1>
+            <h1>Помогаю бизнесу находить точки роста и доводить маркетинговые проекты до измеримого результата</h1>
             <p className="marketing-lead">
-              Исследую рынок и клиента, собираю маркетинговую и продуктовую логику, ставлю ТЗ и довожу проект до запуска и проверяемого результата.
+              Исследую рынок и клиента, формирую стратегию, собираю решение, ставлю ТЗ и координирую запуск — от идеи до результата.
             </p>
             <div className="marketing-hero-actions">
               <a className="marketing-button marketing-button-primary" href="#flagships">Смотреть проекты ↓</a>
@@ -155,7 +155,7 @@ export default function MarketingPortfolio() {
           <div className="marketing-heading-row">
             <div>
               <p className="marketing-kicker">Главные проекты</p>
-              <h2>Два кейса, где видно весь путь: от исследования до решения.</h2>
+              <h2>Два кейса, где видно весь путь: от исследования до решения</h2>
             </div>
             <a href="#commercial">Все коммерческие кейсы →</a>
           </div>
@@ -178,7 +178,7 @@ export default function MarketingPortfolio() {
                 </div>
               </div>
               <div className="marketing-flagship-visual marketing-eal-visual">
-                <img src={`${asset}/eal-site.jpg`} alt="Рабочий материал проекта EAL" />
+                <img src={`${asset}/eal-site-v2.jpg`} alt="Рабочий материал проекта EAL" />
                 <span>исследование → коммерческая система → сайт</span>
               </div>
             </article>
@@ -223,7 +223,7 @@ export default function MarketingPortfolio() {
               </div>
             </div>
             <div className="marketing-project-cover">
-              <img src={`${asset}/eal-site.jpg`} alt="Рабочий материал проекта EAL" />
+              <img src={`${asset}/eal-site-v2.jpg`} alt="Рабочий материал проекта EAL" />
               <ul>
                 <li>Исследование рынка</li>
                 <li>Продуктовая стратегия</li>
@@ -303,7 +303,7 @@ export default function MarketingPortfolio() {
                 className="marketing-proof-feature"
                 items={[
                   {
-                    src: `${asset}/eal-site.jpg`,
+                    src: `${asset}/eal-site-v2.jpg`,
                     alt: "MVP сайта EAL",
                     caption: "Рабочий материал EAL: выводы исследования переведены в структуру решений и план внедрения.",
                   },
@@ -320,18 +320,29 @@ export default function MarketingPortfolio() {
                 ]}
               />
               <aside className="marketing-requirements">
-                <h4>Ключевые блоки требований</h4>
-                <ol>
-                  <li>Данные и аналитика</li>
-                  <li>Финансы и юнит-экономика</li>
-                  <li>Продукты и предложения</li>
-                  <li>Маркетинг и привлечение</li>
-                  <li>Продажи и CRM</li>
-                  <li>Операции и качество</li>
-                  <li>Команда и обучение</li>
-                  <li>Запуск и тестирование</li>
-                </ol>
-                <a href={links.eal} target="_blank" rel="noreferrer">Открыть план внедрения ↗</a>
+                <h4>Что нужно было подготовить, чтобы стратегия дошла до запуска</h4>
+                <p className="marketing-requirements-intro">
+                  Исследование само по себе ничего не меняет. Поэтому я перевела выводы в четыре рабочих контура, по которым команда могла принимать решения и внедрять изменения.
+                </p>
+                <div className="marketing-requirement-groups">
+                  <article>
+                    <strong>01 · Аналитика и экономика</strong>
+                    <span>данные, дашборды, маржинальность и критерии результата</span>
+                  </article>
+                  <article>
+                    <strong>02 · Продукт и маркетинг</strong>
+                    <span>предложения, позиционирование, контент и привлечение</span>
+                  </article>
+                  <article>
+                    <strong>03 · Продажи и операции</strong>
+                    <span>CRM, процессы, SLA, качество и контроль исполнения</span>
+                  </article>
+                  <article>
+                    <strong>04 · Команда и запуск</strong>
+                    <span>роли, обучение, тестирование и проверка первых результатов</span>
+                  </article>
+                </div>
+                <a href={links.eal} target="_blank" rel="noreferrer">Открыть полный план внедрения ↗</a>
               </aside>
             </div>
           </div>
@@ -530,7 +541,7 @@ export default function MarketingPortfolio() {
             </article>
             <article>
               <span className="marketing-chip">ГК Альфа</span>
-              <ProofGallery className="marketing-brand-proof-single" items={[{ src: `${asset}/Alpha-brandbook-colors.jpg`, alt: "Фрагмент бренд-системы ГК Альфа" }]} />
+              <ProofGallery className="marketing-brand-proof-single" items={[{ src: `${asset}/alpha-brandbook-v2.jpg`, alt: "Фрагмент бренд-системы ГК Альфа" }]} />
               <p>Требования к шаблонам презентаций и визуальному единообразию материалов.</p>
             </article>
             <article className="marketing-brand-role">
@@ -547,7 +558,7 @@ export default function MarketingPortfolio() {
           <div className="marketing-heading-row">
             <div>
               <p className="marketing-kicker">Как я работаю</p>
-              <h2>От неясной задачи — к запуску и проверке результата.</h2>
+              <h2>От неясной задачи — к запуску и проверке результата</h2>
             </div>
           </div>
           <ol className="marketing-workflow">
