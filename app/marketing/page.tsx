@@ -42,7 +42,7 @@ const commercialCases = [
   {
     title: "COMvex — B2B-выставочный проект",
     badge: "Выставочный проект",
-    image: `${asset}/cover-COMvex.svg`,
+    image: null,
     metrics: ["2,5 млн ₽|бюджет", "137|целевых лидов", "67 млн ₽|продаж", "44 млн ₽|валовой прибыли"],
     task: "Организовать участие в отраслевой выставке с понятной коммуникацией и коммерческой целью.",
     role: "Содержание, требования, ТЗ, подрядчики, логистика, запуск, контроль бюджета и результата.",
@@ -52,7 +52,7 @@ const commercialCases = [
   {
     title: "Canton Fair — международный проект",
     badge: "Международный проект",
-    image: `${asset}/cover-Canton.svg`,
+    image: null,
     metrics: ["317|лидов", "98|новых клиентов", "30,9%|конверсия"],
     task: "Привлечь новых клиентов на международной выставке и быстро перестроить проект под новые требования.",
     role: "Пересборка плана, коммуникация команды и подрядчиков, контроль запуска и качества.",
@@ -72,7 +72,7 @@ const commercialCases = [
   {
     title: "TatOilExpo — событийный коммерческий проект",
     badge: "Событийный проект",
-    image: `${asset}/cover-TatOil.svg`,
+    image: null,
     metrics: ["1,5 млн ₽|бюджет", "117|лидов", "37 млн ₽|атрибутированной выручки"],
     task: "Подготовить отраслевое событие с целевой B2B-аудиторией и измеримым коммерческим результатом.",
     role: "Коммуникация, материалы, подрядчики, программа, сроки, запуск активности и контроль.",
@@ -201,6 +201,43 @@ export default function MarketingPortfolio() {
                 <span>путь клиента → гипотеза → прототип → проверка</span>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="marketing-section marketing-proof-section" id="proof">
+        <div className="marketing-shell">
+          <div className="marketing-heading-row marketing-proof-heading">
+            <div>
+              <p className="marketing-kicker">Подтверждающие материалы</p>
+              <h2>Не только описание кейсов — показываю рабочие материалы</h2>
+              <p>Фрагменты исследований, планов внедрения, прототипов и реальный экран продукта. Каждый материал можно открыть отдельно или перейти в полный кейс.</p>
+            </div>
+          </div>
+
+          <div className="marketing-proof-showcase">
+            <a href={`${asset}/EAL-01-CA.svg`} target="_blank" rel="noreferrer">
+              <img src={`${asset}/EAL-01-CA.svg`} alt="EAL — сегментация аудитории" />
+              <div><span>Рабочий проект</span><strong>EAL — сегментация аудитории</strong><small>Ситуации покупки, боли, риски и критерии выбора</small></div>
+            </a>
+            <a href={`${asset}/EAL-04-implementation.svg`} target="_blank" rel="noreferrer">
+              <img src={`${asset}/EAL-04-implementation.svg`} alt="EAL — план внедрения" />
+              <div><span>Рабочий проект</span><strong>EAL — план внедрения</strong><small>Приоритеты, зависимости и этапы проверки</small></div>
+            </a>
+            <a href={`${asset}/CarWit-product-screen.jpg`} target="_blank" rel="noreferrer">
+              <img src={`${asset}/CarWit-product-screen.jpg`} alt="CarWit — реальный экран продуктовой презентации" />
+              <div><span>Реальный материал</span><strong>CarWit — продуктовая презентация</strong><small>Экран рабочего материала проекта КАН-АВТО</small></div>
+            </a>
+            <a href={`${asset}/VOIS-02-journey.svg`} target="_blank" rel="noreferrer">
+              <img src={`${asset}/VOIS-02-journey.svg`} alt="VOIS — карта пути клиента" />
+              <div><span>Инициативный проект</span><strong>VOIS — карта пути клиента</strong><small>Открытые данные · зоны неопределённости и точки проверки</small></div>
+            </a>
+          </div>
+
+          <div className="marketing-proof-actions">
+            <a href={links.eal} target="_blank" rel="noreferrer">Открыть полный рабочий кейс EAL ↗</a>
+            <a href={links.carwit} target="_blank" rel="noreferrer">Открыть кейс CarWit ↗</a>
+            <a href={links.vois} target="_blank" rel="noreferrer">Открыть исследование VOIS ↗</a>
           </div>
         </div>
       </section>
@@ -438,7 +475,15 @@ export default function MarketingPortfolio() {
                     <span className="marketing-chip">{item.badge}</span>
                     <h3>{item.title}</h3>
                   </div>
-                  <img src={item.image} alt="" loading="lazy" />
+                  {item.image ? (
+                    <img src={item.image} alt={`Материал проекта ${item.title}`} loading="lazy" />
+                  ) : (
+                    <a className="marketing-case-proof-panel" href={item.href} target="_blank" rel="noreferrer" aria-label={`Открыть подтверждающие материалы: ${item.title}`}>
+                      <span>Рабочий кейс</span>
+                      <strong>Расчёты, роль и результат</strong>
+                      <small>Открыть подтверждающие материалы ↗</small>
+                    </a>
+                  )}
                 </header>
                 <div className="marketing-case-metrics">
                   {item.metrics.map((metric) => {
@@ -474,8 +519,10 @@ export default function MarketingPortfolio() {
                 <h3>CTT / SuperSnow</h3>
                 <p>Концепция стенда, ключевые сообщения, печатные и digital-материалы, работа с подрядчиками и подготовка команды на площадке.</p>
               </div>
-              <div className="marketing-extra-visual">
-                <img src={`${asset}/cover-Canton.svg`} alt="CTT / SuperSnow — выставочная коммуникация" />
+              <div className="marketing-extra-proof-panel">
+                <span>Реальный проект</span>
+                <strong>Концепция → материалы → подрядчики → готовность к запуску</strong>
+                <p>Не использую условную картинку вместо доказательства: здесь оставляю только описание реальной роли и результата проекта.</p>
               </div>
             </article>
 
@@ -496,13 +543,21 @@ export default function MarketingPortfolio() {
                 <h3>EAL / LOTOS / ГК Альфа</h3>
                 <p>Требования к системе, содержание, ТЗ, правила применения и контроль носителей. Графическую реализацию выполняли профильные дизайнеры.</p>
               </div>
-              <ProofGallery
-                className="marketing-brand-proofs"
-                items={[
-                  { src: `${asset}/EAL-06-TZ-fragment.svg`, alt: "Фрагмент проектных материалов EAL" },
-                  { src: `${asset}/cover-COMvex.svg`, alt: "Выставочная коммуникация ГК Альфа" },
-                ]}
-              />
+              <div className="marketing-brand-proof-wrap">
+                <ProofGallery
+                  className="marketing-brand-proofs"
+                  items={[
+                    { src: `${asset}/EAL-06-TZ-fragment.svg`, alt: "Фрагмент проектных материалов EAL" },
+                  ]}
+                />
+                <div className="marketing-brand-proof-copy">
+                  <strong>Что подтверждаю здесь</strong>
+                  <span>EAL — требования и правила внедрения</span>
+                  <span>LOTOS — работа с вариантами фирменной системы</span>
+                  <span>ГК Альфа — требования к шаблонам и единообразию материалов</span>
+                  <small>Графическую реализацию выполняли профильные дизайнеры</small>
+                </div>
+              </div>
             </article>
           </div>
         </div>
