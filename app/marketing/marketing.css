@@ -1090,3 +1090,73 @@
     padding: 22px;
   }
 }
+
+
+/* Real evidence behavior */
+.marketing-gallery-card {
+  display: block;
+  overflow: hidden;
+}
+.marketing-gallery-card figure {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+}
+.marketing-gallery-image {
+  display: grid;
+  min-height: 240px;
+  color: inherit;
+  text-decoration: none;
+}
+.marketing-gallery-case-link {
+  display: inline-flex;
+  margin-top: 13px;
+  color: var(--green) !important;
+  font-size: .78rem;
+  font-weight: 760;
+}
+.marketing-gallery-case-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.marketing-evidence-visual {
+  display: grid;
+  width: 100%;
+  min-height: 250px;
+  place-content: center;
+  gap: 10px;
+  padding: 28px;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(163,111,112,.16), transparent 12rem),
+    linear-gradient(145deg,#e8eee9,#f6f3ed);
+  text-align: left;
+}
+.marketing-selected-wide .marketing-evidence-visual,
+.marketing-selected-large .marketing-evidence-visual {
+  min-height: 330px;
+}
+.marketing-evidence-visual small {
+  color: var(--green);
+  font-size: .67rem;
+  font-weight: 780;
+  letter-spacing: .09em;
+}
+.marketing-evidence-visual strong {
+  max-width: 14ch;
+  color: var(--green-dark);
+  font-size: clamp(1.55rem,2.8vw,2.55rem);
+  line-height: 1.06;
+  letter-spacing: -.045em;
+}
+.marketing-evidence-visual span {
+  max-width: 28ch;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+@media (max-width: 760px) {
+  .marketing-gallery-image { min-height: 225px; }
+  .marketing-evidence-visual,
+  .marketing-selected-wide .marketing-evidence-visual,
+  .marketing-selected-large .marketing-evidence-visual {
+    min-height: 230px;
+  }
+}
