@@ -81,10 +81,10 @@
   backdrop-filter: blur(8px);
 }
 .marketing-nav {
-  min-height: 58px;
-  padding: 0 18px;
+  min-height: 68px;
+  padding: 0 22px;
   display: grid;
-  grid-template-columns: 220px 1fr auto;
+  grid-template-columns: 250px 1fr auto;
   align-items: center;
   gap: 24px;
   border: 1px solid rgba(30,49,72,.08);
@@ -93,21 +93,21 @@
   box-shadow: 0 8px 26px rgba(15,35,56,.04);
 }
 .marketing-brand { display: grid; line-height: 1.05; }
-.marketing-brand strong { font-size: 1.05rem; }
-.marketing-brand span { margin-top: 4px; color: #8b96a6; font-size: .58rem; letter-spacing: .06em; }
-.marketing-nav-links { display: flex; justify-content: center; gap: 26px; font-size: .76rem; font-weight: 750; }
+.marketing-brand strong { font-size: 1.22rem; }
+.marketing-brand span { margin-top: 4px; color: #7d899a; font-size: .66rem; letter-spacing: .045em; }
+.marketing-nav-links { display: flex; justify-content: center; gap: 30px; font-size: .90rem; font-weight: 760; }
 .marketing-nav-links a { color: #40506a; }
 .marketing-nav-links a:hover { color: var(--green); }
 .marketing-resume-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 38px;
-  padding: 0 14px;
+  min-height: 44px;
+  padding: 0 17px;
   border-radius: 8px;
   background: var(--green);
   color: #fff !important;
-  font-size: .75rem;
+  font-size: .86rem;
   font-weight: 800;
 }
 
@@ -136,7 +136,7 @@
 .marketing-hero h1 {
   max-width: 15.5ch;
   margin-top: 12px;
-  font-size: clamp(2.8rem,5vw,5.05rem);
+  font-size: clamp(2.65rem,4.55vw,4.55rem);
   line-height: .97;
   text-wrap: balance;
 }
@@ -171,12 +171,13 @@
   object-position: 50% 21%;
   filter: saturate(.92) contrast(.98) brightness(1.03);
 }
+/* Handwritten overlay removed from the portrait at user request. */
 .marketing-hand-note {
   position: absolute;
   z-index: 2;
   top: 46px;
   right: 22px;
-  display: grid;
+  display: none;
   gap: 0;
   color: #224475;
   font-family: Georgia, "Times New Roman", serif;
