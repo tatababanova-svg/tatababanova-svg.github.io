@@ -129,9 +129,6 @@ export default function MarketingPortfolio() {
 
           <div className="marketing-hero-photo" aria-label="Татьяна Бабанова">
             <img src="/tatiana-babanova.jpg" alt="Татьяна Бабанова" />
-            <div className="marketing-hand-note" aria-hidden="true">
-              <span>Исследование</span><span>Анализ</span><span>Стратегия</span><span>Запуск</span><span>Результат</span>
-            </div>
             <p className="marketing-photo-caption">проекты, которые двигают бизнес вперёд</p>
           </div>
         </div>
@@ -509,10 +506,14 @@ export default function MarketingPortfolio() {
                 <h3>CTT / SuperSnow</h3>
                 <p>Концепция стенда, ключевые сообщения, печатные и digital-материалы, подрядчики и готовность команды к площадке.</p>
               </div>
-              <div className="marketing-extra-proof-panel marketing-extra-proof-compact">
-                <span>Реальный проект</span>
-                <strong>Концепция → материалы → подрядчики → запуск</strong>
-                <small>Подробные материалы — в полном портфолио</small>
+              <div className="marketing-ctt-proof" aria-label="Масштаб выставочных проектов">
+                <span>CTT Expo</span>
+                <strong>3 проекта / 90 дней</strong>
+                <div>
+                  <b>157+</b><small>дизайн-макетов</small>
+                  <b>50 000+</b><small>POS-материалов</small>
+                </div>
+                <p>Требования → производство → подрядчики → готовность площадки</p>
               </div>
             </article>
 
