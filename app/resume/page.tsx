@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PrintResumeButton } from "@/components/print-resume-button";
 import Image from "next/image";
-import { AmbientGeometry } from "@/components/ambient-geometry";
+
 
 export const metadata: Metadata = {
   title:"Резюме — Татьяна Бабанова | Executive Assistant",
@@ -51,17 +51,9 @@ const roles = [
    ]}
 ];
 const skills = ["Поддержка собственника и генерального директора","Контроль поручений и управленческих решений","Межфункциональная координация","Подготовка аналитики и вариантов решений","Организация встреч и поездок","Подрядчики, договоры и оплаты","Подбор персонала","Оптимизация и регламентация процессов","ИИ и автоматизация административных задач"];
-const metrics = [
-  ["88%", "вопросов решала без повторного подключения собственника"],
-  ["−77%", "просроченных поручений после систематизации"],
-  ["−78,3%", "регулярных расходов на ИТ-сопровождение"],
-  ["120 → 5 мин", "время регулярной финансовой проверки в 1С"]
-];
-
 export default function ResumePage() {
   return (
     <div className="proj-site resume-site">
-      <AmbientGeometry />
       <header className="proj-nav">
         <nav className="proj-container proj-nav-inner" aria-label="Навигация по резюме">
           <a className="proj-brand" href="/">Татьяна Бабанова</a>
@@ -85,7 +77,7 @@ export default function ResumePage() {
               <p className="resume-title">Executive Assistant</p>
               <p className="resume-summary">Самостоятельно решаю рабочие и личные вопросы собственника, организую исполнителей, контролирую поручения и улучшаю бизнес-процессы.</p>
               <div className="resume-contact-list">
-                <span>Казань · Удалённо по России · Готова к командировкам</span>
+                <span>Казань · гибрид · удалённо по России · готова к командировкам</span>
                 <a href="tel:+79867233155">+7 (986) 723-31-55 ↗</a>
                 <a href="mailto:babanova595@gmail.com">babanova595@gmail.com ↗</a>
                 <a href="https://t.me/taninnik" target="_blank" rel="noreferrer">Telegram: @taninnik ↗</a>
@@ -98,12 +90,6 @@ export default function ResumePage() {
               </figure>
             </div>
           </header>
-
-          <section className="resume-metric-grid" aria-label="Главные результаты">
-            {metrics.map(([number,label])=>(
-              <div className="resume-metric" key={number}><strong>{number}</strong><p>{label}</p></div>
-            ))}
-          </section>
 
           <div className="resume-section-row">
             <section className="resume-intro-block" aria-labelledby="resume-about">
@@ -165,7 +151,7 @@ export default function ResumePage() {
       </main>
       <footer className="resume-footer">
         <div className="proj-container">
-          <div><strong>Татьяна Бабанова</strong><span>Executive Assistant · Казань / удалённо</span></div>
+          <div><strong>Татьяна Бабанова</strong><span>Executive Assistant · Казань · гибрид · удалённо по России · готова к командировкам</span></div>
           <nav aria-label="Ссылки из резюме"><a href="/">Главная</a><a href="/projects/">Проекты</a><a href="https://t.me/taninnik" target="_blank" rel="noreferrer">Telegram ↗</a></nav>
         </div>
       </footer>
