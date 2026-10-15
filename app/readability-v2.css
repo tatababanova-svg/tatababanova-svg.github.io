@@ -1,0 +1,175 @@
+
+/* Readability refinement — intentionally final stylesheet after legacy cascades. */
+/* Until a side-widget design is selected, hide low-contrast old decoration. */
+.site-ambient { display: none !important; }
+.approved-modern .ea-value::after,
+.proj-site .proj-section::after { display: none !important; }
+
+/* Main portfolio: use full width, avoid artificially short lines and centered text. */
+.approved-site.approved-modern {
+  --approved-container: min(1840px, calc(100vw - 56px));
+}
+.approved-modern .approved-nav {
+  width: min(1800px,calc(100vw - 56px));
+  justify-content: flex-start;
+  padding-inline:clamp(18px,2vw,34px);
+}
+.approved-modern .approved-desktop-nav {
+  margin-left: 0 !important;
+  justify-content: flex-start;
+  gap: clamp(5px,.55vw,14px);
+}
+.approved-modern .approved-section,
+.approved-modern .approved-contact {
+  padding-left: max(28px,calc((100vw - 1840px)/2)) !important;
+  padding-right: max(28px,calc((100vw - 1840px)/2)) !important;
+}
+.approved-modern .approved-section-head,
+.approved-modern .approved-contact-head,
+.approved-modern .approved-hero-copy {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+.approved-modern .approved-display {
+  max-width: 100% !important;
+  text-align:left;
+}
+.approved-modern .approved-hero-shell {
+  width:var(--approved-container);
+  grid-template-columns:minmax(0,1.4fr) minmax(320px,.6fr);
+  gap:clamp(30px,3vw,65px);
+}
+.approved-modern .approved-hero h1 {
+  max-width: none !important;
+  font-size:clamp(3rem,3.75vw,4.8rem);
+  line-height:1.13;
+  text-wrap:balance;
+}
+.approved-modern .approved-hero-lead {
+  max-width: 77ch !important;
+  font-size: clamp(1.48rem,1.6vw,1.75rem) !important;
+  line-height:1.62;
+}
+.approved-modern .approved-hero-statement {
+  max-width: 78ch !important;
+  font-size:clamp(1.34rem,1.43vw,1.55rem) !important;
+}
+.approved-modern .approved-hero-location {font-size:1.22rem !important;}
+.approved-modern .approved-hero-actions { gap:16px;justify-content:flex-start; }
+.approved-modern .approved-button {font-size:1.17rem;min-height:59px;}
+.approved-modern .approved-hero-stats {width:var(--approved-container);}
+.approved-modern .approved-hero-stats strong {font-size:clamp(2.05rem,2.2vw,2.65rem);}
+.approved-modern .approved-hero-stats span {font-size:1.25rem !important;}
+.approved-modern .approved-section-head {margin-bottom:clamp(33px,3.7vw,58px);}
+.approved-modern .ea-section-title {max-width: none !important;}
+.approved-modern .ea-section-lead {max-width:90ch !important; font-size:1.42rem;}
+.approved-modern :is(
+  .ea-value-card p,.ea-ai-grid p,.ea-proofs-grid p,.ea-education-block p,
+  .ea-projects-grid p,.approved-result p,.approved-method-steps p,
+  .approved-business-grid p,.approved-toolbox p,.approved-experience-copy p,
+  .approved-case-sections p,.ea-personal-list li
+) {
+  font-size: clamp(1.42rem,1.55vw,1.66rem) !important;
+  line-height:1.67 !important;
+}
+.approved-modern .ea-value-grid {gap:24px;}
+.approved-modern .ea-value-card {min-height:0;padding:clamp(32px,2.7vw,52px);}
+.approved-modern .ea-value-card h3 {font-size:clamp(1.7rem,1.8vw,2.18rem);}
+.approved-modern .ea-personal-list li {max-width:none;}
+.approved-modern .approved-result-copy,
+.approved-modern .approved-result h3,
+.approved-modern .approved-result p {
+  max-width:none !important;
+}
+.approved-modern .approved-result h3 {font-size:clamp(1.9rem,2.2vw,2.46rem);}
+.approved-modern .approved-result-primary {font-size:1.38rem !important;}
+.approved-modern .approved-method-steps li {padding:32px 46px 36px 34px;min-height:0;}
+.approved-modern .approved-method-steps h3 {max-width:none;font-size:1.62rem;}
+.approved-modern .approved-method-steps p {max-width:none !important;}
+.approved-modern .approved-case-visual {min-height:250px;}
+.approved-modern .approved-case {grid-template-columns:minmax(215px,.31fr) minmax(0,1.69fr);}
+.approved-modern .approved-case-content {padding:32px clamp(28px,2.6vw,52px);}
+.approved-modern .approved-case-head h3 {max-width:none !important;}
+.approved-modern .approved-case-sections p {max-width:100ch !important;}
+.approved-modern .approved-case-highlight p {max-width:none;font-size:1.2rem;}
+.approved-modern .approved-experience-list article {
+  grid-template-columns:minmax(175px,.33fr) minmax(0,1fr) !important;
+  column-gap:clamp(28px,4.3vw,92px);
+  row-gap:12px;
+  min-height:0;
+  align-items:start;
+  padding-block:42px;
+}
+.approved-modern .approved-experience-period {grid-column:1;grid-row:1 / span 2;font-size:1.18rem;}
+.approved-modern .approved-experience-role {grid-column:2;grid-row:1;gap:14px;}
+.approved-modern .approved-experience-copy {
+  grid-column:2 !important;
+  grid-row:2;
+  width:100%;
+  max-width:none !important;
+  gap:18px;
+}
+.approved-modern .approved-experience-copy p {
+  max-width: 96ch !important;
+  font-size:clamp(1.43rem,1.58vw,1.68rem) !important;
+  color:#233e2d !important;
+  line-height:1.68 !important;
+}
+.approved-modern .approved-experience-copy > strong {max-width: min(100%,95ch) !important;}
+.approved-modern .approved-experience-role h3 {font-size:clamp(1.82rem,2vw,2.34rem);}
+.approved-modern .approved-experience-role strong {font-size:1.37rem !important;}
+.approved-modern .approved-details-grid {max-width:100%;}
+.approved-modern .approved-toolbox p {max-width:100ch !important;}
+.approved-modern .approved-contact-copy {max-width:100% !important;}
+.approved-modern .ea-footer-message p {max-width:100ch !important;}
+
+/* Project portfolio: keep wide cards, large comfortable fonts. */
+.proj-site:not(.resume-site) .proj-container {width:min(1840px,calc(100vw - 56px));}
+.proj-site:not(.resume-site) .proj-hero h1 {max-width:none;}
+.proj-site:not(.resume-site) .proj-case dl {
+  grid-template-columns: minmax(145px,.22fr) minmax(0,1fr);
+}
+.proj-site:not(.resume-site) .proj-case dd {font-size:clamp(1.4rem,1.52vw,1.62rem);}
+.proj-site:not(.resume-site) .proj-nav-inner {justify-content:flex-start;}
+.proj-site:not(.resume-site) .proj-nav-links {margin-left:0;}
+@media(max-width:1280px) {
+  .approved-modern .approved-experience-list article {grid-template-columns:minmax(140px,.27fr) minmax(0,1fr) !important;}
+  .approved-modern .approved-case {grid-template-columns:1fr;}
+  .approved-modern .approved-hero-shell {grid-template-columns:minmax(0,1.22fr) minmax(280px,.78fr);}
+}
+@media(max-width:900px) {
+  .approved-modern .approved-hero-shell {grid-template-columns:1fr;}
+  .approved-modern .approved-experience-list article {grid-template-columns:1fr !important;row-gap:12px;}
+  .approved-modern .approved-experience-period,
+  .approved-modern .approved-experience-role,
+  .approved-modern .approved-experience-copy {
+    grid-column:1 !important;
+    grid-row:auto;
+  }
+  .approved-modern .approved-section-head {margin-inline:0 !important;}
+}
+@media(max-width:700px) {
+  .approved-site.approved-modern {--approved-container:calc(100vw - 32px);}
+  .approved-modern .approved-section,
+  .approved-modern .approved-contact {padding-inline:16px !important;}
+  .approved-modern .approved-nav {width:calc(100vw - 24px);justify-content:flex-end;}
+  .approved-modern .approved-desktop-nav {display:none;}
+  .approved-modern .mobile-menu {margin-left:auto;}
+  .approved-modern .approved-hero h1 {font-size:clamp(2.4rem,9vw,3.2rem);}
+  .approved-modern .approved-hero-lead {font-size:1.27rem !important;}
+  .approved-modern .approved-hero-statement {font-size:1.2rem !important;}
+  .approved-modern :is(
+    .ea-value-card p,.ea-ai-grid p,.ea-proofs-grid p,.ea-education-block p,
+    .ea-projects-grid p,.approved-result p,.approved-method-steps p,
+    .approved-business-grid p,.approved-toolbox p,.approved-experience-copy p,
+    .approved-case-sections p,.ea-personal-list li
+  ) {font-size:1.2rem !important;line-height:1.65 !important;}
+  .approved-modern .approved-case-content {padding:22px 12px;}
+  .approved-modern .approved-experience-copy p {font-size:1.2rem !important;}
+  .approved-modern .approved-hero-stats span {font-size:1.09rem !important;}
+  .proj-site:not(.resume-site) .proj-container {width:calc(100vw - 32px);}
+  .proj-site:not(.resume-site) .proj-case dl {grid-template-columns:1fr;}
+  .proj-site:not(.resume-site) .proj-case dd {font-size:1.16rem;}
+}
