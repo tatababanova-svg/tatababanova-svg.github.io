@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 import landing from "@/content/landing.json";
 import { MobileNavigation } from "@/components/mobile-navigation";
 import { MotionController } from "@/components/motion-controller";
-import { AmbientGeometry } from "@/components/ambient-geometry";
+import { LeftKineticGrid } from "@/components/left-kinetic-grid";
 
 function withoutTrailingPeriod(text: string) {
   return text.replace(/\.$/, "");
@@ -494,9 +494,10 @@ function ProofsSection() {
 
 export function ApprovedLanding() {
   return (
-    <div className="approved-site approved-modern" data-motion="c">
-      <MotionController motion="c" />
-      <AmbientGeometry />
+    <>
+      <LeftKineticGrid />
+      <div className="approved-site approved-modern has-kinetic-grid" data-motion="c">
+        <MotionController motion="c" />
       <div className="approved-cursor" aria-hidden="true"><span /></div>
       <SiteHeader />
       <main>
@@ -513,6 +514,7 @@ export function ApprovedLanding() {
         <ProofsSection />
         <ContactSection />
       </main>
-    </div>
+      </div>
+    </>
   );
 }
