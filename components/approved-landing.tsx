@@ -91,6 +91,7 @@ function HeroSection() {
             <a className="approved-button approved-button-secondary" href={landing.contact.resumeHref} target="_blank" rel="noreferrer" data-analytics-event="resume_pdf">
               {hero.secondaryCta} <span aria-hidden="true">↗</span>
             </a>
+            <a className="approved-button approved-button-secondary" href={landing.contact.telegramHref} target="_blank" rel="noreferrer" data-analytics-event="hero_telegram">Написать в Telegram <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -347,7 +348,7 @@ function ContactSection() {
 
       <div className="approved-contact-action" data-reveal>
         <div>
-          <span className="approved-contact-kicker">Открыта к новым проектам</span>
+          <span className="approved-contact-kicker">Открыта к работе и проектам</span>
           <h3>{contact.ctaTitle}</h3>
         </div>
         <a
@@ -474,6 +475,13 @@ function ProofsSection() {
         {proofs.items.map(item => (
           <article data-reveal key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>
         ))}
+      </div>
+      <div className="ea-education-block" data-reveal>
+        <h3>Образование и подготовка</h3>
+        <p><strong>КНИТУ, 2015</strong> — экономический факультет, коммерсант-маркетолог.</p>
+        <p><strong>2025:</strong> «Бизнес-ассистент руководителя 2.0» (школа Анны Сосновой); «ИИ-менеджмент: от хаоса к системе» (ANTIUNIVERSITY).</p>
+        <p><strong>2023:</strong> Product Manager, Университет Иннополис. <strong>2022:</strong> бизнес-разведка (РАНХиГС), маркетинг и связи с общественностью (РЭУ им. Плеханова).</p>
+        <p>Русский — родной · Английский — B1</p>
       </div>
       <p className="ea-proof-note">{proofs.closing}</p>
     </section>
