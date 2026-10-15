@@ -123,10 +123,10 @@ export default function ProjectsPage() {
       <AmbientGeometry />
       <header className="proj-nav">
         <nav className="proj-container proj-nav-inner" aria-label="Навигация по проектам">
-          <a className="proj-brand" href="/">ТАТЬЯНА <span>БАБАНОВА</span></a>
+          
           <div className="proj-nav-links">
             <a href="#internal">Внутренние</a><a href="#research">Развитие</a><a href="#commercial">Коммерческие</a>
-            <a href="/resume/">Резюме</a><a className="proj-nav-cta" href="https://t.me/taninnik" target="_blank" rel="noreferrer">Связаться ↗</a>
+            <a className="proj-nav-cta" href="https://t.me/taninnik" target="_blank" rel="noreferrer">Связаться ↗</a>
           </div>
         </nav>
       </header>
@@ -206,7 +206,7 @@ export default function ProjectsPage() {
             <div className="proj-footer-contact-link"><span>ФОРМАТ</span><strong>Удалённо по России · командировки</strong></div>
           </div>
           <nav className="proj-footer-nav" aria-label="Навигация в подвале">
-            <a href="/">Бизнес-ассистент</a><a href="#internal">Внутренние проекты</a><a href="#commercial">Коммерческие кейсы</a><a href="/resume/">Резюме</a><a href="#top">Наверх ↑</a>
+            <a href="/">Бизнес-ассистент</a><a href="#internal">Внутренние проекты</a><a href="#commercial">Коммерческие кейсы</a><a href="#top">Наверх ↑</a>
           </nav>
         </div>
       </footer>
