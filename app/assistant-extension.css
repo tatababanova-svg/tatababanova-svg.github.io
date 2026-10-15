@@ -134,3 +134,8 @@
  .proj-resume {border:0; margin:0; max-width:none; padding:0;}
  .proj-resume h2 {page-break-after:avoid;}
 }
+
+.approved-modern .ea-education-block { margin-top: 38px; padding: 30px; border-radius: 16px; border: 1px solid #dce2d9; background: #fffaf5; max-width: 1000px; }
+.approved-modern .ea-education-block h3 { font-size: clamp(1.3rem,2vw,1.8rem); margin-bottom: 14px; }
+.approved-modern .ea-education-block p { color: #4d5a50; font-size: 1.03rem; margin-top: 10px; line-height: 1.58; }
+.approved-modern .approved-hero-actions a { text-align:center; }
