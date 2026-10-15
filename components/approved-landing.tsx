@@ -86,30 +86,30 @@ function HeroSection() {
           </div>
         </div>
 
-        <figure className="approved-portrait" data-hero-motion>
-          <figcaption className="ea-portrait-title">
-            <strong>ТАТЬЯНА БАБАНОВА</strong>
-            <span className="ea-portrait-title-mark" aria-hidden="true"></span>
-          </figcaption>
-          <div className="approved-portrait-frame">
-            <Image
-              src={hero.portraitSrc}
-              alt={hero.portraitAlt}
-              fill
-              priority
-              sizes="(max-width: 820px) 92vw, (max-width: 1180px) 44vw, 40vw"
-            />
+        <div className="approved-hero-side" data-hero-motion>
+          <figure className="approved-portrait">
+            <figcaption className="ea-portrait-title">
+              <strong>ТАТЬЯНА БАБАНОВА</strong>
+            </figcaption>
+            <div className="approved-portrait-frame">
+              <Image
+                src={hero.portraitSrc}
+                alt={hero.portraitAlt}
+                fill
+                priority
+                sizes="(max-width: 820px) 92vw, (max-width: 1180px) 44vw, 40vw"
+              />
+            </div>
+          </figure>
+          <div className="approved-hero-stats" aria-label="Ключевые показатели">
+            {hero.stats.map((stat) => (
+              <article key={stat.value}>
+                <strong className="approved-numeric">{stat.value}</strong>
+                <span>{stat.label}</span>
+              </article>
+            ))}
           </div>
-        </figure>
-      </div>
-
-      <div className="approved-hero-stats" aria-label="Ключевые показатели">
-        {hero.stats.map((stat) => (
-          <article data-reveal key={stat.value}>
-            <strong className="approved-numeric">{stat.value}</strong>
-            <span>{stat.label}</span>
-          </article>
-        ))}
+        </div>
       </div>
 
     </section>
