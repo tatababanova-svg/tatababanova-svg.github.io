@@ -143,10 +143,13 @@ export default function ProjectsPage() {
               </div>
               <div className="proj-actions"><a className="proj-button" href="#internal">Смотреть кейсы ↓</a><a className="proj-button proj-button-light" href="/">Портфолио бизнес-ассистента</a></div>
             </div>
-            <figure className="proj-hero-portrait">
-              <Image src="/tatiana-babanova.jpg" alt="Татьяна Бабанова — менеджер проектов и бизнес-ассистент" fill priority sizes="(max-width: 900px) 92vw, 35vw" />
-              <figcaption>Татьяна Бабанова <span>Бизнес-ассистент · проектная координация</span></figcaption>
-            </figure>
+            <div className="proj-hero-profile">
+              <div className="proj-portrait-name">ТАТЬЯНА БАБАНОВА<span aria-hidden="true" /></div>
+              <figure className="proj-hero-portrait">
+                <Image src="/tatiana-babanova.jpg" alt="Татьяна Бабанова — бизнес-ассистент и менеджер проектов" fill priority sizes="(max-width: 900px) 92vw, 35vw" />
+                <figcaption>Бизнес-ассистент · проектная координация</figcaption>
+              </figure>
+            </div>
           </div>
         </section>
         {groups.map((group,index)=>(
