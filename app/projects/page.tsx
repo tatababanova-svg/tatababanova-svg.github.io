@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { AmbientGeometry } from "@/components/ambient-geometry";
+
 
 export const metadata: Metadata = {
   title: "Проекты и измеримые результаты — Татьяна Бабанова",
@@ -109,6 +109,42 @@ const steps = [
   ["Исполнение","Координирую участников, подрядчиков и изменения."],
   ["Результат","Организую проверку, приёмку и передачу решения бизнесу."]
 ];
+const projectApproaches = [
+  {
+    name: "Kanban",
+    subtitle: "Визуализация потока задач",
+    when: "Когда поручения поступают непрерывно, приоритеты меняются, а важнее всего видеть загрузку, сроки и незавершённую работу.",
+    practice: "Единый список, понятные статусы, ответственные, ограничения одновременно выполняемых задач и регулярная проверка задержек.",
+    example: "Подход по смыслу близок к моему опыту координации потока ИТ-задач и поручений руководителя."
+  },
+  {
+    name: "Каскадный подход (Waterfall)",
+    subtitle: "Последовательные этапы и контрольные точки",
+    when: "Когда есть фиксированная дата или согласованный результат, а ошибки в последовательности работ особенно дороги.",
+    practice: "Требования, этапы, согласования, зависимости, контроль готовности, приёмка. Изменения согласовываются с учётом влияния на сроки и бюджет.",
+    example: "Подходит для выставочных проектов, миграций и работ с заранее назначенной датой запуска."
+  },
+  {
+    name: "Гибкий подход (Agile)",
+    subtitle: "Короткие циклы и обратная связь",
+    when: "Когда требования могут уточняться, а итоговое решение полезнее проверять и улучшать частями.",
+    practice: "Приоритизация, небольшие итерации, демонстрация промежуточного результата, обратная связь и корректировка следующего шага.",
+    example: "Подходит для доработок сайтов, управленческих отчётов и цифровых инструментов по мере уточнения потребностей."
+  },
+  {
+    name: "Смешанный подход (Hybrid)",
+    subtitle: "Фиксированные вехи + гибкая работа внутри этапов",
+    when: "Когда нельзя сдвигать бюджет или дату, но материалы и отдельные решения приходится многократно уточнять.",
+    practice: "Сохраняю основные сроки, ответственных и точки приёмки, а внутри этапа организую короткие циклы согласований и изменений.",
+    example: "Подходит для мероприятий, внедрения 1С и межфункциональных проектов."
+  }
+];
+const methodologyCriteria = [
+  "Насколько определены требования и конечный результат?",
+  "Есть ли фиксированные сроки, зависимости и бюджет?",
+  "Как часто появляются новые задачи или меняются приоритеты?",
+  "Нужна ли регулярная проверка промежуточных версий?"
+];
 const roles = [
   ["Менеджер проектов","Внутренние и межфункциональные проекты, подрядчики, сроки, изменения, запуск и приёмка."],
   ["Операционный менеджер","Оптимизация процессов, отчётность, регламенты, контроль исполнения и автоматизация."],
@@ -120,7 +156,6 @@ const roles = [
 export default function ProjectsPage() {
   return (
     <div className="proj-site">
-      <AmbientGeometry />
       <header className="proj-nav">
         <nav className="proj-container proj-nav-inner" aria-label="Навигация по проектам">
           
@@ -134,17 +169,17 @@ export default function ProjectsPage() {
         <section className="proj-hero" id="top">
           <div className="proj-container proj-hero-layout">
             <div className="proj-hero-copy">
-              <span className="proj-eyebrow">Татьяна Бабанова / Проектное портфолио</span>
+              <span className="proj-eyebrow">ПРОЕКТНОЕ ПОРТФОЛИО</span>
               <h1>Проекты, процессы и измеримые результаты</h1>
               <p className="proj-lead proj-lead-strong">Превращаю задачи бизнеса в работающие решения.</p>
               <p className="proj-lead">Внутренние и межфункциональные проекты, автоматизация, исследование новых направлений, координация подрядчиков и коммерческие запуски.</p>
               <div className="proj-specialisms" aria-label="Ключевые компетенции">
                 {["Планирование и сроки","Подрядчики и бюджет","Регламенты","Автоматизация","Контроль результата"].map(item => <span key={item}>{item}</span>)}
               </div>
-              <div className="proj-actions"><a className="proj-button" href="#internal">Смотреть кейсы ↓</a><a className="proj-button proj-button-light" href="/">Портфолио бизнес-ассистента</a></div>
+              <div className="proj-actions"><a className="proj-button" href="#internal">Смотреть кейсы ↓</a></div>
             </div>
             <div className="proj-hero-profile">
-              <div className="proj-portrait-name">ТАТЬЯНА БАБАНОВА<span aria-hidden="true" /></div>
+              <div className="proj-portrait-name">ТАТЬЯНА БАБАНОВА</div>
               <figure className="proj-hero-portrait">
                 <Image src="/tatiana-babanova.jpg" alt="Татьяна Бабанова — бизнес-ассистент и менеджер проектов" fill priority sizes="(max-width: 900px) 92vw, 35vw" />
                 <figcaption>Бизнес-ассистент · проектная координация</figcaption>
@@ -162,7 +197,7 @@ export default function ProjectsPage() {
                   <article className="proj-case" id={c.slug} key={c.n}>
                     <span className="proj-case-num">КЕЙС {c.n}</span>
                     <h3>{c.title}</h3>
-                    <p className="proj-case-metric">{c.metric}</p><div className="proj-case-rule" aria-hidden="true"><span /></div>
+                    <p className="proj-case-metric">{c.metric}</p>
                     <dl>
                       <dt>Задача</dt><dd>{c.task}</dd>
                       <dt>Что сделала</dt><dd>{c.action}</dd>
@@ -183,6 +218,31 @@ export default function ProjectsPage() {
             <div className="proj-steps">{steps.map(([title,desc],i)=><article className="proj-step" key={title}><strong>{"0"+(i+1)}</strong><h3>{title}</h3><p>{desc}</p></article>)}</div>
           </div>
         </section>
+        <section className="proj-section proj-methodologies" id="methodologies" aria-labelledby="project-methodologies-title">
+          <div className="proj-container">
+            <span className="proj-eyebrow">ПОДХОД К УПРАВЛЕНИЮ</span>
+            <h2 id="project-methodologies-title">Выбираю подход под задачу, а не наоборот</h2>
+            <p className="proj-methodologies-intro">Ориентируюсь на характер проекта: непрерывный поток поручений, фиксированную дату или меняющиеся требования. Использую подходящие принципы планирования и контроля, не усложняя работу ненужными церемониями.</p>
+            <div className="proj-method-grid">
+              {projectApproaches.map((approach, index) => (
+                <article className="proj-method-card" key={approach.name}>
+                  <span className="proj-method-index">{"0" + (index + 1)}</span>
+                  <h3>{approach.name}</h3>
+                  <p className="proj-method-subtitle">{approach.subtitle}</p>
+                  <dl>
+                    <dt>Когда выбираю</dt><dd>{approach.when}</dd>
+                    <dt>Как организую</dt><dd>{approach.practice}</dd>
+                  </dl>
+                  <p className="proj-method-example">{approach.example}</p>
+                </article>
+              ))}
+            </div>
+            <div className="proj-method-decision">
+              <h3>С чего начинаю выбор</h3>
+              <ul>{methodologyCriteria.map((item)=><li key={item}>{item}</li>)}</ul>
+            </div>
+          </div>
+        </section>
         <section className="proj-section proj-section-alt" id="roles">
           <div className="proj-container">
             <span className="proj-eyebrow">Роли</span><h2>В каких задачах могу быть полезна</h2>
@@ -194,7 +254,7 @@ export default function ProjectsPage() {
         <div className="proj-container">
           <div className="proj-footer-heading">
             <div>
-              <span className="proj-footer-eyebrow">На связи · Казань / удалённо</span>
+              <span className="proj-footer-eyebrow">На связи · Казань · гибрид · удалённо</span>
               <h2>Обсудим ваши задачи?</h2>
               <p>Помогу организовать проект, наладить работу участников, сократить ручные операции и сделать результат прозрачным для руководителя.</p>
             </div>
@@ -203,7 +263,7 @@ export default function ProjectsPage() {
           <div className="proj-footer-contact-grid">
             <a className="proj-footer-contact-link" href="https://t.me/taninnik" target="_blank" rel="noreferrer"><span>НАПИСАТЬ</span><strong>Telegram: @taninnik ↗</strong></a>
             <a className="proj-footer-contact-link" href="mailto:babanova595@gmail.com"><span>ЭЛЕКТРОННАЯ ПОЧТА</span><strong>babanova595@gmail.com ↗</strong></a>
-            <div className="proj-footer-contact-link"><span>ФОРМАТ</span><strong>Удалённо по России · командировки</strong></div>
+            <div className="proj-footer-contact-link"><span>ФОРМАТ РАБОТЫ</span><strong>Казань · гибрид · удалённо по России · готова к командировкам</strong></div>
           </div>
           <nav className="proj-footer-nav" aria-label="Навигация в подвале">
             <a href="/">Бизнес-ассистент</a><a href="#internal">Внутренние проекты</a><a href="#commercial">Коммерческие кейсы</a><a href="#top">Наверх ↑</a>
