@@ -13,6 +13,7 @@ import "./mobile-editorial-final.css";
 import "./assistant-extension.css";
 import "./final-legibility.css";
 import "./readability-v2.css";
+import "./kinetic-grid.css";
 
 export const metadata: Metadata = {
   title: seo.title,
