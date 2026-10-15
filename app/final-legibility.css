@@ -314,3 +314,11 @@
   .resume-site .resume-end-panel {padding:0;border:0;}
   .resume-site .resume-end-panel dt {font-size:10pt;}
 }
+
+/* Side diagrams appear at wide desktop sizes, without overlapping the reading area. */
+@media (min-width: 1920px) {
+  .site-ambient {display:block !important;}
+  .site-ambient-art {display:block !important;width:65px;height:158px;opacity:.66;}
+  .site-ambient-art-left {left:7px;}
+  .site-ambient-art-right {right:7px;}
+}
