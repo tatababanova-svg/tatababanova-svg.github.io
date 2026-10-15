@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { AmbientGeometry } from "@/components/ambient-geometry";
 
 export const metadata: Metadata = {
   title: "Проекты и измеримые результаты — Татьяна Бабанова",
@@ -118,23 +120,33 @@ const roles = [
 export default function ProjectsPage() {
   return (
     <div className="proj-site">
+      <AmbientGeometry />
       <header className="proj-nav">
         <nav className="proj-container proj-nav-inner" aria-label="Навигация по проектам">
-          <a className="proj-brand" href="/">Татьяна Бабанова</a>
+          <a className="proj-brand" href="/">ТАТЬЯНА <span>БАБАНОВА</span></a>
           <div className="proj-nav-links">
             <a href="#internal">Внутренние</a><a href="#research">Развитие</a><a href="#commercial">Коммерческие</a>
-            <a href="/">Основное портфолио ↗</a>
+            <a href="/resume/">Резюме</a><a className="proj-nav-cta" href="https://t.me/taninnik" target="_blank" rel="noreferrer">Связаться ↗</a>
           </div>
         </nav>
       </header>
       <main>
-        <section className="proj-hero">
-          <div className="proj-container">
-            <span className="proj-eyebrow">Портфолио внутренних и специальных проектов · 2026</span>
-            <h1>Проекты, процессы и измеримые результаты</h1>
-            <p className="proj-lead">Превращаю задачи бизнеса в работающие решения. Мой опыт включает внутренние и межфункциональные проекты, оптимизацию расходов, автоматизацию, исследование новых направлений, координацию подрядчиков и коммерческие запуски.</p>
-            <p className="proj-small">Планирование · сроки · подрядчики · бюджет · анализ вариантов · регламенты · внедрение изменений · контроль результата</p>
-            <div className="proj-actions"><a className="proj-button" href="#internal">Смотреть проекты ↓</a><a className="proj-button proj-button-light" href="/">Вернуться к портфолио ассистента</a></div>
+        <section className="proj-hero" id="top">
+          <div className="proj-container proj-hero-layout">
+            <div className="proj-hero-copy">
+              <span className="proj-eyebrow">Татьяна Бабанова / Проектное портфолио</span>
+              <h1>Проекты, процессы и измеримые результаты</h1>
+              <p className="proj-lead proj-lead-strong">Превращаю задачи бизнеса в работающие решения.</p>
+              <p className="proj-lead">Внутренние и межфункциональные проекты, автоматизация, исследование новых направлений, координация подрядчиков и коммерческие запуски.</p>
+              <div className="proj-specialisms" aria-label="Ключевые компетенции">
+                {["Планирование и сроки","Подрядчики и бюджет","Регламенты","Автоматизация","Контроль результата"].map(item => <span key={item}>{item}</span>)}
+              </div>
+              <div className="proj-actions"><a className="proj-button" href="#internal">Смотреть кейсы ↓</a><a className="proj-button proj-button-light" href="/">Портфолио бизнес-ассистента</a></div>
+            </div>
+            <figure className="proj-hero-portrait">
+              <Image src="/tatiana-babanova.jpg" alt="Татьяна Бабанова — менеджер проектов и бизнес-ассистент" fill priority sizes="(max-width: 900px) 92vw, 35vw" />
+              <figcaption>Татьяна Бабанова <span>Бизнес-ассистент · проектная координация</span></figcaption>
+            </figure>
           </div>
         </section>
         {groups.map((group,index)=>(
@@ -147,7 +159,7 @@ export default function ProjectsPage() {
                   <article className="proj-case" id={c.slug} key={c.n}>
                     <span className="proj-case-num">КЕЙС {c.n}</span>
                     <h3>{c.title}</h3>
-                    <p className="proj-case-metric">{c.metric}</p>
+                    <p className="proj-case-metric">{c.metric}</p><div className="proj-case-rule" aria-hidden="true"><span /></div>
                     <dl>
                       <dt>Задача</dt><dd>{c.task}</dd>
                       <dt>Что сделала</dt><dd>{c.action}</dd>
@@ -175,13 +187,24 @@ export default function ProjectsPage() {
           </div>
         </section>
       </main>
-      <footer className="proj-footer">
+      <footer className="proj-footer" id="contacts">
         <div className="proj-container">
-          <h2>Обсудим ваши задачи?</h2>
-          <p>Могу помочь организовать новый проект, наладить работу участников, сократить ручные операции или обеспечить прозрачность исполнения.</p>
-          <p>Татьяна Бабанова · Казань · Удалённо · Готова к командировкам</p>
-          <div className="proj-actions"><a className="proj-button" href="https://t.me/taninnik" target="_blank" rel="noreferrer">Написать в Telegram ↗</a><a className="proj-button proj-button-light" href="/">Основное портфолио</a></div>
-          <p><a href="mailto:babanova595@gmail.com">babanova595@gmail.com</a></p>
+          <div className="proj-footer-heading">
+            <div>
+              <span className="proj-footer-eyebrow">На связи · Казань / удалённо</span>
+              <h2>Обсудим ваши задачи?</h2>
+              <p>Помогу организовать проект, наладить работу участников, сократить ручные операции и сделать результат прозрачным для руководителя.</p>
+            </div>
+            <figure className="proj-footer-portrait"><Image src="/tatiana-babanova.jpg" alt="Татьяна Бабанова" fill sizes="144px" /></figure>
+          </div>
+          <div className="proj-footer-contact-grid">
+            <a className="proj-footer-contact-link" href="https://t.me/taninnik" target="_blank" rel="noreferrer"><span>НАПИСАТЬ</span><strong>Telegram: @taninnik ↗</strong></a>
+            <a className="proj-footer-contact-link" href="mailto:babanova595@gmail.com"><span>ЭЛЕКТРОННАЯ ПОЧТА</span><strong>babanova595@gmail.com ↗</strong></a>
+            <div className="proj-footer-contact-link"><span>ФОРМАТ</span><strong>Удалённо по России · командировки</strong></div>
+          </div>
+          <nav className="proj-footer-nav" aria-label="Навигация в подвале">
+            <a href="/">Бизнес-ассистент</a><a href="#internal">Внутренние проекты</a><a href="#commercial">Коммерческие кейсы</a><a href="/resume/">Резюме</a><a href="#top">Наверх ↑</a>
+          </nav>
         </div>
       </footer>
     </div>
