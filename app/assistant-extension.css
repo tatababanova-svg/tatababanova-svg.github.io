@@ -3,7 +3,7 @@
 .approved-modern .approved-desktop-nav { gap: 1px; }
 .approved-modern .approved-desktop-nav a { padding-inline: 9px; font-size: .91rem; }
 .approved-modern .approved-nav { width: min(1210px, calc(100vw - 28px)); }
-.approved-modern .approved-hero-copy h1 { text-wrap: balance; max-width: 15ch; }
+.approved-modern .approved-hero-copy h1 { text-wrap: balance; max-width: 100%; font-size: clamp(2.45rem, 4.25vw, 4.05rem); line-height: 1.07; }
 .approved-modern .approved-hero-role-label { max-width: 42ch; }
 .approved-modern .approved-hero-stats span { font-size: 1.06rem; line-height: 1.46; }
 .approved-modern .approved-hero-stats article { min-height: 142px; }
