@@ -69,17 +69,9 @@ function SiteHeader() {
 
 function HeroSection() {
   const { hero } = landing;
-  const [firstName, lastName] = hero.name.split(" ");
-
   return (
     <section className="approved-hero" id="top" aria-labelledby="approved-hero-title">
       <div className="approved-hero-shell">
-        <p className="approved-hero-signature" data-hero-motion>
-          <span>{firstName}</span>
-          <span>{lastName}</span>
-          <i aria-hidden="true">Портфолио · 2026</i>
-        </p>
-
         <div className="approved-hero-copy">
           <p className="approved-hero-role-label" data-hero-motion>{hero.role}</p>
           <h1 id="approved-hero-title" data-hero-motion>{withoutTrailingPeriod(hero.title)}</h1>
@@ -98,6 +90,10 @@ function HeroSection() {
         </div>
 
         <figure className="approved-portrait" data-hero-motion>
+          <figcaption className="ea-portrait-title">
+            <strong>ТАТЬЯНА БАБАНОВА</strong>
+            <span className="ea-portrait-title-mark" aria-hidden="true"></span>
+          </figcaption>
           <div className="approved-portrait-frame">
             <Image
               src={hero.portraitSrc}
