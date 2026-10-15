@@ -11,6 +11,7 @@ import "./mobile-parity-v2.css";
 import "./editorial-refresh.css";
 import "./mobile-editorial-final.css";
 import "./assistant-extension.css";
+import "./final-legibility.css";
 
 export const metadata: Metadata = {
   title: seo.title,
