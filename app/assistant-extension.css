@@ -139,3 +139,235 @@
 .approved-modern .ea-education-block h3 { font-size: clamp(1.3rem,2vw,1.8rem); margin-bottom: 14px; }
 .approved-modern .ea-education-block p { color: #4d5a50; font-size: 1.03rem; margin-top: 10px; line-height: 1.58; }
 .approved-modern .approved-hero-actions a { text-align:center; }
+
+
+/* Accessibility and wide-screen readability update — 15 October 2026 */
+/* Open up the grid: previous legacy stylesheet constrained content to 1120-1160px. */
+.approved-site.approved-modern {
+  --approved-container: min(1600px, calc(100vw - 72px));
+  font-size: 20px;
+  line-height: 1.64;
+}
+.approved-modern .approved-section {
+  padding-right: max(36px, calc((100vw - 1600px) / 2));
+  padding-left: max(36px, calc((100vw - 1600px) / 2));
+}
+.approved-modern .approved-contact {
+  padding-right: max(36px, calc((100vw - 1600px) / 2));
+  padding-left: max(36px, calc((100vw - 1600px) / 2));
+}
+.approved-modern .approved-hero-shell,
+.approved-modern .approved-hero-stats { width: var(--approved-container); }
+.approved-modern .approved-hero-shell {
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, .75fr);
+  gap: clamp(34px, 4vw, 76px);
+}
+.approved-modern .approved-hero-copy { width: 100%; max-width: 870px; margin-inline: 0; }
+.approved-modern .approved-hero h1 { max-width: 870px; }
+.approved-modern .approved-section-head,
+.approved-modern .approved-contact-head {
+  max-width: 1320px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+.approved-modern .approved-display { max-width: 1300px; }
+.approved-modern .ea-section-title { max-width: 1300px; }
+.approved-modern .ea-section-lead { max-width: 99ch; }
+
+/* Dark, visible numbering on the light background of all six case cards. */
+.approved-modern .ea-case-art { color: #20372b !important; opacity: 1; }
+.approved-modern .ea-case-art strong,
+.approved-modern .ea-case-art span { color: #20372b !important; }
+.approved-modern .ea-case-art i { background: #54735f; }
+.approved-modern .approved-case-number {
+  color: #20372b !important;
+  font-size: 1.12rem;
+  font-weight: 850;
+}
+.approved-modern .approved-step-number,
+.approved-modern .approved-method-steps li:nth-child(even) .approved-step-number,
+.approved-modern .approved-method-steps li:nth-child(3) .approved-step-number,
+.approved-modern .approved-method-steps li:nth-child(4) .approved-step-number {
+  color: #20372b !important;
+  background: #edf4ec !important;
+  border-color: #a9bdb0 !important;
+}
+.approved-modern .approved-method-steps li:hover .approved-step-number { color: #173325 !important; }
+
+/* The burgundy operational projects strip did not belong to the site's light editorial palette. */
+.approved-modern .ea-projects {
+  background: #eaf1eb !important;
+  color: #20352b !important;
+}
+.approved-modern .ea-projects .approved-eyebrow {
+  color: #3c644a !important;
+}
+.approved-modern .ea-projects .ea-section-title,
+.approved-modern .ea-projects .ea-section-lead {
+  color: #20352b !important;
+}
+.approved-modern .ea-projects-grid article {
+  background: #fffefa;
+  border: 1px solid #cbdacb;
+  box-shadow: 0 8px 25px rgba(40, 68, 49, .035);
+}
+.approved-modern .ea-projects-grid strong { color: #244d35 !important; }
+.approved-modern .ea-projects-grid p { color: #384f40 !important; }
+.approved-modern .ea-project-link {
+  color: #fffefa !important;
+  background: #345a43 !important;
+}
+.approved-modern .ea-project-link:hover { background: #254331 !important; }
+
+/* Bring legacy typography up to the size used in new sections. No narrow ch-caps. */
+.approved-modern .approved-experience-list article {
+  grid-template-columns: minmax(160px, .28fr) minmax(275px, .64fr) minmax(0, 1.18fr);
+  gap: clamp(18px, 3vw, 48px);
+}
+.approved-modern .approved-experience-copy { max-width: none; width: 100%; }
+.approved-modern .approved-experience-copy p {
+  max-width: 85ch;
+  font-size: clamp(1.17rem, 1.25vw, 1.35rem);
+  line-height: 1.65;
+  color: #34483b !important;
+}
+.approved-modern .approved-experience-copy > strong {
+  max-width: 100%;
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+  line-height: 1.55;
+}
+.approved-modern .approved-experience-period {
+  font-size: 1rem;
+  color: #435f4c !important;
+}
+.approved-modern .approved-experience-role h3 { font-size: clamp(1.45rem, 1.9vw, 2rem); }
+.approved-modern .approved-experience-role strong { font-size: 1.13rem; }
+.approved-modern .approved-hero-stats span { font-size: 1.06rem; }
+.approved-modern .approved-case {
+  grid-template-columns: minmax(270px, .49fr) minmax(0, 1.51fr);
+}
+.approved-modern .approved-case-head h3 { max-width: 58ch; font-size: clamp(1.55rem, 2vw, 2.05rem); }
+.approved-modern .approved-case-sections p {
+  max-width: 90ch;
+  font-size: clamp(1.12rem, 1.26vw, 1.28rem);
+  line-height: 1.65;
+  color: #35493b !important;
+}
+.approved-modern .approved-case h4 { font-size: .99rem; color: #3f5947 !important; }
+.approved-modern .approved-case-tags { font-size: .95rem; color: #4d6454 !important; }
+.approved-modern .approved-case-result-content :where(p, strong, span),
+.approved-modern .approved-case-notes p { font-size: 1.06rem; line-height: 1.55; }
+.approved-modern .approved-result-copy,
+.approved-modern .approved-result p { max-width: 90ch; }
+.approved-modern .approved-result p { font-size: 1.19rem; line-height: 1.58; }
+.approved-modern .approved-result h3 { max-width: 54ch; }
+.approved-modern .approved-method-steps p,
+.approved-modern .approved-method-steps > li > strong {
+  max-width: 92ch;
+  font-size: 1.14rem;
+  line-height: 1.58;
+}
+.approved-modern .approved-method-steps h3 { max-width: 95%; font-size: 1.36rem; }
+.approved-modern .approved-business-grid p {
+  max-width: 85ch;
+  font-size: 1.12rem;
+  line-height: 1.58;
+}
+.approved-modern .approved-business-grid h4 { font-size: 1.25rem; }
+.approved-modern .approved-toolbox p { max-width: 80ch; font-size: 1.12rem; line-height: 1.63; }
+.approved-modern .approved-toolbox strong { font-size: 1.17rem; }
+.approved-modern .approved-toolbox h3 { font-size: 1.07rem; }
+.approved-modern .approved-contact-copy { max-width: 900px; }
+.approved-modern .approved-contact-copy p { max-width: 90ch; font-size: 1.13rem; line-height: 1.65; }
+.approved-modern .approved-contact-details span,
+.approved-modern .approved-contact-details p { font-size: .96rem; }
+.approved-modern .ea-value-card p,
+.approved-modern .ea-ai-grid p,
+.approved-modern .ea-proofs-grid p,
+.approved-modern .ea-education-block p { font-size: clamp(1.1rem, 1.2vw, 1.25rem); line-height: 1.65; }
+.approved-modern .ea-projects-grid p { font-size: clamp(1.07rem, 1.18vw, 1.2rem); line-height: 1.6; }
+.approved-modern .ea-personal-list li { font-size: 1.22rem; }
+.approved-modern .ea-kicker,
+.approved-modern .approved-eyebrow { font-size: .97rem; }
+
+/* Project page: spacious columns and readable details on desktop monitors. */
+.proj-site { font-size: 20px; line-height: 1.67; }
+.proj-container { width: min(1660px, calc(100% - 72px)); }
+.proj-hero h1 { max-width: 1370px; }
+.proj-lead { max-width: 1280px; font-size: clamp(1.2rem, 1.65vw, 1.47rem); }
+.proj-small { max-width: 1280px; font-size: 1.08rem; }
+.proj-section { padding-top: clamp(75px, 6vw, 108px); padding-bottom: clamp(75px, 6vw, 108px); }
+.proj-section h2 { max-width: 1450px; }
+.proj-grid { gap: clamp(18px, 1.7vw, 28px); }
+.proj-case { padding: clamp(28px, 3vw, 45px); }
+.proj-case h3 { font-size: clamp(1.8rem, 2.15vw, 2.35rem); line-height: 1.25; }
+.proj-case-num, .proj-eyebrow { font-size: .96rem; color: #345c43; }
+.proj-case-metric { font-size: 1.13rem; line-height: 1.5; }
+.proj-case dt { margin-top: 19px; font-size: 1.08rem; }
+.proj-case dd { font-size: 1.07rem; line-height: 1.68; color: #354d3d; }
+.proj-note { max-width: 1300px; font-size: 1.04rem; }
+.proj-step h3 { font-size: 1.48rem; }
+.proj-step p { font-size: 1.07rem; line-height: 1.64; }
+.proj-role h3 { font-size: 1.4rem; }
+.proj-role p { font-size: 1.09rem; line-height: 1.65; }
+.proj-nav-links { font-size: .97rem; }
+.proj-footer p { max-width: 1150px; font-size: 1.08rem; }
+
+/* Tablets: use the full viewport minus comfortable gutters. */
+@media (max-width: 1024px) {
+  .approved-site.approved-modern { --approved-container: calc(100vw - 44px); font-size: 19px; }
+  .approved-modern .approved-section,
+  .approved-modern .approved-contact { padding-left: 22px; padding-right: 22px; }
+  .approved-modern .approved-experience-list article {
+    grid-template-columns: minmax(145px, .31fr) minmax(0, 1fr);
+    gap: 16px 24px;
+  }
+  .approved-modern .approved-experience-copy { grid-column: 2; }
+  .approved-modern .approved-case { grid-template-columns: 1fr; }
+  .approved-modern .approved-case-visual { min-height: 210px; }
+  .approved-modern .ea-projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .proj-container { width: calc(100% - 44px); }
+}
+@media (max-width: 700px) {
+  .approved-site.approved-modern { --approved-container: calc(100vw - 32px); font-size: 18px; }
+  .approved-modern .approved-section,
+  .approved-modern .approved-contact { padding-left: 16px; padding-right: 16px; }
+  .approved-modern .approved-section-head,
+  .approved-modern .approved-contact-head { max-width: 100%; width: 100%; }
+  .approved-modern .approved-hero-shell { width: var(--approved-container); grid-template-columns: 1fr; }
+  .approved-modern .approved-hero h1 { font-size: clamp(2rem, 8.7vw, 2.8rem); max-width: 100%; }
+  .approved-modern .approved-experience-list article { grid-template-columns: 1fr; }
+  .approved-modern .approved-experience-copy { grid-column: auto; }
+  .approved-modern .approved-experience-copy p,
+  .approved-modern .approved-case-sections p,
+  .approved-modern .approved-method-steps p,
+  .approved-modern .approved-business-grid p { max-width: 100%; font-size: 1.08rem; line-height: 1.6; }
+  .approved-modern .approved-case-head h3 { font-size: 1.42rem; }
+  .approved-modern .approved-case-content { padding: 22px 8px 14px; }
+  .approved-modern .ea-projects-grid { grid-template-columns: 1fr; }
+  .approved-modern .ea-projects-grid p,
+  .approved-modern .ea-value-card p,
+  .approved-modern .ea-ai-grid p,
+  .approved-modern .ea-proofs-grid p,
+  .approved-modern .ea-education-block p { font-size: 1.08rem; }
+  .approved-modern .approved-hero-stats span { font-size: .99rem; }
+  .proj-site { font-size: 18px; }
+  .proj-container { width: calc(100% - 32px); }
+  .proj-hero { padding: 64px 0; }
+  .proj-hero h1 { font-size: clamp(2.2rem, 9.3vw, 3.1rem); }
+  .proj-lead { font-size: 1.16rem; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-case { padding: 25px 22px; }
+  .proj-case h3 { font-size: 1.6rem; }
+  .proj-case dd { font-size: 1.02rem; line-height: 1.65; }
+  .proj-case-metric { font-size: 1.07rem; }
+  .proj-step p,
+  .proj-role p { font-size: 1.02rem; }
+}
+/* Retain the existing compact printable resume layout on paper. */
+@media print {
+  .proj-resume { max-width: none; margin: 0; }
+  .proj-resume p, .proj-resume li { font-size: .95rem; }
+}
