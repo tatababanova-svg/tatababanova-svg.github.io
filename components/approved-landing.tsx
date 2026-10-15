@@ -55,7 +55,7 @@ function SiteHeader() {
 
   return (
     <header className="approved-nav">
-      <a href="#top" className="ea-header-brand" aria-label="Татьяна Бабанова — наверх">ТАТЬЯНА <span>БАБАНОВА</span></a>
+      
       <nav className="approved-desktop-nav" aria-label="Основная навигация">
         {landing.navigation.map((item) => (
           <a href={`#${item.target}`} data-nav-target={item.target} key={item.target}>{item.label}</a>
@@ -81,9 +81,6 @@ function HeroSection() {
           <div className="approved-hero-actions" data-hero-motion>
             <a className="approved-button approved-button-primary" href="#cases" data-analytics-event="hero_cases">
               {hero.primaryCta}
-            </a>
-            <a className="approved-button approved-button-secondary" href={landing.contact.resumeHref} target="_blank" rel="noreferrer" data-analytics-event="resume_pdf">
-              {hero.secondaryCta} <span aria-hidden="true">↗</span>
             </a>
             <a className="approved-button approved-button-secondary" href={landing.contact.telegramHref} target="_blank" rel="noreferrer" data-analytics-event="hero_telegram">Написать в Telegram <span aria-hidden="true">↗</span></a>
           </div>
@@ -379,7 +376,6 @@ function ContactSection() {
           <span>Формат работы</span>
           <p>{contact.location}</p>
         </div>
-        <a className="approved-contact-resume" id="pdf" href={contact.resumeHref} target="_blank" rel="noreferrer" data-analytics-event="resume_pdf">{contact.resumeCta} <span aria-hidden="true">↗</span></a>
       </address>
 
       <div className="approved-footer-end ea-footer-end">
@@ -387,7 +383,6 @@ function ContactSection() {
         <nav aria-label="Навигация в подвале" className="ea-footer-links">
           <a href="#cases">Кейсы бизнес-ассистента</a>
           <a href="/projects/">Проекты</a>
-          <a href="/resume/">Резюме</a>
           <a href="#top">Наверх ↑</a>
         </nav>
       </div>
