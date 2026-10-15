@@ -12,6 +12,7 @@ import "./editorial-refresh.css";
 import "./mobile-editorial-final.css";
 import "./assistant-extension.css";
 import "./final-legibility.css";
+import "./readability-v2.css";
 
 export const metadata: Metadata = {
   title: seo.title,
