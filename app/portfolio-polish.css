@@ -30,7 +30,7 @@
     padding-inline:var(--final-gutter) !important;
   }
   .approved-modern.has-kinetic-grid .approved-hero-shell {
-    width:min(var(--portfolio-max),calc(100% - 2 * var(--final-gutter))) !important;
+    width:min(var(--portfolio-max),calc(100% - 96px)) !important;
     max-width:var(--portfolio-max) !important;
     margin-inline:auto !important;
     padding:0 !important;
