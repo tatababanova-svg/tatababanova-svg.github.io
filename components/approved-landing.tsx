@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import landing from "@/content/landing.json";
 import { MobileNavigation } from "@/components/mobile-navigation";
 import { MotionController } from "@/components/motion-controller";
+import { AmbientGeometry } from "@/components/ambient-geometry";
 
 function withoutTrailingPeriod(text: string) {
   return text.replace(/\.$/, "");
@@ -54,6 +55,7 @@ function SiteHeader() {
 
   return (
     <header className="approved-nav">
+      <a href="#top" className="ea-header-brand" aria-label="Татьяна Бабанова — наверх">ТАТЬЯНА <span>БАБАНОВА</span></a>
       <nav className="approved-desktop-nav" aria-label="Основная навигация">
         {landing.navigation.map((item) => (
           <a href={`#${item.target}`} data-nav-target={item.target} key={item.target}>{item.label}</a>
@@ -341,9 +343,15 @@ function ContactSection() {
         <DisplayTitle id="approved-contact-title" lines={contact.titleLines} />
       </div>
 
-      <div className="approved-contact-copy" data-reveal>
-        <p><InlineEmphasis text={contact.text} phrase={contact.textEmphasis} /></p>
-        <p><InlineEmphasis text={contact.role} phrase={contact.roleEmphasis} /></p>
+      <div className="approved-contact-copy ea-contact-story" data-reveal>
+        <figure className="ea-footer-portrait">
+          <Image src="/tatiana-babanova.jpg" alt="Татьяна Бабанова" fill sizes="(max-width: 700px) 128px, 180px" />
+        </figure>
+        <div className="ea-footer-message">
+          <p className="ea-footer-name">Татьяна Бабанова</p>
+          <p><InlineEmphasis text={contact.text} phrase={contact.textEmphasis} /></p>
+          <p><InlineEmphasis text={contact.role} phrase={contact.roleEmphasis} /></p>
+        </div>
       </div>
 
       <div className="approved-contact-action" data-reveal>
@@ -378,9 +386,14 @@ function ContactSection() {
         <a className="approved-contact-resume" id="pdf" href={contact.resumeHref} target="_blank" rel="noreferrer" data-analytics-event="resume_pdf">{contact.resumeCta} <span aria-hidden="true">↗</span></a>
       </address>
 
-      <div className="approved-footer-end">
-        <span>© 2026</span>
-        <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+      <div className="approved-footer-end ea-footer-end">
+        <span>© 2026 · Татьяна Бабанова</span>
+        <nav aria-label="Навигация в подвале" className="ea-footer-links">
+          <a href="#cases">Кейсы бизнес-ассистента</a>
+          <a href="/projects/">Проекты</a>
+          <a href="/resume/">Резюме</a>
+          <a href="#top">Наверх ↑</a>
+        </nav>
       </div>
     </footer>
   );
@@ -492,6 +505,7 @@ export function ApprovedLanding() {
   return (
     <div className="approved-site approved-modern" data-motion="c">
       <MotionController motion="c" />
+      <AmbientGeometry />
       <div className="approved-cursor" aria-hidden="true"><span /></div>
       <SiteHeader />
       <main>
