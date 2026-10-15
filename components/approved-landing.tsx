@@ -41,34 +41,9 @@ function HeroFlow() {
 }
 
 function CaseMotionWidget({ number }: { number: string }) {
-  if (number === "01") {
-    return (
-      <div className="approved-case-widget approved-cost-widget" aria-hidden="true">
-        <span><i />300</span>
-        <span><i />65</span>
-      </div>
-    );
-  }
-
-  if (number === "02") {
-    return (
-      <div className="approved-case-widget approved-migration-widget" aria-hidden="true">
-        <span /><i /><span /><i /><span />
-      </div>
-    );
-  }
-
-  if (number === "03") {
-    return (
-      <div className="approved-case-widget approved-deadline-widget" aria-hidden="true">
-        <span>−14</span><i /><b>0</b>
-      </div>
-    );
-  }
-
   return (
-    <div className="approved-case-widget approved-parallel-widget" aria-hidden="true">
-      <span><i /></span><span><i /></span><span><i /></span>
+    <div className="ea-case-art" aria-hidden="true">
+      <span>КЕЙС</span><strong>{number}</strong><i />
     </div>
   );
 }
@@ -230,7 +205,7 @@ function CasesSection() {
 
       <div className="approved-case-list">
         {cases.items.map((item) => (
-          <article className="approved-case" data-reveal key={item.number}>
+          <article className="approved-case" id={"case-" + item.number} data-reveal key={item.number}>
             <div className="approved-case-visual" aria-hidden="true">
               <CaseMotionWidget number={item.number} />
               <div className="approved-case-highlight">
@@ -410,6 +385,101 @@ function ContactSection() {
   );
 }
 
+
+function ValueSection() {
+  const { value } = landing;
+  return (
+    <section className="approved-section ea-section ea-value" id="value" aria-labelledby="ea-value-title" data-motion-section>
+      <div className="approved-section-head" data-reveal>
+        <Eyebrow>{value.label}</Eyebrow>
+        <DisplayTitle id="ea-value-title" lines={value.titleLines} />
+      </div>
+      <div className="ea-value-grid">
+        {value.items.map((item, index) => (
+          <article className="ea-value-card" data-reveal key={item.title}>
+            <span className="ea-kicker">{"0" + (index + 1)}</span>
+            <h3>{item.title}</h3><p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function PersonalSection() {
+  const { personal } = landing;
+  return (
+    <section className="approved-section ea-section ea-personal" id="personal" aria-labelledby="ea-personal-title" data-motion-section>
+      <div className="ea-personal-copy" data-reveal>
+        <Eyebrow>{personal.label}</Eyebrow>
+        <h2 id="ea-personal-title">{personal.title}</h2><p>{personal.text}</p>
+      </div>
+      <ul className="ea-personal-list">
+        {personal.items.map((item) => <li data-reveal key={item}>{item}</li>)}
+      </ul>
+    </section>
+  );
+}
+
+function ProjectsTeaserSection() {
+  const { projectsTeaser } = landing;
+  return (
+    <section className="approved-section ea-section ea-projects" id="projects" aria-labelledby="ea-projects-title" data-motion-section>
+      <div className="approved-section-head" data-reveal>
+        <Eyebrow>{projectsTeaser.label}</Eyebrow>
+        <h2 id="ea-projects-title" className="ea-section-title">{projectsTeaser.title}</h2>
+        <p className="ea-section-lead">{projectsTeaser.text}</p>
+      </div>
+      <div className="ea-projects-grid">
+        {projectsTeaser.items.map(item => (
+          <article data-reveal key={item.value}>
+            <strong>{item.value}</strong><p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+      <a className="ea-project-link" href={projectsTeaser.href}>
+        {projectsTeaser.cta}<span aria-hidden="true">↗</span>
+      </a>
+    </section>
+  );
+}
+
+function AISection() {
+  const { ai } = landing;
+  return (
+    <section className="approved-section ea-section ea-ai" id="ai" aria-labelledby="ea-ai-title" data-motion-section>
+      <div className="approved-section-head" data-reveal>
+        <Eyebrow>{ai.label}</Eyebrow>
+        <h2 id="ea-ai-title" className="ea-section-title">{ai.title}</h2>
+        <p className="ea-section-lead">{ai.intro}</p>
+      </div>
+      <div className="ea-ai-grid">
+        {ai.items.map(item => (
+          <article data-reveal key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ProofsSection() {
+  const { proofs } = landing;
+  return (
+    <section className="approved-section ea-section ea-proofs" id="proofs" aria-labelledby="ea-proofs-title" data-motion-section>
+      <div className="approved-section-head" data-reveal>
+        <Eyebrow>{proofs.label}</Eyebrow>
+        <h2 id="ea-proofs-title" className="ea-section-title">{proofs.title}</h2>
+      </div>
+      <div className="ea-proofs-grid">
+        {proofs.items.map(item => (
+          <article data-reveal key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>
+        ))}
+      </div>
+      <p className="ea-proof-note">{proofs.closing}</p>
+    </section>
+  );
+}
+
 export function ApprovedLanding() {
   return (
     <div className="approved-site approved-modern" data-motion="c">
@@ -418,11 +488,16 @@ export function ApprovedLanding() {
       <SiteHeader />
       <main>
         <HeroSection />
+        <ValueSection />
         <ResultsSection />
-        <MethodSection />
         <CasesSection />
+        <PersonalSection />
+        <ProjectsTeaserSection />
+        <MethodSection />
+        <AISection />
         <ExperienceSection />
         <DetailsSection />
+        <ProofsSection />
         <ContactSection />
       </main>
     </div>
