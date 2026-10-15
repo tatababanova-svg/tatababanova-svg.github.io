@@ -61,16 +61,17 @@ export function LeftKineticGrid() {
       if (active === lastIndex) return;
       clearHot();
       lastIndex = active;
-      const row = Math.floor(active / COLUMNS);
-      const col = active % COLUMNS;
+      const columns = window.matchMedia("(min-width: 768px) and (max-width: 1199px)").matches ? 4 : COLUMNS;
+      const row = Math.floor(active / columns);
+      const col = active % columns;
       for (let dy = -2; dy <= 2; dy++) {
         for (let dx = -2; dx <= 2; dx++) {
           const dist = Math.abs(dx) + Math.abs(dy);
           if (dist > 3) continue;
           const y = row + dy;
           const x = col + dx;
-          if (x < 0 || x >= COLUMNS || y < 0) continue;
-          const node = cells[y * COLUMNS + x];
+          if (x < 0 || x >= columns || y < 0) continue;
+          const node = cells[y * columns + x];
           if (node) node.dataset.hot = dist <= 1 ? "strong" : "near";
         }
       }
