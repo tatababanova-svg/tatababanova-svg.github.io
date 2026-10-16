@@ -20,8 +20,8 @@
   }
   .approved-modern.has-kinetic-grid .approved-section,
   .approved-modern.has-kinetic-grid .approved-contact {
-    padding-left:max(7.5%,calc((100% - 1440px)/2)) !important;
-    padding-right:max(7.5%,calc((100% - 1440px)/2)) !important;
+    padding-left:7.5% !important;
+    padding-right:7.5% !important;
   }
   .approved-modern.has-kinetic-grid .approved-hero-shell {
     width:85% !important;
