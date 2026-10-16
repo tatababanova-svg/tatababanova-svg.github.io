@@ -1,25 +1,18 @@
-"use client";
-
-import type { MouseEvent } from "react";
-
 type MobileNavigationProps = {
   items: string[];
   targets: string[];
 };
 
+/**
+ * Always-visible mobile navigation.
+ * Avoid a drop-down that covers the first screen and prevents scanning.
+ */
 export function MobileNavigation({ items, targets }: MobileNavigationProps) {
-  const closeMenu = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.currentTarget.closest("details")?.removeAttribute("open");
-  };
-
   return (
-    <details className="mobile-menu">
-      <summary>Меню <span aria-hidden="true">+</span></summary>
-      <nav aria-label="Мобильная навигация">
-        {items.map((item, index) => (
-          <a key={item} href={`#${targets[index]}`} onClick={closeMenu}>{item}</a>
-        ))}
-      </nav>
-    </details>
+    <nav className="mobile-direct-nav" aria-label="Навигация по портфолио">
+      {items.map((item, index) => (
+        <a key={targets[index]} href={`#${targets[index]}`}>{item}</a>
+      ))}
+    </nav>
   );
 }
