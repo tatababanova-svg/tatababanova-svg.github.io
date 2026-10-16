@@ -76,4 +76,14 @@
     max-width: 1408px !important;
     margin-inline: auto !important;
   }
+
+  /* Keep text 3 mm (~11 px) farther from the left motion rail.
+     Only desktop text moves: rail geometry and right margin are unchanged. */
+  .approved-modern.has-kinetic-grid .approved-section,
+  .approved-modern.has-kinetic-grid .approved-contact {
+    padding-left: calc(max(64px, calc((100% - 1408px) / 2)) + 11px) !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-hero-copy {
+    padding-left: 11px !important;
+  }
 }
