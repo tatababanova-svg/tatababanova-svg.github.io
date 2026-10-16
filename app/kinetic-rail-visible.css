@@ -1,0 +1,151 @@
+/* Kinetic grid visibility fix — genuine left rail on every screen width.
+   Overrides the previous horizontal mobile banner in balanced-responsive-v3.css. */
+
+/* Keep the chosen motion element on the assistant homepage and above layout background. */
+body > .left-kinetic-grid {
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  z-index:90 !important;
+}
+@media (min-width:768px) {
+  body > .left-kinetic-grid {
+    position:fixed !important;
+    top:0 !important;
+    bottom:0 !important;
+    left:0 !important;
+    right:auto !important;
+    height:100dvh !important;
+    width:var(--kg-rail-width) !important;
+    border-radius:0 !important;
+    background:linear-gradient(160deg,#17442e,#285c3c 55%,#143b28) !important;
+    border-top:0 !important;
+    border-left:0 !important;
+    border-bottom:0 !important;
+    border-right:2px solid #83b88c !important;
+    box-shadow:8px 0 28px rgba(10,54,27,.12) !important;
+    pointer-events:auto !important;
+  }
+  body > .left-kinetic-grid .kg-grid {
+    display:grid !important;
+    height:100% !important;
+  }
+}
+/* On phones it was mistakenly rendered as a horizontal strip.
+   Use a slim, full-height, vertical rail instead. */
+@media (max-width:767px) {
+  :root { --kg-phone-width:clamp(34px,11vw,46px); }
+  body > .left-kinetic-grid {
+    position:fixed !important;
+    left:0 !important;
+    right:auto !important;
+    top:0 !important;
+    bottom:0 !important;
+    width:var(--kg-phone-width) !important;
+    height:100dvh !important;
+    min-height:100vh !important;
+    margin:0 !important;
+    border:0 !important;
+    border-right:1px solid #75a683 !important;
+    border-radius:0 !important;
+    background:linear-gradient(170deg,#1d4a32,#2e6946 54%,#16432e) !important;
+    box-shadow:3px 0 12px rgba(22,71,40,.14) !important;
+    pointer-events:none !important;
+    overflow:hidden !important;
+    isolation:isolate !important;
+  }
+  body > .left-kinetic-grid::before {
+    background:linear-gradient(180deg,rgba(249,255,248,.08),transparent 26%,rgba(10,55,26,.08)) !important;
+  }
+  body > .left-kinetic-grid .kg-grid {
+    display:grid !important;
+    position:absolute !important;
+    inset:-24px 0 -24px 0 !important;
+    width:100% !important;
+    height:calc(100% + 48px) !important;
+    margin:0 !important;
+    padding:8px 3px !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    grid-auto-rows:15px !important;
+    align-content:start !important;
+    gap:4px !important;
+    overflow:hidden !important;
+    transform:translate3d(0,var(--kg-scroll-y),0) !important;
+    will-change:transform;
+  }
+  body > .left-kinetic-grid .kg-cell,
+  body > .left-kinetic-grid .kg-cell:nth-child(n+25) {
+    display:block !important;
+    min-width:0 !important;
+    border-radius:4px !important;
+    transform:none !important;
+    visibility:visible !important;
+    opacity:1 !important;
+  }
+  body > .left-kinetic-grid .kg-tile {
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    border-radius:4px !important;
+    border:1px solid rgba(222,255,224,.48) !important;
+    background:linear-gradient(150deg,#bcdfb7,#5aab75) !important;
+    box-shadow:0 1px 5px rgba(7,39,19,.16) !important;
+    opacity:.95 !important;
+    animation:kg-wave 7s ease-in-out infinite !important;
+    animation-delay:var(--kg-delay) !important;
+  }
+  body > .left-kinetic-grid .kg-cell:nth-child(5n) .kg-tile {
+    background:linear-gradient(145deg,#d7f0cf,#a1d3aa) !important;
+  }
+  body > .left-kinetic-grid .kg-cell:nth-child(7n) .kg-tile {
+    background:linear-gradient(145deg,#4a9c66,#276841) !important;
+  }
+  body > .left-kinetic-grid .kg-bottom-fade,
+  body > .left-kinetic-grid .kg-glow { display:none !important; }
+
+  /* The rail is outside the page, so reserve exactly its width within
+     the main root, keeping cases and navigation out of the rail. */
+  .approved-site.approved-modern.has-kinetic-grid {
+    position:relative !important;
+    margin-left:var(--kg-phone-width) !important;
+    width:calc(100% - var(--kg-phone-width)) !important;
+    max-width:calc(100% - var(--kg-phone-width)) !important;
+    overflow:visible !important;
+    --approved-container:calc(100% - 18px) !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-nav {
+    left:8px !important;
+    right:8px !important;
+    width:calc(100% - 16px) !important;
+    max-width:none !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-hero {
+    padding-top:119px !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-hero-shell {
+    width:calc(100% - 18px) !important;
+    margin-inline:9px !important;
+    max-width:none !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-section,
+  .approved-modern.has-kinetic-grid .approved-contact {
+    padding-inline:9px !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-nav .mobile-direct-nav {
+    gap:4px !important;
+  }
+  .approved-modern.has-kinetic-grid .mobile-direct-nav a {
+    padding:8px 2px !important;
+    font-size:clamp(10.5px,2.95vw,12.5px) !important;
+    letter-spacing:-.01em;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  body > .left-kinetic-grid .kg-grid {
+    transform:none !important;
+    will-change:auto !important;
+  }
+  body > .left-kinetic-grid .kg-tile {
+    animation:none !important;
+  }
+}
