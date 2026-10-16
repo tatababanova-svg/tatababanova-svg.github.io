@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
 
-const COLUMNS = 6;
-const CELL_COUNT = 270;
+const COLUMNS = 8;
+const CELL_COUNT = 640;
 const CELLS = Array.from({ length: CELL_COUNT }, (_, index) => ({
   index,
   row: Math.floor(index / COLUMNS),
@@ -16,7 +16,7 @@ const CELLS = Array.from({ length: CELL_COUNT }, (_, index) => ({
  * Scroll moves the geometric field; mouse proximity activates neighboring tiles.
  * No copy, personal data, or inaccessible vertical captions.
  */
-export function LeftKineticGrid() {
+export function LeftKineticGrid({ side = "left" }: { side?: "left" | "right" }) {
   const railRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export function LeftKineticGrid() {
       if (active === lastIndex) return;
       clearHot();
       lastIndex = active;
-      const columns = window.matchMedia("(min-width: 768px) and (max-width: 1199px)").matches ? 4 : COLUMNS;
+      const columns = Math.max(1, window.getComputedStyle(grid).gridTemplateColumns.trim().split(/\s+/).length);
       const row = Math.floor(active / columns);
       const col = active % columns;
       for (let dy = -2; dy <= 2; dy++) {
@@ -95,7 +95,7 @@ export function LeftKineticGrid() {
   }, []);
 
   return (
-    <aside className="left-kinetic-grid" ref={railRef} aria-hidden="true">
+    <aside className={`left-kinetic-grid${side === "right" ? " right-kinetic-grid" : ""}`} ref={railRef} aria-hidden="true">
       <div className="kg-glow" />
       <div className="kg-grid">
         {CELLS.map(({index, row, col}) => (

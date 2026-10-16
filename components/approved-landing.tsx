@@ -495,7 +495,8 @@ function ProofsSection() {
 export function ApprovedLanding() {
   return (
     <>
-      <LeftKineticGrid />
+      <LeftKineticGrid side="left" />
+      <LeftKineticGrid side="right" />
       <div className="approved-site approved-modern has-kinetic-grid" data-motion="c">
         <MotionController motion="c" />
       <div className="approved-cursor" aria-hidden="true"><span /></div>
