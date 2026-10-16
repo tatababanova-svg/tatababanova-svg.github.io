@@ -1,0 +1,244 @@
+/* Balanced layout v3 — 15% narrower on desktop, calmer kinetic grid, mobile nav always visible. */
+/* Keep the selected kinetic grid present on desktop and tablets. */
+@media (min-width:768px) {
+  .left-kinetic-grid {
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    z-index:90 !important;
+    position:fixed !important;
+  }
+  .left-kinetic-grid .kg-grid {display:grid !important;}
+}
+.approved-modern .mobile-direct-nav {display:none;}
+/* Center reading area by reducing its footprint by roughly 15%, rather than shrinking text. */
+@media (min-width:1200px) {
+  .approved-site.approved-modern.has-kinetic-grid {
+    --reading-inset:7.5%;
+    --approved-container:min(1440px,85%);
+  }
+  .approved-modern.has-kinetic-grid .approved-section,
+  .approved-modern.has-kinetic-grid .approved-contact {
+    padding-left:max(7.5%,calc((100% - 1440px)/2)) !important;
+    padding-right:max(7.5%,calc((100% - 1440px)/2)) !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-hero-shell {
+    width:85% !important;
+    max-width:1440px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-nav {
+    left:calc(var(--kg-rail-width) + 7.5vw) !important;
+    max-width:calc(85vw - var(--kg-rail-width)) !important;
+  }
+  .approved-modern .approved-section-head,
+  .approved-modern .approved-display,
+  .approved-modern .ea-section-title {max-width:100% !important;}
+  .proj-site:not(.resume-site) .proj-container,
+  .resume-site .proj-container,
+  .resume-site .proj-resume {
+    width:85% !important;
+    max-width:1440px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+  .proj-site:not(.resume-site) .proj-nav {right:7.5% !important;}
+}
+/* Tablet maintains enough width for readable content alongside the rail. */
+@media (min-width:768px) and (max-width:1199px) {
+  .approved-modern.has-kinetic-grid .approved-nav {width:max-content !important;max-width:calc(100vw - 128px) !important;}
+  .approved-modern.has-kinetic-grid .approved-section,
+  .approved-modern.has-kinetic-grid .approved-contact {padding-left:28px !important;padding-right:28px !important;}
+  .approved-modern.has-kinetic-grid .approved-hero-shell {
+    width:calc(100% - 56px) !important;
+    margin-left:28px !important;
+    margin-right:28px !important;
+  }
+  .proj-site .proj-container,
+  .resume-site .proj-resume {width:calc(100% - 56px) !important;max-width:none !important;margin-inline:28px !important;}
+}
+/* Phone: show navigation directly, never via a dropdown that covers the page. */
+@media (max-width:767px) {
+  .approved-modern.has-kinetic-grid .approved-nav {
+    position:absolute !important;
+    top:12px !important;
+    left:12px !important;
+    right:12px !important;
+    bottom:auto !important;
+    width:calc(100% - 24px) !important;
+    max-width:none !important;
+    min-height:0 !important;
+    padding:0 !important;
+    display:block !important;
+    border:none !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    backdrop-filter:none !important;
+    z-index:150 !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-nav .mobile-direct-nav {
+    display:grid !important;
+    width:100% !important;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-auto-rows:minmax(35px,auto);
+    gap:6px;
+    align-items:stretch;
+    margin:0 !important;
+    padding:0 !important;
+  }
+  .approved-modern .mobile-direct-nav a {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    min-width:0;
+    padding:7px 3px;
+    font-family:"Golos Text","Segoe UI",sans-serif;
+    font-size:clamp(12px,3.5vw,14px) !important;
+    line-height:1.25 !important;
+    font-weight:750;
+    color:#214732 !important;
+    background:#fdfefa;
+    border:1px solid #cadacb;
+    border-radius:9px;
+    text-decoration:none;
+    box-shadow:0 2px 6px rgba(17,55,31,.04);
+    overflow-wrap:anywhere;
+  }
+  .approved-modern .mobile-direct-nav a:active,
+  .approved-modern .mobile-direct-nav a:focus-visible {
+    background:#dcebdd !important;
+    border-color:#609a72 !important;
+    outline:2px solid #3f8257;
+    outline-offset:1px;
+  }
+  .approved-modern.has-kinetic-grid .approved-nav .mobile-menu {display:none !important;}
+  .approved-modern.has-kinetic-grid .approved-nav .approved-desktop-nav {display:none !important;}
+  /* Kinetic mosaic now a soft light motion accent, not a bold arcade-like banner. */
+  .left-kinetic-grid {
+    display:block !important;
+    position:absolute !important;
+    top:109px !important;
+    left:12px !important;
+    right:12px !important;
+    bottom:auto !important;
+    width:calc(100% - 24px) !important;
+    height:47px !important;
+    background:linear-gradient(95deg,#e7efe6,#d9e9dd 40%,#eef5eb) !important;
+    border:1px solid #d0ded2 !important;
+    border-radius:11px !important;
+    box-shadow:none !important;
+    pointer-events:none !important;
+    z-index:4 !important;
+    isolation:isolate;
+  }
+  .left-kinetic-grid::before {
+    background:linear-gradient(90deg,rgba(245,249,244,.65),transparent 19%,transparent 81%,rgba(245,249,244,.65)) !important;
+  }
+  .left-kinetic-grid .kg-grid {
+    display:grid !important;
+    grid-template-columns:repeat(12,minmax(0,1fr)) !important;
+    grid-auto-rows:13px !important;
+    align-content:center !important;
+    gap:5px !important;
+    padding:6px 12px !important;
+    overflow:hidden !important;
+  }
+  .left-kinetic-grid .kg-cell {border-radius:3px !important;transform:none !important;will-change:auto;}
+  .left-kinetic-grid .kg-cell:nth-child(n+25){display:none !important;}
+  .left-kinetic-grid .kg-tile {
+    border-radius:3px !important;
+    background:linear-gradient(140deg,#c4dec9,#79a98b) !important;
+    border:1px solid rgba(75,138,93,.32) !important;
+    box-shadow:none !important;
+    opacity:.82;
+    animation-duration:9s !important;
+  }
+  .left-kinetic-grid .kg-cell:nth-child(5n) .kg-tile {background:linear-gradient(135deg,#ecf5e8,#a7cdb0) !important;}
+  .left-kinetic-grid .kg-cell:nth-child(7n) .kg-tile {background:linear-gradient(135deg,#95bea0,#4c8661) !important;}
+  .left-kinetic-grid .kg-glow,.left-kinetic-grid .kg-bottom-fade {display:none !important;}
+  /* Navigation + mosaic fit above the content instead of increasing scroll dead space. */
+  .approved-modern.has-kinetic-grid .approved-hero {padding-top:173px !important;}
+  .approved-modern.has-kinetic-grid .approved-hero-shell {gap:19px !important;}
+
+  /* Reduce mobile text approximately 15% (not transform:scale, which would break layout). */
+  .approved-modern.has-kinetic-grid .approved-hero h1 {font-size:clamp(27px,7.5vw,34px) !important;}
+  .approved-modern.has-kinetic-grid .approved-hero-role-label {font-size:13px !important;}
+  .approved-modern.has-kinetic-grid .approved-hero-lead,
+  .approved-modern.has-kinetic-grid .approved-hero-statement {font-size:15.3px !important;}
+  .approved-modern.has-kinetic-grid .approved-hero-location {font-size:13px !important;}
+  .approved-modern.has-kinetic-grid .approved-hero-actions .approved-button {font-size:13px !important;min-height:42px !important;}
+  .approved-modern.has-kinetic-grid .ea-portrait-title {font-size:clamp(16px,4.3vw,20px) !important;}
+  .approved-modern.has-kinetic-grid .approved-hero-side .approved-hero-stats strong {font-size:21px !important;}
+  .approved-modern.has-kinetic-grid .approved-hero-side .approved-hero-stats span {font-size:12px !important;}
+  .approved-modern .approved-display,
+  .approved-modern .ea-section-title {font-size:clamp(24px,6.4vw,30px) !important;}
+  .approved-modern .approved-eyebrow {font-size:12px !important;}
+  .approved-modern .ea-section-lead {font-size:15.3px !important;}
+  .approved-modern :is(.ea-value-card p,.ea-ai-grid p,.ea-proofs-grid p,.ea-projects-grid p,
+    .approved-result p,.approved-business-grid p,.approved-toolbox p,.approved-experience-copy p,
+    .ea-personal-list li,.approved-method-steps p,.approved-case-sections p,.approved-case-notes p) {
+    font-size:15.3px !important;
+    line-height:1.56 !important;
+  }
+  .approved-modern .ea-value-card h3 {font-size:clamp(19px,5.5vw,23px) !important;}
+  .approved-modern .approved-case-head h3 {font-size:clamp(21px,5.7vw,26px) !important;}
+  .approved-modern .approved-case-highlight strong {font-size:clamp(19px,5.3vw,23px) !important;}
+  .approved-modern .approved-case-highlight p {font-size:14px !important;}
+  .approved-modern .approved-case-tags {font-size:12.5px !important;}
+  .approved-modern .approved-case-number {font-size:16px !important;}
+  .approved-modern .approved-case h4 {font-size:14px !important;}
+  .approved-modern .approved-case-result-content :is(p,strong,span) {font-size:15.3px !important;}
+  .approved-modern .approved-experience-role h3 {font-size:21px !important;}
+  .approved-modern .approved-method-steps h3 {font-size:21px !important;}
+  .approved-modern .approved-business-value > h3 {font-size:21px !important;padding:15px 18px !important;}
+  /* Projects – approximately 15% smaller copy, but do not return to microscopic labels. */
+  .proj-site:not(.resume-site) .proj-hero h1 {font-size:clamp(27px,6.9vw,34px) !important;}
+  .proj-site:not(.resume-site) .proj-section h2 {font-size:clamp(24px,6.5vw,30px) !important;}
+  .proj-site:not(.resume-site) .proj-lead,
+  .proj-site:not(.resume-site) .proj-case dd,
+  .proj-site:not(.resume-site) .proj-method-card dd,
+  .proj-site:not(.resume-site) .proj-methodologies-intro,
+  .proj-site:not(.resume-site) .proj-method-decision li {font-size:15.3px !important;}
+  .proj-site:not(.resume-site) .proj-case h3 {font-size:22px !important;}
+  .proj-site:not(.resume-site) .proj-case-metric {font-size:15.3px !important;}
+  .proj-site:not(.resume-site) .proj-method-card h3 {font-size:23px !important;}
+  .proj-site:not(.resume-site) .proj-method-subtitle {font-size:17px !important;}
+  .proj-site:not(.resume-site) .proj-method-example {font-size:14px !important;}
+  .proj-site:not(.resume-site) .proj-case dt {font-size:13px !important;}
+  .proj-site:not(.resume-site) .proj-portrait-name {font-size:18px !important;}
+  .proj-site:not(.resume-site) .proj-specialisms span {font-size:12px !important;}
+  .proj-site:not(.resume-site) .proj-step p,
+  .proj-site:not(.resume-site) .proj-role p {font-size:15px !important;}
+  /* Resume reading page. Printing remains original sizes. */
+  .resume-site .resume-hero h1 {font-size:clamp(27px,6.9vw,34px) !important;}
+  .resume-site .resume-title {font-size:21px !important;}
+  .resume-site .resume-summary,
+  .resume-site :is(.resume-intro-block p,.resume-job li,.resume-job-intro,.resume-end-panel p,.resume-end-panel dd) {
+    font-size:15.3px !important;
+    line-height:1.58 !important;
+  }
+  .resume-site .resume-job h3 {font-size:21px !important;}
+  .resume-site .resume-job-role {font-size:17px !important;}
+  .resume-site .resume-skill-block li {font-size:15px !important;}
+  .resume-site .resume-contact-list :is(span,a) {font-size:14px !important;}
+  .resume-site .resume-section-row h2,
+  .resume-site .resume-end-panel h2 {font-size:clamp(24px,6.4vw,30px) !important;}
+}
+@media (max-width:360px) {
+  .approved-modern .mobile-direct-nav a {font-size:11px !important;}
+  .approved-modern.has-kinetic-grid .approved-hero h1 {font-size:27px !important;}
+}
+@media print {
+  .resume-site .resume-summary,
+  .resume-site :is(.resume-intro-block p,.resume-job li,.resume-job-intro,.resume-end-panel p,.resume-end-panel dd) {
+    font-size:9.5pt !important;
+    line-height:1.35 !important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .left-kinetic-grid .kg-tile {animation:none !important;}
+}
