@@ -87,3 +87,24 @@
     padding-left: 11px !important;
   }
 }
+
+/* Desktop: compact right-aligned menu instead of an oversized white strip. */
+@media (min-width: 1200px) {
+  .approved-site.approved-modern.has-kinetic-grid .approved-nav {
+    left: auto !important;
+    right: calc(var(--kg-field-width) + 12px) !important;
+    width: max-content !important;
+    max-width: calc(var(--kg-reading-width) - 24px) !important;
+    margin: 0 !important;
+    padding: 7px 9px !important;
+    min-height: 0 !important;
+    justify-content: flex-end !important;
+    gap: 0 !important;
+    transform: none !important;
+  }
+
+  .approved-site.approved-modern.has-kinetic-grid .approved-desktop-nav {
+    margin: 0 !important;
+    flex: 0 0 auto;
+  }
+}
