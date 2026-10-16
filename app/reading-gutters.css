@@ -1,0 +1,79 @@
+/* Consistent readable side gutters across the portfolio.
+   Loaded after legacy responsive styles so text never hugs a rail or viewport edge. */
+
+/* Narrow screens: the green rail is separate from the page.
+   Keep a second, real text inset INSIDE the remaining page width. */
+@media (max-width: 767px) {
+  .approved-site.approved-modern.has-kinetic-grid {
+    --reading-gutter: clamp(20px, 5.8vw, 26px);
+  }
+
+  .approved-modern.has-kinetic-grid .approved-section,
+  .approved-modern.has-kinetic-grid .approved-contact {
+    padding-left: var(--reading-gutter) !important;
+    padding-right: var(--reading-gutter) !important;
+  }
+
+  /* Hero is not an .approved-section; explicitly match its inner edges. */
+  .approved-modern.has-kinetic-grid .approved-hero-shell {
+    width: calc(100% - 2 * var(--reading-gutter)) !important;
+    max-width: none !important;
+    margin-left: var(--reading-gutter) !important;
+    margin-right: var(--reading-gutter) !important;
+  }
+
+  .approved-modern.has-kinetic-grid .approved-hero-copy,
+  .approved-modern.has-kinetic-grid .ea-personal-copy,
+  .approved-modern.has-kinetic-grid .approved-section-head,
+  .approved-modern.has-kinetic-grid .approved-contact-head {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Existing cards use very narrow inner copy padding on phones. */
+  .approved-modern.has-kinetic-grid .approved-case-content {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Give independently displayed project pages the same safe outer inset. */
+  .proj-site:not(.resume-site) .proj-container {
+    width: calc(100% - 2 * clamp(20px, 5.8vw, 26px)) !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Tablet: slightly wider text margins alongside the left animated rail. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .approved-modern.has-kinetic-grid .approved-section,
+  .approved-modern.has-kinetic-grid .approved-contact {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-hero-shell {
+    width: calc(100% - 64px) !important;
+    max-width: none !important;
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+  }
+}
+
+/* Desktop: increase the minimum reading inset while keeping both kinetic
+   fields connected to the content edge (no gap or asymmetric rail). */
+@media (min-width: 1200px) {
+  :root {
+    --kg-reading-width: min(1408px, calc(var(--kg-center-width) - 128px));
+  }
+  .approved-modern.has-kinetic-grid .approved-section,
+  .approved-modern.has-kinetic-grid .approved-contact {
+    padding-left: max(64px, calc((100% - 1408px) / 2)) !important;
+    padding-right: max(64px, calc((100% - 1408px) / 2)) !important;
+  }
+  .approved-modern.has-kinetic-grid .approved-hero-shell {
+    width: var(--kg-reading-width) !important;
+    max-width: 1408px !important;
+    margin-inline: auto !important;
+  }
+}
