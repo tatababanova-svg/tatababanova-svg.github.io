@@ -17,6 +17,7 @@ import "./kinetic-grid.css";
 import "./portfolio-polish.css";
 import "./mobile-layout-repair.css";
 import "./balanced-responsive-v3.css";
+import "./kinetic-rail-visible.css";
 
 export const metadata: Metadata = {
   title: seo.title,
