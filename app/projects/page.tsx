@@ -249,7 +249,7 @@ const deliverySteps = [
   },
   {
     number: "05",
-    title: "Исполнение и изменения",
+    title: "Исполнение и контроль изменений",
     text: "Координирую команды и подрядчиков, контролирую статусы, сроки, блокеры и отклонения.",
   },
   {
@@ -371,7 +371,7 @@ const toolGroups = [
   },
   {
     title: "Документация и совместная работа",
-    items: ["Confluence", "Notion", "Microsoft 365", "Google Workspace", "Google Drive"],
+    items: ["Confluence", "Notion", "Microsoft 365", "Google Workspace"],
   },
   {
     title: "Учёт и аналитика",
@@ -610,7 +610,7 @@ export default function ProjectsPage() {
           <div className="itpm-container">
             <div className="itpm-section-heading">
               <span className="itpm-eyebrow">ЦИФРОВЫЕ ИНИЦИАТИВЫ</span>
-              <h2>Проекты с применением ИИ и цифровые решения</h2>
+              <h2>Цифровые инициативы и проекты с применением ИИ</h2>
               <p>
                 Дополнительные примеры постановки задач, работы с исполнителями и самостоятельной реализации цифровых инструментов. Статус каждого проекта указан отдельно.
               </p>
@@ -676,7 +676,7 @@ export default function ProjectsPage() {
           <div className="itpm-container">
             <div className="itpm-section-heading">
               <span className="itpm-eyebrow">ПОДХОД К УПРАВЛЕНИЮ</span>
-              <h2>Как я веду проект — от потребности до приёмки</h2>
+              <h2>Как я управляю проектами</h2>
               <p>
                 Подход выбираю под характер задачи: непрерывный поток работ, фиксированные сроки, технические зависимости или меняющиеся требования. Не усложняю процесс методологией ради самой методологии.
               </p>
