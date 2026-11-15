@@ -21,6 +21,7 @@ import "./kinetic-rail-visible.css";
 import "./case-headline-visibility.css";
 import "./desktop-kinetic-sides.css";
 import "./reading-gutters.css";
+import "./itpm-portfolio.css";
 
 export const metadata: Metadata = {
   title: seo.title,
