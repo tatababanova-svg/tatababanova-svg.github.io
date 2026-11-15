@@ -546,7 +546,7 @@ export default function ProjectsPage() {
               </div>
               <div className="itpm-actions">
                 <a className="itpm-button itpm-button-primary" href="#cases">Смотреть IT-кейсы <span aria-hidden="true">↘</span></a>
-                <a className="itpm-button itpm-button-secondary" href="mailto:babanova595@gmail.com?subject=Запрос%20актуального%20резюме">Назначить собеседование</a>
+                <a className="itpm-button itpm-button-secondary" href="mailto:babanova595@gmail.com?subject=%D0%9D%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B8%D1%82%D1%8C%20%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Назначить собеседование</a>
               </div>
               <p className="itpm-hero-meta">Казань · Удалённая работа по России · Готова к командировкам</p>
             </div>
