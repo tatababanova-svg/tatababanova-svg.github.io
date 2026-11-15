@@ -17,7 +17,7 @@
   overflow: clip;
   background: var(--itpm-bg);
   color: var(--itpm-text);
-  font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+  font-family: "Manrope", "Segoe UI", Arial, sans-serif !important;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -27,8 +27,8 @@
 .proj-site.itpm-site *::after { box-sizing: border-box; }
 .proj-site.itpm-site a { color: inherit; }
 .proj-site.itpm-site :where(h1,h2,h3) {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: 400 !important;
   letter-spacing: -0.035em;
   line-height: 1.14;
   text-wrap: balance;
