@@ -21,25 +21,39 @@ import "./kinetic-rail-visible.css";
 import "./case-headline-visibility.css";
 import "./desktop-kinetic-sides.css";
 import "./reading-gutters.css";
+import "./itpm-portfolio.css";
 
 export const metadata: Metadata = {
   title: seo.title,
   description: seo.description,
-  applicationName: "Татьяна Бабанова — бизнес-ассистент собственника",
+  applicationName: "Татьяна Бабанова — IT Project Manager",
   authors: [{ name: "Татьяна Бабанова" }],
   creator: "Татьяна Бабанова",
   keywords: [
-    "Executive Assistant", "бизнес-ассистент собственника", "старший бизнес-ассистент",
-    "помощник руководителя", "управление поручениями", "операционный менеджер",
-    "Project Manager", "координатор проектов", "администратор проектов",
-    "автоматизация бизнес-процессов", "Татьяна Бабанова"
+    "IT Project Manager",
+    "менеджер IT-проектов",
+    "управление IT-проектами",
+    "автоматизация бизнес-процессов",
+    "1С:КА 2.5",
+    "интеграция корпоративных систем",
+    "IT-инфраструктура",
+    "миграция данных",
+    "бизнес-анализ",
+    "сбор и формализация требований",
+    "технические задания",
+    "управление подрядчиками",
+    "Jira",
+    "Confluence",
+    "пользовательская приёмка",
+    "UAT",
+    "Татьяна Бабанова",
   ],
   openGraph: {
     type: "website",
     locale: "ru_RU",
     title: seo.title,
     description: seo.description,
-    siteName: "Татьяна Бабанова — бизнес-ассистент собственника",
+    siteName: "Татьяна Бабанова — IT Project Manager",
   },
   twitter: {
     card: "summary",
